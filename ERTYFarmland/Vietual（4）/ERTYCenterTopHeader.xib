@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR">
+            <rect key="frame" x="0.0" y="0.0" width="477" height="825"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Nb-BW-ffO">
+                    <rect key="frame" x="0.0" y="0.0" width="477" height="461"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="461" id="nL5-Kw-Vah"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKV-Qa-8PM">
+                    <rect key="frame" x="244.66666666666663" y="366" width="220.33333333333337" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  Edit" image="edittravel"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfS-PQ-9At">
+                    <rect key="frame" x="148.66666666666666" y="314" width="179.99999999999997" height="32"/>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5g-gF-8ah">
+                    <rect key="frame" x="188.66666666666666" y="206" width="99.999999999999972" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="NB8-M1-eEa"/>
+                        <constraint firstAttribute="height" constant="100" id="NpM-Vc-ZbB"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nza-Ln-Vkt">
+                    <rect key="frame" x="12" y="366" width="220.66666666666666" height="44"/>
+                    <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3CG-At-05K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  Setting" image="setingtravel"/>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <constraints>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="leading" secondItem="Nza-Ln-Vkt" secondAttribute="trailing" constant="12" id="3Vc-TC-31A"/>
+                <constraint firstItem="3Nb-BW-ffO" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="5yz-fF-sAR"/>
+                <constraint firstItem="Nza-Ln-Vkt" firstAttribute="top" secondItem="ZfS-PQ-9At" secondAttribute="bottom" constant="20" id="B0h-S3-9di"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="bKV-Qa-8PM" secondAttribute="trailing" constant="12" id="NQO-T2-h53"/>
+                <constraint firstItem="ZfS-PQ-9At" firstAttribute="top" secondItem="G5g-gF-8ah" secondAttribute="bottom" constant="8" id="Ofb-Cd-6u9"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="height" secondItem="Nza-Ln-Vkt" secondAttribute="height" id="Ta4-9e-M6r"/>
+                <constraint firstItem="ZfS-PQ-9At" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="dxp-IL-gZL"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="centerY" secondItem="Nza-Ln-Vkt" secondAttribute="centerY" id="khn-9t-4ko"/>
+                <constraint firstItem="Nza-Ln-Vkt" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="12" id="rCo-dT-sb7"/>
+                <constraint firstItem="G5g-gF-8ah" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="206" id="rKm-w0-d1C"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="width" secondItem="Nza-Ln-Vkt" secondAttribute="width" id="swd-fv-RnO"/>
+                <constraint firstItem="G5g-gF-8ah" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="uJz-lG-mP4"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="3Nb-BW-ffO" secondAttribute="trailing" id="v8P-g7-NmD"/>
+                <constraint firstItem="3Nb-BW-ffO" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="wHf-jq-xmI"/>
+            </constraints>
+            <point key="canvasLocation" x="168.70229007633588" y="293.3098591549296"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="edittravel" width="22" height="20"/>
+        <image name="setingtravel" width="21" height="20"/>
+    </resources>
+</document>
