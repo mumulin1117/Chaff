@@ -22,4 +22,18 @@ class ERTYMainLinkersayell: UICollectionViewCell {
         trailsImageview.layer.cornerRadius = 10
         trailsImageview.layer.masksToBounds = true
     }
+    
+    
+    func Sharedadventures(noemalDic:Dictionary<String,Any>) {
+        vistasLabel.text = noemalDic["alpineVista"] as? String
+        
+        if let imglink = (noemalDic["forestBathing"] as? String),let uri = URL(string: imglink) {
+          
+            trailsImageview.setminImge(url:uri)
+        }
+        
+        
+      
+        
+    }
 }

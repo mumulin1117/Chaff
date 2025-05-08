@@ -1,0 +1,30 @@
+PODS:
+  - IQKeyboardManager (6.5.19)
+  - MJRefresh (3.7.9)
+  - SDWebImage (5.21.0):
+    - SDWebImage/Core (= 5.21.0)
+  - SDWebImage/Core (5.21.0)
+  - SwiftyStoreKit (0.16.1)
+
+DEPENDENCIES:
+  - IQKeyboardManager
+  - MJRefresh
+  - SDWebImage
+  - SwiftyStoreKit
+
+SPEC REPOS:
+  trunk:
+    - IQKeyboardManager
+    - MJRefresh
+    - SDWebImage
+    - SwiftyStoreKit
+
+SPEC CHECKSUMS:
+  IQKeyboardManager: c8665b3396bd0b79402b4c573eac345a31c7d485
+  MJRefresh: ff9e531227924c84ce459338414550a05d2aea78
+  SDWebImage: f84b0feeb08d2d11e6a9b843cb06d75ebf5b8868
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+
+PODFILE CHECKSUM: 56d4a6598dafdd6b7ef1ae3bc79d0fabb7b9eb5d
+
+COCOAPODS: 1.16.2

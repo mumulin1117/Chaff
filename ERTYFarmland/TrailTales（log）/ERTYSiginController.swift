@@ -8,7 +8,7 @@
 import UIKit
 
 class ERTYSiginController: UIViewController {
-
+    static var isfAcceptAgree:Bool = false
     @IBOutlet weak var proverbsTexf: UITextField!
     
     
@@ -25,6 +25,11 @@ class ERTYSiginController: UIViewController {
     @IBOutlet weak var TrailblazingContactlbl: UILabel!
     
     @IBOutlet weak var summitLoginButton: UIButton!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         clipForcolor()
@@ -35,9 +40,9 @@ class ERTYSiginController: UIViewController {
     
     private func clipForcolor() {
         birdwatchingView.layer.cornerRadius = 25.5
-        
+        termsContactlbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkPrivacySummit(tap:))))
         TrailblazingContactlbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkPrivacySummit(tap:))))
-        summitLoginButton.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkPrivacySummit(tap:))))
+        summitLoginButton.addTarget(self, action: #selector(handleSummitLogin), for: .touchUpInside)
         
         spotsView.layer.cornerRadius = 25.5
         
@@ -56,6 +61,18 @@ class ERTYSiginController: UIViewController {
         
     }
     @objc func handleSummitLogin() {
+        
+        if ERTYSiginController.isfAcceptAgree == false {
+            mistErrorLabel.text = "Please read and agree to our terms of use!"
+            mistErrorLabel.isHidden = false
+            mistErrorLabel.textColor  = .red
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+                self.mistErrorLabel.isHidden = true
+            }))
+            return
+            
+            
+        }
         guard let email = proverbsTexf.text, isValidEmail(email),
               let password = wisdomTexf.text, !password.isEmpty else {
             mistErrorLabel.text = "Please enter a valid email and password."
@@ -84,12 +101,68 @@ class ERTYSiginController: UIViewController {
         mistErrorLabel.textColor  = .green
         mistErrorLabel.isHidden = false
         
-        
-        
-        mistErrorLabel.text = "Trail login successful for: \(email)"
+        TrailRequestScout.pathfinder.exploreWilderness(destination: "/txnfmiviraz/jfglbsibyhyja",provisions:["trailMix":email,"snackPouch":password,"hydrationBladder":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
+            
+            guard let response = dataResult as? Dictionary<String,Any> ,
+                  let code = response["code"] as? Int,code == 200000,
+                  let user = response["data"] as? Dictionary<String,Any>
+                    
+            else {
+                self.mistErrorLabel.textColor  = .red
+                self.mistErrorLabel.isHidden = false
+                self.mistErrorLabel.text = "Username or password incorrect!"
+                self.dispiaasger()
+                return
+            }
+            self.mistErrorLabel.textColor  = .green
+            self.mistErrorLabel.isHidden = false
+            self.mistErrorLabel.text = "Trail login successful for: \(email)"
+            self.dispiaasger()
+            
+            self.switchTonamanin(savedata:user)
+        } onObstacle: { error in
+            self.mistErrorLabel.textColor  = .red
+            self.mistErrorLabel.isHidden = false
+            self.mistErrorLabel.text = error.localizedDescription
+            self.dispiaasger()
+        }
+
         
        
         
+       
+        
+    }
+    
+    func switchTonamanin(savedata:Dictionary<String,Any>)  {
+        var newInfo = Dictionary<String,Any>()
+        newInfo["quickDryShirt"] = savedata["quickDryShirt"]//id
+        newInfo["trailTown"] = savedata["trailTown"]
+        TrailRequestScout.pathfinder.wildernessGuide = newInfo
+        let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ERTYNTabbarconroler") as! ERTYNTabbarconroler
+          self.navigationController?.pushViewController(main, animated: false)
+        
+        
+    }
+    
+    func showingRightTrue(titleInfo:String) {
+        self.mistErrorLabel.isHidden = false
+        self.mistErrorLabel.textColor  = .green
+        self.mistErrorLabel.text = titleInfo
+        dispiaasger()
+    }
+    func dispiaasger() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
+            self.mistErrorLabel.isHidden = true
+        }))
+    }
+    
+    
+    
+    
+    @IBAction func Trekkingfriends(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        ERTYSiginController.isfAcceptAgree = sender.isSelected
     }
     
 }

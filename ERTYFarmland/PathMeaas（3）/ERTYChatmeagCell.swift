@@ -8,16 +8,36 @@
 import UIKit
 
 class ERTYChatmeagCell: UITableViewCell {
-
+    @IBOutlet weak var vistasLabel: UILabel!//name
+    
+    @IBOutlet weak var trailsImageview: UIImageView!//header
+    
+     
+    @IBOutlet weak var detailLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        Mistyvalleys()
+        self.selectionStyle = .none
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    private func Mistyvalleys()  {
+        trailsImageview.layer.cornerRadius = 32
+        trailsImageview.layer.masksToBounds = true
+    }
+    
+    func Sharedadventures(noemalDic:Dictionary<String,Any>) {
+        vistasLabel.text = noemalDic["tentPitching"] as? String
+        detailLabel.text = noemalDic["waterFilter"] as? String
+        
+        if let imglink = (noemalDic["sleepingBag"] as? String),let uri = URL(string: imglink) {
+          
+            trailsImageview.setminImge(url:uri)
+        }
+        
+       
+        
+       
     }
     
 }
