@@ -52,6 +52,8 @@ class ERTYMainCirDymCell: UITableViewCell {
         
     }
     private func Mistyvalleys()  {
+        trailsImageview.layer.borderColor = UIColor.orange.cgColor
+        trailsImageview.layer.borderWidth = 2
         trailsImageview.layer.cornerRadius = 21
         contendetailImage.layer.masksToBounds = true
         contendetailImage.layer.cornerRadius = 21

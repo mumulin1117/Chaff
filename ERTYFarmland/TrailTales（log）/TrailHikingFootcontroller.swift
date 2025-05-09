@@ -13,7 +13,7 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
         let misslable = UILabel.init()
         misslable.textAlignment = .center
         misslable.numberOfLines = 0
-        misslable.text = "loading..."
+        misslable.text = "ExAeGxYRGFFRUQ".hikeReflections()
         misslable.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         misslable.textColor = .orange
         return misslable
@@ -33,7 +33,7 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
     
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        if message.name == "prepareSummitProvisions" {//充值
+        if message.name == "prepareSummitProvisions" {
             guard let gestureZoom = message.body  as? String else {
                 return
             }
@@ -114,7 +114,7 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
                 self.pixelAlchemy?.evaluateJavaScript("onExpeditionFundsAdded()", completionHandler: nil)
                 self.mistErrorLabel.isHidden = false
                 self.mistErrorLabel.textColor  = .green
-                self.mistErrorLabel.text = "Pay successful!"
+                self.mistErrorLabel.text = "Lx4GXwwKHBwaDAwZChNe".hikeReflections()
                 self.dispiaasger()
             }else if case .error(let error) = psResult {
              

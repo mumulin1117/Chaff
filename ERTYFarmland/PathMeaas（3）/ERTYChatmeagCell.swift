@@ -23,6 +23,8 @@ class ERTYChatmeagCell: UITableViewCell {
 
     private func Mistyvalleys()  {
         trailsImageview.layer.cornerRadius = 32
+        trailsImageview.layer.borderColor = UIColor.orange.cgColor
+        trailsImageview.layer.borderWidth = 2
         trailsImageview.layer.masksToBounds = true
     }
     

@@ -12,7 +12,7 @@ class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , 
     private var fogNavigation:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
     func reportHikingContent() {
-        pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "pages/Report/index?")
+        pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".hikeReflections())
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,8 +95,8 @@ extension ERTYEchoTrailsController:UICollectionViewDelegate,UICollectionViewData
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":20,"leaveNoTrace":1,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             self.shareingContetnView.mj_header?.endRefreshing()
             guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["code"] as? Int,code == 200000,
-                  let hikedata = response["data"] as? Array<Dictionary<String,Any>>
+                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                

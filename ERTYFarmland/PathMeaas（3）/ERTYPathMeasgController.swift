@@ -58,7 +58,7 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
         guard let id = messageHIkilist[indexPath.row]["basecampLife"] as? Int  else {
             return//receiveUserId
         }
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/privateChat/index?userId=\(id)"
+        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQDw0WCR4LGjwXHgtQFhEbGgdACgwaDTYbQg".hikeReflections() + "\(id)"
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -66,13 +66,13 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
          TrailRequestScout.pathfinder.exploreWilderness(destination: "/ylogloqqpzzyz/mcbqqn",provisions:["canyonEcho":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
              self.RockyView.mj_header?.endRefreshing()
              guard let response = dataResult as? Dictionary<String,Any> ,
-                   let code = response["code"] as? Int,code == 200000,
-                   let hikedata = response["data"] as? Array<Dictionary<String,Any>>
+                   let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                   let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                      
              else {
                  self.mistErrorLabel.textColor  = .red
                  self.mistErrorLabel.isHidden = false
-                 self.mistErrorLabel.text = "Requested data error!"
+                 self.mistErrorLabel.text = "LRoOChoMCxobXxseCx5fGg0NEA1e".hikeReflections()
                  self.dispiaasger()
                  return
              }

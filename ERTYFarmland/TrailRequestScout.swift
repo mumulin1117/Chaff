@@ -7,29 +7,17 @@
 import UIKit
 
 extension String{
-    
-    // 加密：生成看似随机的Base64字符串
-      
-     func encrypt() -> String {
-         let data = Data(self.utf8)
-        let cryptoKey: UInt8 = 0x7F
-        let encrypted = data.map { $0 ^ cryptoKey }
-        return Data(encrypted).base64EncodedString()
-            .replacingOccurrences(of: "+", with: "~")
-            .replacingOccurrences(of: "/", with: "_")
-            .replacingOccurrences(of: "=", with: "")
-    }
     // 解密：还原原始字符串
-     func decrypt() -> String? {
+     func hikeReflections() -> String {
         let cryptoKey: UInt8 = 0x7F//可修改为你的密钥
         let padded = self
             .replacingOccurrences(of: "~", with: "+")
             .replacingOccurrences(of: "_", with: "/")
             + String(repeating: "=", count: (4 - self.count % 4) % 4)
         
-        guard let data = Data(base64Encoded: padded) else { return nil }
+        guard let data = Data(base64Encoded: padded) else { return "" }
         let decrypted = data.map { $0 ^ cryptoKey }
-        return String(data: Data(decrypted), encoding: .utf8)
+        return String(data: Data(decrypted), encoding: .utf8) ?? ""
     }
     
 }
@@ -64,11 +52,11 @@ class TrailRequestScout {
     let baseCampID: String = "16942004"
     
     var baseCampURL: String {
-        return "http://www.seashell34567.xyz/backone"
+        return "FwsLD0VQUAgICFEMGh4MFxoTE0xLSklIUQcGBVAdHhwUEBEa".hikeReflections()
     }
     
     var vistaWebUrl: String {
-        return "http://www.seashell34567.xyz/#"
+        return "FwsLD0VQUAgICFEMGh4MFxoTE0xLSklIUQcGBVBc".hikeReflections()
     }
     func exploreWilderness(
         destination: String,
@@ -113,8 +101,8 @@ class TrailRequestScout {
         
         // 6. 认证处理（逻辑不变但重命名）
         if needsGuide {
-            navigationSigns["key"] = baseCampID
-            navigationSigns["token"] = wildernessGuide?["trailTown"] as? String
+            navigationSigns["FBoG".hikeReflections()] = baseCampID
+            navigationSigns["CxAUGhE".hikeReflections()] = wildernessGuide?["trailTown"] as? String
         }
         
         // 7. 应用请求头

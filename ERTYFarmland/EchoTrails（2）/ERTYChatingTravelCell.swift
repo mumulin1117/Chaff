@@ -48,6 +48,8 @@ class ERTYChatingTravelCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         Mistyvalleys()
+        trailsImageview.layer.borderColor = UIColor.orange.cgColor
+        trailsImageview.layer.borderWidth = 2
         Adventureleys()
         pilgrimages.addTarget(self, action: #selector(sureshongiReport), for: .touchUpInside)
     }

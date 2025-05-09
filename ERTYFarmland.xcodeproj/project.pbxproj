@@ -218,7 +218,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ERTYFarmland/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "加密";
+				INFOPLIST_KEY_CFBundleDisplayName = Chaff;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
@@ -256,7 +256,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ERTYFarmland/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "加密";
+				INFOPLIST_KEY_CFBundleDisplayName = Chaff;
 				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";

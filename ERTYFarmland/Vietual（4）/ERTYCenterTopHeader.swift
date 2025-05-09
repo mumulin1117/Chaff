@@ -35,7 +35,8 @@ class ERTYCenterTopHeader: UICollectionReusableView {
     func quickDryShirt() {
         soto.layer.cornerRadius = 22
         soto.layer.masksToBounds = true
-        
+        creekCross.layer.borderColor = UIColor.orange.cgColor
+        creekCross.layer.borderWidth = 2
     }
     
     func dehydratedMeal() {

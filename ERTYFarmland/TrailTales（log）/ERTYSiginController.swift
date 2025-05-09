@@ -63,7 +63,7 @@ class ERTYSiginController: UIViewController {
     @objc func handleSummitLogin() {
         
         if ERTYSiginController.isfAcceptAgree == false {
-            mistErrorLabel.text = "Please read and agree to our terms of use!"
+            mistErrorLabel.text = "LxMaHgwaXw0aHhtfHhEbXx4YDRoaXwsQXxAKDV8LGg0SDF8QGV8KDBpe".hikeReflections()
             mistErrorLabel.isHidden = false
             mistErrorLabel.textColor  = .red
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
@@ -75,7 +75,7 @@ class ERTYSiginController: UIViewController {
         }
         guard let email = proverbsTexf.text, isValidEmail(email),
               let password = wisdomTexf.text, !password.isEmpty else {
-            mistErrorLabel.text = "Please enter a valid email and password."
+            mistErrorLabel.text = "LxMaHgwaXxoRCxoNXx5fCR4TFhtfGhIeFhNfHhEbXw8eDAwIEA0bUQ".hikeReflections()
             mistErrorLabel.isHidden = false
             mistErrorLabel.textColor  = .red
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
@@ -97,20 +97,20 @@ class ERTYSiginController: UIViewController {
     }
     
     func performTrailLogin(email: String, password: String) {
-        mistErrorLabel.text = "Logging in..."
+        mistErrorLabel.text = "MxAYGBYRGF8WEVFRUQ".hikeReflections()
         mistErrorLabel.textColor  = .green
         mistErrorLabel.isHidden = false
         
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/txnfmiviraz/jfglbsibyhyja",provisions:["trailMix":email,"snackPouch":password,"hydrationBladder":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             
             guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["code"] as? Int,code == 200000,
-                  let user = response["data"] as? Dictionary<String,Any>
+                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let user = response["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
                     
             else {
                 self.mistErrorLabel.textColor  = .red
                 self.mistErrorLabel.isHidden = false
-                self.mistErrorLabel.text = "Username or password incorrect!"
+                self.mistErrorLabel.text = "KgwaDREeEhpfEA1fDx4MDAgQDRtfFhEcEA0NGhwLXg".hikeReflections()
                 self.dispiaasger()
                 return
             }

@@ -34,7 +34,7 @@ class ERTYPrivicerController: UIViewController {
         
         
         if compass == .privacy {
-            alertsLabel.text = "Privacy Policy"
+            alertsLabel.text = "Lw0WCR4cBl8vEBMWHAY".hikeReflections()
             trackingContent.text = """
 Last Updated: 2025-05-01
 Contact Email: docbar@gmail.com

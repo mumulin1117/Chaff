@@ -6,23 +6,24 @@
 //
 
 import UIKit
-import MJRefresh
+
 
 class ERTYVietual_Controller: HIkingMainBasci, CenterGHeadeDelegate{
+    var headerMeView:ERTYCenterTopHeader?
     
     func bugRepellent(buttontag: Int) {
         var totlaLinder = TrailRequestScout.pathfinder.vistaWebUrl
         
         switch buttontag {
         case 10:
-            totlaLinder  = totlaLinder + "pages/Setting/index?"
+            totlaLinder  = totlaLinder + "Dx4YGgxQLBoLCxYRGFAWERsaB0A".hikeReflections()
             
         case 20:
-            totlaLinder = totlaLinder + "pages/EditData/index?"
+            totlaLinder = totlaLinder + "Dx4YGgxQOhsWCzseCx5QFhEbGgdA".hikeReflections()
         case 30:
-            totlaLinder = totlaLinder + "pages/VoucherCenter/index?"
+            totlaLinder = totlaLinder + "Dx4YGgxQKRAKHBcaDTwaEQsaDVAWERsaB0A".hikeReflections()
         case 40:
-            totlaLinder = totlaLinder + "pages/CreateRole/index?"
+            totlaLinder = totlaLinder + "Dx4YGgxQPA0aHgsaLRATGlAWERsaB0A".hikeReflections()
         default:
             break
         }
@@ -39,7 +40,7 @@ class ERTYVietual_Controller: HIkingMainBasci, CenterGHeadeDelegate{
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.centinformationview.mj_header?.beginRefreshing()
+        requestForDymAllHikeData()
         
     }
    
@@ -51,15 +52,16 @@ class ERTYVietual_Controller: HIkingMainBasci, CenterGHeadeDelegate{
         centinformationview.dataSource = self
         
         let layer = UICollectionViewFlowLayout()
-        layer.itemSize = CGSize(width: 105, height: 105)
+        layer.itemSize = CGSize.init(width: UIScreen.main.bounds.width - 24, height: 200)
         layer.minimumInteritemSpacing = 14
         
         layer.minimumInteritemSpacing = 14
         layer.scrollDirection = .vertical
         centinformationview.collectionViewLayout = layer
+        centinformationview.contentInsetAdjustmentBehavior = .never
         centinformationview.register(UINib.init(nibName: "ERTYCenterTopHeader", bundle: nil), forSupplementaryViewOfKind:UICollectionView.elementKindSectionHeader , withReuseIdentifier: "ERTYCenterTopHeader")
-        centinformationview.register(UINib(nibName: "ERTYMainLinkersayell", bundle: nil), forCellWithReuseIdentifier: "ERTYMainLinkersayell")
-        centinformationview.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(requestForDymAllHikeData))
+        centinformationview.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "ERTYemptyyell")
+      
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,18 +73,25 @@ class ERTYVietual_Controller: HIkingMainBasci, CenterGHeadeDelegate{
 }
 extension ERTYVietual_Controller:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        CGSize.zero
+        .zero
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        CGSize.init(width: self.view.frame.width, height: 670)
+        CGSize.init(width: self.view.frame.width, height: 640)
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        0
+        1
     }
     
+    
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let erty = collectionView.dequeueReusableCell(withReuseIdentifier: "ERTYMainLinkersayell", for: indexPath) as! ERTYMainLinkersayell
+        let erty = collectionView.dequeueReusableCell(withReuseIdentifier: "ERTYemptyyell", for: indexPath)
         
+        let emptyImage = UIImageView.init(image: UIImage.init(named: "notinhRecird"))
+        emptyImage.contentMode = .scaleAspectFill
+        emptyImage.frame = CGRect.init(x: 0, y: 0, width: 100, height: 100)
+        emptyImage.center = erty.contentView.center
+        erty.contentView.addSubview(emptyImage)
         return erty
         
     }
@@ -94,6 +103,7 @@ extension ERTYVietual_Controller:UICollectionViewDelegate,UICollectionViewDataSo
             let headerMe = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ERTYCenterTopHeader", for: indexPath) as! ERTYCenterTopHeader
             headerMe.Sharedadventures(noemalDic: hikiLoaginData)
             headerMe.deelegate = self
+            headerMeView = headerMe
             return headerMe
             
            
@@ -102,16 +112,16 @@ extension ERTYVietual_Controller:UICollectionViewDelegate,UICollectionViewDataSo
         }
     }
     
-    @objc func requestForDymAllHikeData()  {//sj/user/selectUserInfo
+    @objc func requestForDymAllHikeData()  {
         guard let useID = TrailRequestScout.pathfinder.wildernessGuide?["quickDryShirt"] as? Int else{
             return
         }
-        self.centinformationview.mj_header?.isHidden = false
+        
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/zatsqmegbrjz/adoexqmwl",provisions:["basecampLife":"\(useID)"],needsGuide:true) { dataResult in
-             self.centinformationview.mj_header?.endRefreshing()
+             
              guard let response = dataResult as? Dictionary<String,Any> ,
-                   let code = response["code"] as? Int,code == 200000,
-                   let hikedata = response["data"] as? Dictionary<String,Any>
+                   let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                   let hikedata = response["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
                      
              else {
                
@@ -120,10 +130,10 @@ extension ERTYVietual_Controller:UICollectionViewDelegate,UICollectionViewDataSo
              
             self.hikiLoaginData = hikedata
            
-            self.centinformationview.mj_header?.isHidden = true
-             self.centinformationview.reloadData()
+            self.headerMeView?.Sharedadventures(noemalDic: hikedata)
+            self.centinformationview.reloadData()
          } onObstacle: { error in
-             self.centinformationview.mj_header?.endRefreshing()
+             
          }
      }
 }

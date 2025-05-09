@@ -9,7 +9,7 @@ import UIKit
 import MJRefresh
 class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     func reportHikingContent() {
-        pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "pages/Report/index?")
+        pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".hikeReflections())
     }
     
     private var backpackLoad:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
@@ -47,8 +47,8 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":10,"leaveNoTrace":selectType,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             self.RockyView.mj_header?.endRefreshing()
             guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["code"] as? Int,code == 200000,
-                  let hikedata = response["data"] as? Array<Dictionary<String,Any>>
+                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                
@@ -73,8 +73,8 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ajnmxapjrisziauz/eegygoz",provisions:["trailBlazing":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             self.RockyView.mj_header?.endRefreshing()
             guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["code"] as? Int,code == 200000,
-                  let hikedata = response["data"] as? Array<Dictionary<String,Any>>
+                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                 self.mistErrorLabel.textColor  = .red
@@ -142,7 +142,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     //AI
     @objc func reflections() {
         
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/screenplay/index?"
+        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQDBwNGhoRDxMeBlAWERsaB0A".hikeReflections()
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -164,7 +164,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     
     //post
     @IBAction func takingNewpost(_ sender: Any) {
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/ReleaseDynamic/index?"
+        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoTGh4MGjsGER4SFhxQFhEbGgdA".hikeReflections()
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -198,7 +198,7 @@ extension ERTYPeakPalsController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let summitQuest = backpackLoad[indexPath.row]["summitQuest"] as? Int else { return  }
        
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/HomePage/index?userId=\(summitQuest)"
+        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQNxASGi8eGBpQFhEbGgdACgwaDTYbQg".hikeReflections() +  "\(summitQuest)"
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -219,7 +219,7 @@ extension ERTYPeakPalsController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let natureJournal = fogNavigation[indexPath.row]["natureJournal"] as? Int else { return  }
        
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/DynamicDetails/index?dynamicId=\(natureJournal)"
+        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQOwYRHhIWHDsaCx4WEwxQFhEbGgdAGwYRHhIWHDYbQg".hikeReflections() + "\(natureJournal)"
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -237,7 +237,7 @@ extension ERTYPeakPalsController:UITableViewDelegate,UITableViewDataSource{
 
 extension UIViewController {
     func pushtoNexteHikenpage(valleys:String) {
-        let  centr = valleys +  "&token=" +  (TrailRequestScout.pathfinder.wildernessGuide?["trailTown"] as? String ?? "") + "&appID=" +  TrailRequestScout.pathfinder.baseCampID
+        let  centr = valleys +  "WQsQFBoRQg".hikeReflections() +  (TrailRequestScout.pathfinder.wildernessGuide?["trailTown"] as? String ?? "") + "WR4PDzY7Qg".hikeReflections() +  TrailRequestScout.pathfinder.baseCampID
        
         self.navigationController?.pushViewController(TrailHikingFootcontroller.init(_moodGlyph: centr), animated: true)
     }
