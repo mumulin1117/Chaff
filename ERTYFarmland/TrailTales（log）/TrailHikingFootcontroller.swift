@@ -74,8 +74,9 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
                 return
             }
             // 使用 window
+            let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OkailLaungnavi") as! UINavigationController
             window.rootViewController
-            = ERTYLaunchController.init()
+            = main
             return
         }
         
@@ -102,17 +103,20 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
         SwiftyStoreKit.purchaseProduct(hikes, atomically: true) { [self] psResult in
             self.typographyKit()
             if case .success(let psPurch) = psResult {
-//               
-//                let plogPrism = psPurch.transaction.downloads
-//                if !plogPrism.isEmpty {
-//                    SwiftyStoreKit.start(plogPrism)
-//                }
-//                
-//                if psPurch.needsFinishTransaction {
-//                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
-//                }
+               
+                let hikisugg = psPurch.transaction.downloads
+                
+                
+
                 self.pixelAlchemy?.evaluateJavaScript("onExpeditionFundsAdded()", completionHandler: nil)
+                if !hikisugg.isEmpty {
+                    SwiftyStoreKit.start(hikisugg)
+                }
                 self.mistErrorLabel.isHidden = false
+              
+                if psPurch.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
+                }
                 self.mistErrorLabel.textColor  = .green
                 self.mistErrorLabel.text = "Lx4GXwwKHBwaDAwZChNe".hikeReflections()
                 self.dispiaasger()
@@ -247,4 +251,19 @@ extension TrailHikingFootcontroller:WKNavigationDelegate,WKUIDelegate{
         
     }
     
+    
+    static func completerAppPayAlso(){
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { hike in
+            for toyStoreP in hike {
+                
+                if toyStoreP.transaction.transactionState == .purchased ||
+                    toyStoreP.transaction.transactionState == .restored{
+                    if toyStoreP.needsFinishTransaction {
+                        SwiftyStoreKit.finishTransaction(toyStoreP.transaction)
+                    }
+                }
+            }
+        }
+    }
 }
