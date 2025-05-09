@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -132,14 +131,14 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="CulturalLael" destination="e1L-qH-GA2" id="AJy-pb-zcv"/>
                 <outlet property="commentCountButton" destination="9nD-hw-TCi" id="g7h-lg-Pl7"/>
                 <outlet property="contendetailImage" destination="8xW-7U-eYi" id="vPF-kF-H8i"/>
-                <outlet property="detailLabel" destination="peu-tg-oX6" id="7Lr-EF-Efw"/>
                 <outlet property="foolowNCounteLabel" destination="1Mi-Bi-TqC" id="cPb-8x-9bg"/>
-                <outlet property="heartCountLael" destination="e1L-qH-GA2" id="AJy-pb-zcv"/>
                 <outlet property="infomationView" destination="7Ys-Tc-kpT" id="Mbw-MZ-a4m"/>
+                <outlet property="insightsLabel" destination="peu-tg-oX6" id="7Lr-EF-Efw"/>
+                <outlet property="pathways" destination="xiz-TL-PF0" id="UqE-z8-zYA"/>
                 <outlet property="shareBackView" destination="gLc-go-XWZ" id="9nj-yl-KQy"/>
-                <outlet property="sureReporty" destination="xiz-TL-PF0" id="UqE-z8-zYA"/>
                 <outlet property="trailsImageview" destination="xW2-qv-cy6" id="q37-a9-rNB"/>
                 <outlet property="vistasLabel" destination="Hze-Go-no3" id="3Y8-FF-U0m"/>
             </connections>

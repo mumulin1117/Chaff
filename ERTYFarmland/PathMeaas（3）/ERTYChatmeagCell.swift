@@ -2,7 +2,7 @@
 //  ERTYChatmeagCell.swift
 //  ERTYFarmland
 //
-//  Created by mumu on 2025/5/6.
+//  
 //
 
 import UIKit
@@ -13,7 +13,7 @@ class ERTYChatmeagCell: UITableViewCell {
     @IBOutlet weak var trailsImageview: UIImageView!//header
     
      
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var DesertLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +28,7 @@ class ERTYChatmeagCell: UITableViewCell {
     
     func Sharedadventures(noemalDic:Dictionary<String,Any>) {
         vistasLabel.text = noemalDic["tentPitching"] as? String
-        detailLabel.text = noemalDic["waterFilter"] as? String
+        DesertLabel.text = noemalDic["waterFilter"] as? String
         
         if let imglink = (noemalDic["sleepingBag"] as? String),let uri = URL(string: imglink) {
           

@@ -2,7 +2,7 @@
 //  ERTYMainCirDymCell.swift
 //  ERTYFarmland
 //
-//  Created by mumu on 2025/5/6.
+//  
 //
 
 import UIKit
@@ -22,16 +22,16 @@ class ERTYMainCirDymCell: UITableViewCell {
     
     @IBOutlet weak var foolowNCounteLabel: UILabel!
     
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var insightsLabel: UILabel!
     
     @IBOutlet weak var contendetailImage: UIImageView!
     
     
-    @IBOutlet weak var heartCountLael: UIButton!
+    @IBOutlet weak var CulturalLael: UIButton!
     
     
     @IBOutlet weak var commentCountButton: UIButton!
-    @IBOutlet weak var sureReporty: UIButton!
+    @IBOutlet weak var pathways: UIButton!
     
     
     @IBOutlet weak var infomationView: UIView!
@@ -42,7 +42,7 @@ class ERTYMainCirDymCell: UITableViewCell {
         Mistyvalleys()
         self.selectionStyle = .none
         Adventureleys()
-        sureReporty.addTarget(self, action: #selector(sureshongiReport), for: .touchUpInside)
+        pathways.addTarget(self, action: #selector(sureshongiReport), for: .touchUpInside)
     }
 
     @objc func sureshongiReport()  {
@@ -71,7 +71,7 @@ class ERTYMainCirDymCell: UITableViewCell {
     
     func Sharedadventures(noemalDic:Dictionary<String,Any>) {
         vistasLabel.text = noemalDic["altitudeSick"] as? String
-        detailLabel.text = noemalDic["trailEtiquette"] as? String
+        insightsLabel.text = noemalDic["trailEtiquette"] as? String
         foolowNCounteLabel.text = "\(noemalDic["screeSliding"] as? Int ?? 0) Followers"
         if let imglink = (noemalDic["snowfieldCross"] as? String),let uri = URL(string: imglink) {
           
@@ -84,8 +84,8 @@ class ERTYMainCirDymCell: UITableViewCell {
             
         }
         
-        heartCountLael.isSelected = (noemalDic["sunsetVista"] as? Int) == 1
-        heartCountLael.setTitle("\(noemalDic["glacierTravel"] as? Int ?? 0)", for: .normal)
+        CulturalLael.isSelected = (noemalDic["sunsetVista"] as? Int) == 1
+        CulturalLael.setTitle("\(noemalDic["glacierTravel"] as? Int ?? 0)", for: .normal)
         commentCountButton.setTitle("\(noemalDic["firePitBuild"] as? Int ?? 0)", for: .normal)
 //        
     }

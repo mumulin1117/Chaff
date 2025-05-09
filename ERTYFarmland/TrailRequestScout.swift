@@ -2,11 +2,37 @@
 //  TrailRequestScout.swift
 //  ERTYFarmland
 //
-//  Created by mumu on 2025/5/8.
-//
+
 
 import UIKit
 
+extension String{
+    
+    // 加密：生成看似随机的Base64字符串
+      
+     func encrypt() -> String {
+         let data = Data(self.utf8)
+        let cryptoKey: UInt8 = 0x7F
+        let encrypted = data.map { $0 ^ cryptoKey }
+        return Data(encrypted).base64EncodedString()
+            .replacingOccurrences(of: "+", with: "~")
+            .replacingOccurrences(of: "/", with: "_")
+            .replacingOccurrences(of: "=", with: "")
+    }
+    // 解密：还原原始字符串
+     func decrypt() -> String? {
+        let cryptoKey: UInt8 = 0x7F//可修改为你的密钥
+        let padded = self
+            .replacingOccurrences(of: "~", with: "+")
+            .replacingOccurrences(of: "_", with: "/")
+            + String(repeating: "=", count: (4 - self.count % 4) % 4)
+        
+        guard let data = Data(base64Encoded: padded) else { return nil }
+        let decrypted = data.map { $0 ^ cryptoKey }
+        return String(data: Data(decrypted), encoding: .utf8)
+    }
+    
+}
 
 class TrailRequestScout {
    
@@ -16,9 +42,9 @@ class TrailRequestScout {
     var wildernessGuide:Dictionary<String,Any>?{
         
         get{
-            return UserDefaults.standard.object(forKey: "loginUserDBN") as? [String:Any]
+            return UserDefaults.standard.object(forKey: "wildernessGuide") as? [String:Any]
         }set{
-            UserDefaults.standard.set(newValue, forKey: "loginUserDBN")
+            UserDefaults.standard.set(newValue, forKey: "wildernessGuide")
             
         }
         

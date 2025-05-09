@@ -2,7 +2,7 @@
 //  ERTYPrivicerController.swift
 //  ERTYFarmland
 //
-//  Created by mumu on 2025/5/6.
+//  
 //
 
 import UIKit
@@ -24,11 +24,11 @@ class ERTYPrivicerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-        let imageView = UIImageView(image: UIImage(named: "backingWiter"))
+        let pathways = UIImageView(image: UIImage(named: "backingWiter"))
         
-        imageView.isUserInteractionEnabled = true
+        pathways.isUserInteractionEnabled = true
         
-        imageView.contentMode = .scaleAspectFit
+        pathways.contentMode = .scaleAspectFit
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backButtonTapped))
        
         
@@ -75,8 +75,8 @@ Updates: We may revise this policy; check the "Last Updated" date.
 """
         }
         
-        imageView.addGestureRecognizer(tapGesture)
-        let leftBarButton = UIBarButtonItem(customView: imageView)
+        pathways.addGestureRecognizer(tapGesture)
+        let leftBarButton = UIBarButtonItem(customView: pathways)
         navigationItem.leftBarButtonItem = leftBarButton
     }
 

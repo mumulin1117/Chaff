@@ -2,7 +2,7 @@
 //  ERTYChatingTravelCell.swift
 //  ERTYFarmland
 //
-//  Created by mumu on 2025/5/6.
+//  
 //
 
 import UIKit
@@ -15,21 +15,19 @@ class ERTYChatingTravelCell: UICollectionViewCell {
     @IBOutlet weak var trailsImageview: UIImageView!//header
     
      
-    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var Jungle: UILabel!
     
-    @IBOutlet weak var contendetailImage: UIImageView!
-    
-    
-    @IBOutlet weak var heartCountLael: UIButton!
+    @IBOutlet weak var explorations: UIImageView!
     
     
- 
-    @IBOutlet weak var sureReporty: UIButton!
+    @IBOutlet weak var Arcticon: UIButton!
+    
+    @IBOutlet weak var pilgrimages: UIButton!
     
     
     func Sharedadventures(noemalDic:Dictionary<String,Any>) {
         vistasLabel.text = noemalDic["altitudeSick"] as? String
-        detailLabel.text = noemalDic["trailEtiquette"] as? String
+        Jungle.text = noemalDic["trailEtiquette"] as? String
         
         if let imglink = (noemalDic["snowfieldCross"] as? String),let uri = URL(string: imglink) {
           
@@ -38,21 +36,20 @@ class ERTYChatingTravelCell: UICollectionViewCell {
         
         
         if let imglink = noemalDic["windbreaker"] as? String,let uri = URL(string: imglink) {
-            contendetailImage.setminImge(url:uri)
+            explorations.setminImge(url:uri)
             
         }
         
-        heartCountLael.isSelected = (noemalDic["sunsetVista"] as? Int) == 1
-        heartCountLael.setTitle("\(noemalDic["glacierTravel"] as? Int ?? 0)", for: .normal)
+        Arcticon.isSelected = (noemalDic["sunsetVista"] as? Int) == 1
+        Arcticon.setTitle("\(noemalDic["glacierTravel"] as? Int ?? 0)", for: .normal)
       
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         Mistyvalleys()
-   
         Adventureleys()
-        sureReporty.addTarget(self, action: #selector(sureshongiReport), for: .touchUpInside)
+        pilgrimages.addTarget(self, action: #selector(sureshongiReport), for: .touchUpInside)
     }
 
     @objc func sureshongiReport()  {
@@ -69,8 +66,8 @@ class ERTYChatingTravelCell: UICollectionViewCell {
    
     
     private  func Adventureleys()  {
-        contendetailImage.layer.cornerRadius = 16
-        contendetailImage.layer.masksToBounds = true
+        explorations.layer.cornerRadius = 16
+        explorations.layer.masksToBounds = true
         
         
        

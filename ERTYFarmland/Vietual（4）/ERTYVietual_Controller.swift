@@ -2,37 +2,32 @@
 //  ERTYVietual Controller.swift
 //  ERTYFarmland
 //
-//  Created by mumu on 2025/5/6.
+//  
 //
 
 import UIKit
 import MJRefresh
 
 class ERTYVietual_Controller: HIkingMainBasci, CenterGHeadeDelegate{
+    
     func bugRepellent(buttontag: Int) {
-        if buttontag == 10 {
-            let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/Setting/index?"
+        var totlaLinder = TrailRequestScout.pathfinder.vistaWebUrl
+        
+        switch buttontag {
+        case 10:
+            totlaLinder  = totlaLinder + "pages/Setting/index?"
             
-            pushtoNexteHikenpage(valleys:forelnk)
+        case 20:
+            totlaLinder = totlaLinder + "pages/EditData/index?"
+        case 30:
+            totlaLinder = totlaLinder + "pages/VoucherCenter/index?"
+        case 40:
+            totlaLinder = totlaLinder + "pages/CreateRole/index?"
+        default:
+            break
         }
         
-        if buttontag == 20 {
-            let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/EditData/index?"
-            
-            pushtoNexteHikenpage(valleys:forelnk)
-        }
-        
-        if buttontag == 30 {
-            let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/VoucherCenter/index?"
-            
-            pushtoNexteHikenpage(valleys:forelnk)
-        }
-        
-        if buttontag == 40 {
-            let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/CreateRole/index?"
-            
-            pushtoNexteHikenpage(valleys:forelnk)
-        }
+        pushtoNexteHikenpage(valleys:totlaLinder)
     }
     
     func changeInformation(buttontag: Int) {
@@ -93,13 +88,7 @@ extension ERTYVietual_Controller:UICollectionViewDelegate,UICollectionViewDataSo
     }
     
    
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let natureJournal = fogNavigation[indexPath.row]["natureJournal"] as? Int else { return  }
-//       
-//        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/DynamicDetails/index?dynamicId=\(natureJournal)"
-//        
-//        pushtoNexteHikenpage(valleys:forelnk)
-//    }
+
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if indexPath.section == 0 && kind == UICollectionView.elementKindSectionHeader {
             let headerMe = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "ERTYCenterTopHeader", for: indexPath) as! ERTYCenterTopHeader
