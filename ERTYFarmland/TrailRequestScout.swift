@@ -29,10 +29,13 @@ class TrailRequestScout {
     
     var wildernessGuide:Dictionary<String,Any>?{
         
+        
         get{
-            return UserDefaults.standard.object(forKey: "wildernessGuide") as? [String:Any]
+            let iadcard = "wildernessGuide"
+            return UserDefaults.standard.object(forKey: iadcard) as? [String:Any]
         }set{
-            UserDefaults.standard.set(newValue, forKey: "wildernessGuide")
+            let iadcard = "wildernessGuide"
+            UserDefaults.standard.set(newValue, forKey: iadcard)
             
         }
         

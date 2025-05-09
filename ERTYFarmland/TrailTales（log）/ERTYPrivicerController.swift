@@ -12,6 +12,9 @@ class ERTYPrivicerController: UIViewController {
     case terms
         case privacy
     }
+    private let trailMapView = UIView()
+      
+    private let compassButton = UIButton(type: .system)
     var compass:Fever = .terms
     init(compass: Fever) {
         self.compass = compass

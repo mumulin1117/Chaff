@@ -10,7 +10,9 @@ import MJRefresh
 
 class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , reportContetnDelegate {
     private var fogNavigation:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
-    
+    private let trailMapView = UIView()
+      
+    private let compassButton = UIButton(type: .system)
     func reportHikingContent() {
         pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".hikeReflections())
     }
@@ -92,28 +94,35 @@ extension ERTYEchoTrailsController:UICollectionViewDelegate,UICollectionViewData
    
     
    @objc func requestForDymAllHikeData()  {
+       trailMapView.backgroundColor = .tertiarySystemFill
+              
+       trailMapView.layer.cornerRadius = 12
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":20,"leaveNoTrace":1,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             self.shareingContetnView.mj_header?.endRefreshing()
-            guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
-                  let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+            guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
+//                  let code = hikebackdata["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
-               
+                self.shareingContetnView.mj_header?.endRefreshing()
                 return
             }
-           
-            self.fogNavigation = hikedata.filter({ dic in
-                
-                return (dic["windbreaker"] as? String)  != nil //videoImgUrl
-               
-            })
+            self.BasecampData(dafindL:hikedata)
            
             
             self.shareingContetnView.reloadData()
         } onObstacle: { error in
             self.shareingContetnView.mj_header?.endRefreshing()
         }
+    }
+    
+    func BasecampData(dafindL:Array<Dictionary<String,Any>>)  {
+        self.fogNavigation = dafindL.filter({ dic in
+            
+            return (dic["windbreaker"] as? String)  != nil
+           
+        })
+       
     }
     
 }

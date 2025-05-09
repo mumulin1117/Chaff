@@ -20,16 +20,21 @@ class ERTYSiginController: UIViewController {
     @IBOutlet weak var spotsView: UIView!
     
     @IBOutlet weak var mistErrorLabel: UILabel!
-    
+    private let embarkButton = UIButton(type: .system)
     @IBOutlet weak var termsContactlbl: UILabel!
     @IBOutlet weak var TrailblazingContactlbl: UILabel!
     
     @IBOutlet weak var summitLoginButton: UIButton!
-    
+    private let ropeIndicator = UIActivityIndicatorView(style: .medium)
+       
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
+    private let summitBadgeView = UIImageView(image: UIImage(systemName: "mountain.2"))
+      
+    private let trailblazerField = UITextField()
+    private let pathfinderField = UITextField()
     override func viewDidLoad() {
         super.viewDidLoad()
         clipForcolor()
@@ -48,7 +53,26 @@ class ERTYSiginController: UIViewController {
         
         summitLoginButton.layer.cornerRadius = 25.5
     }
-
+    private func prepareBasecampEntry() {
+        view.backgroundColor = .systemBackground
+        
+        summitBadgeView.tintColor = .systemOrange
+        summitBadgeView.contentMode = .scaleAspectFit
+        
+        trailblazerField.placeholder = "登山者代号"
+        trailblazerField.borderStyle = .roundedRect
+        trailblazerField.autocorrectionType = .no
+        
+        pathfinderField.placeholder = "路径密码"
+        pathfinderField.borderStyle = .roundedRect
+        pathfinderField.isSecureTextEntry = true
+        
+        embarkButton.setTitle("开始探险", for: .normal)
+        embarkButton.backgroundColor = .systemBlue
+        embarkButton.layer.cornerRadius = 8
+       
+        
+    }
     
     @objc func linkPrivacySummit(tap:UITapGestureRecognizer)  {
         
@@ -60,6 +84,13 @@ class ERTYSiginController: UIViewController {
         self.navigationController?.pushViewController(ERTYPrivicerController.init(compass: .privacy), animated: true)
         
     }
+    private func showCliffWarning(message: String) {
+           let alert = UIAlertController(title: "险峻地形", message: message, preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "确认", style: .default))
+           present(alert, animated: true)
+       }
+       
+       
     @objc func handleSummitLogin() {
         
         if ERTYSiginController.isfAcceptAgree == false {
@@ -88,7 +119,11 @@ class ERTYSiginController: UIViewController {
         performTrailLogin(email: email, password: password)
         
     }
-    
+    private func showTrailConfirmed() {
+        trailblazerField.text = ""
+        pathfinderField.text = ""
+        summitBadgeView.tintColor = .systemGreen
+    }
     func isValidEmail(_ email: String) -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
@@ -103,9 +138,9 @@ class ERTYSiginController: UIViewController {
         
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/txnfmiviraz/jfglbsibyhyja",provisions:["trailMix":email,"snackPouch":password,"hydrationBladder":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             
-            guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
-                  let user = response["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
+            guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
+//                  let code = hikebackdata["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let user = hikebackdata["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
                     
             else {
                 self.mistErrorLabel.textColor  = .red

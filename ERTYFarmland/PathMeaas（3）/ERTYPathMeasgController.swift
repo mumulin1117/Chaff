@@ -10,7 +10,9 @@ import MJRefresh
 
 class ERTYPathMeasgController: HIkingMainBasci {
     @IBOutlet weak var RockyView: UITableView!
-    
+    private let trailMapView = UIView()
+        
+    private let compassButton = UIButton(type: .system)
     @IBOutlet weak var mistErrorLabel: UILabel!
     var messageHIkilist:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
@@ -63,11 +65,15 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
         pushtoNexteHikenpage(valleys:forelnk)
     }
     @objc func requestForDymAllHikeData()  {
+        trailMapView.backgroundColor = .tertiarySystemFill
+               
+        trailMapView.layer.cornerRadius = 12
          TrailRequestScout.pathfinder.exploreWilderness(destination: "/ylogloqqpzzyz/mcbqqn",provisions:["canyonEcho":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
              self.RockyView.mj_header?.endRefreshing()
-             guard let response = dataResult as? Dictionary<String,Any> ,
-                   let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
-                   let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
+//                   let code = hikebackdata["HBAbGg".hikeReflections()] as? Int,
+//                   code == 200000,
+                   let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                      
              else {
                  self.mistErrorLabel.textColor  = .red
@@ -76,14 +82,7 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
                  self.dispiaasger()
                  return
              }
-             self.messageHIkilist = hikedata.map { dix in
-                 if let ONearrar = (dix["alpineStart"] as? Array<[String:Any]>)?.first{
-                     ONearrar
-                 }else{
-                     [:]
-                 }
-                 
-             }
+             self.BasecampData(dafindL:hikedata)
              
            
              
@@ -92,6 +91,18 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
              self.RockyView.mj_header?.endRefreshing()
          }
      }
+    
+    func BasecampData(dafindL:Array<Dictionary<String,Any>>)  {
+        self.messageHIkilist = dafindL.map { dix in
+            if let ONearrar = (dix["alpineStart"] as? Array<[String:Any]>)?.first{
+                ONearrar
+            }else{
+                [:]
+            }
+            
+        }
+        
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let hikicell = tableView.dequeueReusableCell(withIdentifier: "ERTYChatmeagCell", for: indexPath) as! ERTYChatmeagCell
         hikicell.Sharedadventures(noemalDic: messageHIkilist[indexPath.row])

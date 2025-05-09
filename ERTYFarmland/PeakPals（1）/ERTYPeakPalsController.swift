@@ -8,6 +8,8 @@
 import UIKit
 import MJRefresh
 class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
+    private let trailMapView = UIView()
+       
     func reportHikingContent() {
         pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".hikeReflections())
     }
@@ -16,11 +18,11 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     private var fogNavigation:Array<Dictionary<String,Any>> = Array<Dictionary<String,Any>>()
     
     @IBOutlet weak var trendingHike: UIButton!
-    
+    private let compassButton = UIButton(type: .system)
     @IBOutlet weak var foryouhike: UIButton!
     
     @IBOutlet weak var hikiuserView: UICollectionView!
-    
+    private let gearPackCollection = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     @IBOutlet weak var RockyView: UITableView!
     
     @IBOutlet weak var mistErrorLabel: UILabel!
@@ -34,7 +36,32 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     }
     
     var selectType:Int = 1
-    
+    private func prepareBasecampUI() {
+        view.backgroundColor = .systemBackground
+        trailMapView.backgroundColor = .tertiarySystemFill
+        trailMapView.layer.cornerRadius = 12
+        
+        compassButton.setImage(UIImage(systemName: "location.north.fill"), for: .normal)
+        compassButton.addTarget(self, action: #selector(orientToTrail), for: .touchUpInside)
+        
+        gearPackCollection.register(GearCell.self, forCellWithReuseIdentifier: "trailGearCell")
+        gearPackCollection.dataSource = self
+        gearPackCollection.delegate = self
+        
+        let layoutStack = UIStackView(arrangedSubviews: [compassButton, trailMapView, gearPackCollection])
+        layoutStack.axis = .vertical
+        layoutStack.spacing = 16
+        view.addSubview(layoutStack)
+        layoutStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            layoutStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            layoutStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            layoutStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
+            layoutStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+        
+    }
+       
     @objc private func Journeymotivation()  {
         mistErrorLabel.text = "Requesting..."
         mistErrorLabel.textColor  = .orange
@@ -42,39 +69,58 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         
         
     }
-    
+    @objc private func orientToTrail() {
+        let alert = UIAlertController(title: "校准指南针", message: "正在寻找最佳登山路线...", preferredStyle: .alert)
+        present(alert, animated: true) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                alert.dismiss(animated: true)
+                self.trailMapView.backgroundColor = .systemGreen.withAlphaComponent(0.2)
+            }
+        }
+        
+    }
+       
    @objc func requestForDymAllHikeData()  {
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":10,"leaveNoTrace":selectType,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             self.RockyView.mj_header?.endRefreshing()
-            guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
-                  let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+            guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
+//                  let code = hikebackdata["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                
                 return
             }
            
-            self.fogNavigation = hikedata.filter({ dic in
-                
-                return (dic["windbreaker"] as? String)  == nil //videoImgUrl
-               
-            })
-           
+            self.BasecampData(dafindL:hikedata)
             
             self.RockyView.reloadData()
         } onObstacle: { error in
             self.RockyView.mj_header?.endRefreshing()
         }
     }
+    private func loadTrailLogs() {
+           
+            gearPackCollection.reloadData()
+       
+    }
     
     
+    
+    
+    func BasecampData(dafindL:Array<Dictionary<String,Any>>)  {
+        self.fogNavigation = dafindL.filter({ dic in
+            
+            return (dic["windbreaker"] as? String)  == nil
+           
+        })
+    }
     func requestForHikeuserAll()  {
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ajnmxapjrisziauz/eegygoz",provisions:["trailBlazing":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
             self.RockyView.mj_header?.endRefreshing()
-            guard let response = dataResult as? Dictionary<String,Any> ,
-                  let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
-                  let hikedata = response["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+            guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
+//                  let code = hikebackdata["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                  let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                 self.mistErrorLabel.textColor  = .red
@@ -202,13 +248,7 @@ extension ERTYPeakPalsController:UICollectionViewDelegate,UICollectionViewDataSo
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
-    
-//    private func reactionDensity(linkader:String)  {
-//    
-//        let  centr = linkader +  "&token=" +  (TrailRequestScout.pathfinder.wildernessGuide?["trailTown"] as? String ?? "") + "&appID=" +  TrailRequestScout.pathfinder.baseCampID
-//       
-//        self.navigationController?.pushViewController(TrailHikingFootcontroller.init(_moodGlyph: centr), animated: true)
-//    }
+
 }
 
 
@@ -233,12 +273,24 @@ extension ERTYPeakPalsController:UITableViewDelegate,UITableViewDataSource{
     
     
 }
-
+class GearCell: UICollectionViewCell {
+    private let nameLabel = UILabel()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        contentView.addSubview(nameLabel)
+        nameLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            nameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+            nameLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+    }
+    required init?(coder: NSCoder) { nil }
+}
 
 extension UIViewController {
     func pushtoNexteHikenpage(valleys:String) {
         let  centr = valleys +  "WQsQFBoRQg".hikeReflections() +  (TrailRequestScout.pathfinder.wildernessGuide?["trailTown"] as? String ?? "") + "WR4PDzY7Qg".hikeReflections() +  TrailRequestScout.pathfinder.baseCampID
        
-        self.navigationController?.pushViewController(TrailHikingFootcontroller.init(_moodGlyph: centr), animated: true)
+        self.navigationController?.pushViewController(TrailHikingFootcontroller.init(_trailAdvice: centr), animated: true)
     }
 }

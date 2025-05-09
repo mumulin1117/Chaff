@@ -12,7 +12,9 @@ protocol CenterGHeadeDelegate {
 }
 class ERTYCenterTopHeader: UICollectionReusableView {
     var deelegate:CenterGHeadeDelegate?
-    
+    private let trailMapView = UIView()
+      
+    private let compassButton = UIButton(type: .system)
     @IBOutlet weak var waterSource: UIImageView!
     
     @IBOutlet weak var soto: UIButton!

@@ -119,9 +119,9 @@ extension ERTYVietual_Controller:UICollectionViewDelegate,UICollectionViewDataSo
         
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/zatsqmegbrjz/adoexqmwl",provisions:["basecampLife":"\(useID)"],needsGuide:true) { dataResult in
              
-             guard let response = dataResult as? Dictionary<String,Any> ,
-                   let code = response["HBAbGg".hikeReflections()] as? Int,code == 200000,
-                   let hikedata = response["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
+             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
+//                   let code = hikebackdata["HBAbGg".hikeReflections()] as? Int,code == 200000,
+                   let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
                      
              else {
                
