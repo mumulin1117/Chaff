@@ -219,9 +219,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ERTYFarmland/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Chaff;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "In order to take photos and upload dynamic images, take photos and upload dynamic videos, and take photos and upload personal avatars, Chaff needs to access your camera permissions";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "In order to send voice messages and make audio and video calls, Chaff needs access to your photo album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload dynamic images, videos, and personal avatars from the local album. Chaff needs access to your album permissions";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -233,7 +233,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Encreap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hikeout.chaff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -257,9 +257,9 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ERTYFarmland/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Chaff;
-				INFOPLIST_KEY_NSCameraUsageDescription = "";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
+				INFOPLIST_KEY_NSCameraUsageDescription = "In order to take photos and upload dynamic images, take photos and upload dynamic videos, and take photos and upload personal avatars, Chaff needs to access your camera permissions";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "In order to send voice messages and make audio and video calls, Chaff needs access to your photo album";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload dynamic images, videos, and personal avatars from the local album. Chaff needs access to your album permissions";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -271,7 +271,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.Encreap;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hikeout.chaff;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

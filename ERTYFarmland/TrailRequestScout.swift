@@ -5,6 +5,13 @@
 
 
 import UIKit
+class HIkingMainBasci: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.navigationController?.navigationBar.isHidden = true
+    }
+}
 
 extension String{
     // 解密：还原原始字符串

@@ -345,7 +345,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ju3-fQ-KLa"/>
                     <connections>
-                        <outlet property="RockyView" destination="IiM-E9-jQV" id="bzs-KP-WTh"/>
+                        <outlet property="messageSalonTableView" destination="IiM-E9-jQV" id="bzs-KP-WTh"/>
                         <outlet property="mistErrorLabel" destination="pPL-H3-MeD" id="bFp-wZ-jzN"/>
                     </connections>
                 </viewController>

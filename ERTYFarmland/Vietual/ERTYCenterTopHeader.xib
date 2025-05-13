@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionReusableView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="U6b-Vx-4bR" customClass="ERTYCenterTopHeader" customModule="ERTYFarmland" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="515" height="671"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3Nb-BW-ffO">
+                    <rect key="frame" x="0.0" y="0.0" width="515" height="461"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="461" id="nL5-Kw-Vah"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jM4-Gt-u3g">
+                    <rect key="frame" x="380" y="420" width="11.333333333333314" height="26"/>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Post" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-Of-WQD">
+                    <rect key="frame" x="372.66666666666669" y="400" width="26" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="HLD-9s-u5s"/>
+                        <constraint firstAttribute="width" constant="26" id="gc1-HM-Wdo"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fans" translatesAutoresizingMaskIntoConstraints="NO" id="vZw-rY-Axp">
+                    <rect key="frame" x="116.33333333333331" y="400" width="26" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="eeN-6t-LzD"/>
+                        <constraint firstAttribute="width" constant="26" id="vF2-85-1Qr"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bKV-Qa-8PM">
+                    <rect key="frame" x="268.66666666666669" y="334" width="234.33333333333331" height="44"/>
+                    <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  Edit" image="edittravel"/>
+                    <connections>
+                        <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="QCS-iu-T82"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZfS-PQ-9At">
+                    <rect key="frame" x="257.66666666666669" y="314" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="24"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G5g-gF-8ah">
+                    <rect key="frame" x="207.66666666666663" y="206" width="100" height="100"/>
+                    <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="NB8-M1-eEa"/>
+                        <constraint firstAttribute="height" constant="100" id="NpM-Vc-ZbB"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nza-Ln-Vkt">
+                    <rect key="frame" x="11.999999999999986" y="334" width="234.66666666666663" height="44"/>
+                    <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="3CG-At-05K"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="  Setting" image="setingtravel"/>
+                    <connections>
+                        <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="lvN-bm-Owq"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Followers" translatesAutoresizingMaskIntoConstraints="NO" id="sty-LD-ARh">
+                    <rect key="frame" x="229.66666666666663" y="400" width="56" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="8nE-26-hyi"/>
+                        <constraint firstAttribute="width" constant="56" id="neT-n8-V7P"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-9J-Qah">
+                    <rect key="frame" x="123.66666666666667" y="420" width="11.333333333333329" height="26"/>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YAF-7I-6rk">
+                    <rect key="frame" x="252.00000000000003" y="420" width="11.333333333333343" height="26"/>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z5d-gl-SkA">
+                    <rect key="frame" x="268.66666666666669" y="466" width="234.33333333333331" height="85"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="hikebudy"/>
+                    <connections>
+                        <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="vgy-SR-PMU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wHj-EH-SQ8">
+                    <rect key="frame" x="11.999999999999986" y="466" width="234.66666666666663" height="85"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="85" id="cca-cn-hfs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" backgroundImage="moredimoned"/>
+                    <connections>
+                        <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="UUG-HS-FnR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="50" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfX-Mx-mTS">
+                    <rect key="frame" x="12" y="571" width="45" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="S4t-aB-jRy"/>
+                        <constraint firstAttribute="height" constant="29" id="S5i-qY-PxC"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="postcenter"/>
+                    <state key="selected" image="centerpostsel"/>
+                    <connections>
+                        <action selector="checkPosterOrview:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="ART-iX-cuR"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="60" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J73-6b-fzY">
+                    <rect key="frame" x="102" y="571" width="45" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="45" id="PTc-or-Osh"/>
+                        <constraint firstAttribute="height" constant="29" id="iiD-IC-GX2"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="Video"/>
+                    <state key="selected" image="videocentersel"/>
+                    <connections>
+                        <action selector="checkPosterOrview:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="ADk-qm-WfM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHO-vZ-PDu">
+                    <rect key="frame" x="210" y="413" width="84" height="77"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dX-vI-XCl">
+                    <rect key="frame" x="100" y="519" width="103.66666666666669" height="26"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="26" id="0cC-aE-eXA"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="20"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="VXr-Tz-HHm"/>
+            <color key="backgroundColor" red="0.066666666666666666" green="0.074509803921568626" blue="0.082352941176470587" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="wHj-EH-SQ8" firstAttribute="top" secondItem="VCP-9J-Qah" secondAttribute="bottom" constant="20" id="0Ed-6h-mxS"/>
+                <constraint firstItem="9GT-Of-WQD" firstAttribute="centerY" secondItem="sty-LD-ARh" secondAttribute="centerY" id="1sY-pn-Cyu"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="leading" secondItem="Nza-Ln-Vkt" secondAttribute="trailing" constant="22" id="3Vc-TC-31A"/>
+                <constraint firstItem="Z5d-gl-SkA" firstAttribute="leading" secondItem="9dX-vI-XCl" secondAttribute="trailing" constant="64.670000000000002" id="4aK-wJ-kCl"/>
+                <constraint firstItem="9dX-vI-XCl" firstAttribute="top" secondItem="wHj-EH-SQ8" secondAttribute="bottom" constant="-32" id="5Ph-B2-gUX"/>
+                <constraint firstItem="3Nb-BW-ffO" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" id="5yz-fF-sAR"/>
+                <constraint firstItem="Z5d-gl-SkA" firstAttribute="centerY" secondItem="wHj-EH-SQ8" secondAttribute="centerY" id="6Fx-wX-T6X"/>
+                <constraint firstItem="J73-6b-fzY" firstAttribute="leading" secondItem="jfX-Mx-mTS" secondAttribute="trailing" constant="45" id="6ID-tg-vlU"/>
+                <constraint firstItem="vZw-rY-Axp" firstAttribute="centerX" secondItem="Nza-Ln-Vkt" secondAttribute="centerX" id="83G-eR-Fvv"/>
+                <constraint firstItem="Nza-Ln-Vkt" firstAttribute="top" secondItem="ZfS-PQ-9At" secondAttribute="bottom" constant="20" id="B0h-S3-9di"/>
+                <constraint firstItem="jfX-Mx-mTS" firstAttribute="leading" secondItem="wHj-EH-SQ8" secondAttribute="leading" id="Heq-na-PpJ"/>
+                <constraint firstItem="J73-6b-fzY" firstAttribute="centerY" secondItem="jfX-Mx-mTS" secondAttribute="centerY" id="JJA-pL-vuR"/>
+                <constraint firstItem="Z5d-gl-SkA" firstAttribute="width" secondItem="wHj-EH-SQ8" secondAttribute="width" id="KV3-9T-Nhs"/>
+                <constraint firstItem="vZw-rY-Axp" firstAttribute="centerY" secondItem="sty-LD-ARh" secondAttribute="centerY" id="Ktn-Uk-nfO"/>
+                <constraint firstItem="YAF-7I-6rk" firstAttribute="centerX" secondItem="sty-LD-ARh" secondAttribute="centerX" id="L3g-nT-h38"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="bKV-Qa-8PM" secondAttribute="trailing" constant="12" id="NQO-T2-h53"/>
+                <constraint firstItem="ZfS-PQ-9At" firstAttribute="top" secondItem="G5g-gF-8ah" secondAttribute="bottom" constant="8" id="Ofb-Cd-6u9"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="height" secondItem="Nza-Ln-Vkt" secondAttribute="height" id="Ta4-9e-M6r"/>
+                <constraint firstItem="wHj-EH-SQ8" firstAttribute="leading" secondItem="Nza-Ln-Vkt" secondAttribute="leading" id="TfJ-RI-wal"/>
+                <constraint firstItem="9dX-vI-XCl" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="100" id="WG0-vR-zwc"/>
+                <constraint firstItem="VCP-9J-Qah" firstAttribute="centerX" secondItem="vZw-rY-Axp" secondAttribute="centerX" id="YLd-rO-UQF"/>
+                <constraint firstItem="sty-LD-ARh" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="bFj-O5-vjM"/>
+                <constraint firstItem="9GT-Of-WQD" firstAttribute="centerX" secondItem="bKV-Qa-8PM" secondAttribute="centerX" id="cjc-W4-ONz"/>
+                <constraint firstItem="ZfS-PQ-9At" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="dxp-IL-gZL"/>
+                <constraint firstItem="VCP-9J-Qah" firstAttribute="top" secondItem="vZw-rY-Axp" secondAttribute="bottom" constant="4" id="g8K-2S-CbT"/>
+                <constraint firstItem="sty-LD-ARh" firstAttribute="top" secondItem="bKV-Qa-8PM" secondAttribute="bottom" constant="22" id="hgM-39-ClN"/>
+                <constraint firstItem="Z5d-gl-SkA" firstAttribute="height" secondItem="wHj-EH-SQ8" secondAttribute="height" id="j89-Q9-v00"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="centerY" secondItem="Nza-Ln-Vkt" secondAttribute="centerY" id="khn-9t-4ko"/>
+                <constraint firstItem="jM4-Gt-u3g" firstAttribute="centerX" secondItem="9GT-Of-WQD" secondAttribute="centerX" id="kkj-yt-7yh"/>
+                <constraint firstItem="Z5d-gl-SkA" firstAttribute="leading" secondItem="wHj-EH-SQ8" secondAttribute="trailing" constant="22" id="lu9-Eo-weC"/>
+                <constraint firstItem="jM4-Gt-u3g" firstAttribute="centerY" secondItem="YAF-7I-6rk" secondAttribute="centerY" id="n80-yO-w9d"/>
+                <constraint firstItem="Nza-Ln-Vkt" firstAttribute="leading" secondItem="VXr-Tz-HHm" secondAttribute="leading" constant="12" id="rCo-dT-sb7"/>
+                <constraint firstItem="G5g-gF-8ah" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" constant="206" id="rKm-w0-d1C"/>
+                <constraint firstItem="bKV-Qa-8PM" firstAttribute="width" secondItem="Nza-Ln-Vkt" secondAttribute="width" id="swd-fv-RnO"/>
+                <constraint firstItem="YAF-7I-6rk" firstAttribute="centerY" secondItem="VCP-9J-Qah" secondAttribute="centerY" id="tiB-EG-Ejg"/>
+                <constraint firstItem="G5g-gF-8ah" firstAttribute="centerX" secondItem="U6b-Vx-4bR" secondAttribute="centerX" id="uJz-lG-mP4"/>
+                <constraint firstItem="VXr-Tz-HHm" firstAttribute="trailing" secondItem="3Nb-BW-ffO" secondAttribute="trailing" id="v8P-g7-NmD"/>
+                <constraint firstItem="3Nb-BW-ffO" firstAttribute="top" secondItem="U6b-Vx-4bR" secondAttribute="top" id="wHf-jq-xmI"/>
+                <constraint firstItem="Z5d-gl-SkA" firstAttribute="trailing" secondItem="bKV-Qa-8PM" secondAttribute="trailing" id="yrc-c4-eUI"/>
+                <constraint firstItem="jfX-Mx-mTS" firstAttribute="top" secondItem="wHj-EH-SQ8" secondAttribute="bottom" constant="20" id="z9b-cp-Q8u"/>
+            </constraints>
+            <connections>
+                <outlet property="creekCross" destination="G5g-gF-8ah" id="PhH-gU-rjs"/>
+                <outlet property="editing" destination="bKV-Qa-8PM" id="Z1f-sN-D6R"/>
+                <outlet property="followeCountHikeCount" destination="YAF-7I-6rk" id="Agl-bL-0vX"/>
+                <outlet property="logBridge" destination="ZfS-PQ-9At" id="ZHL-iU-Gl1"/>
+                <outlet property="soto" destination="Nza-Ln-Vkt" id="jz0-jX-hbn"/>
+                <outlet property="waterSource" destination="3Nb-BW-ffO" id="7ND-Ia-wN3"/>
+            </connections>
+            <point key="canvasLocation" x="151.90839694656489" y="238.38028169014086"/>
+        </collectionReusableView>
+    </objects>
+    <resources>
+        <image name="Fans" width="23.666666030883789" height="8.6666669845581055"/>
+        <image name="Followers" width="51" height="9.6666669845581055"/>
+        <image name="Post" width="22.666666030883789" height="8.6666669845581055"/>
+        <image name="Video" width="48.666667938232422" height="14"/>
+        <image name="centerpostsel" width="46" height="29"/>
+        <image name="edittravel" width="22" height="20"/>
+        <image name="hikebudy" width="168" height="80"/>
+        <image name="moredimoned" width="168" height="80"/>
+        <image name="postcenter" width="46.333332061767578" height="29"/>
+        <image name="setingtravel" width="21" height="20"/>
+        <image name="videocentersel" width="50.666667938232422" height="29"/>
+    </resources>
+</document>

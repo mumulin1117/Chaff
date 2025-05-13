@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ERTYPrivicerController" customModule="ERTYFarmland" customModuleProvider="target">
+            <connections>
+                <outlet property="alertsLabel" destination="rNU-5W-8My" id="mDX-OY-IUg"/>
+                <outlet property="trackingContent" destination="Evy-pl-bXA" id="RG2-G8-Sez"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rNU-5W-8My">
+                    <rect key="frame" x="95" y="104" width="203" height="33"/>
+                    <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="25"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Evy-pl-bXA">
+                    <rect key="frame" x="16" y="161" width="361" height="654"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <mutableString key="text">Terms of Service (ToS)
+
+Last Updated: 2025-05-01
+Contact Email: docbar@gmail.com
+
+By using Chaff ("the App"), you agree to these Terms:
+
+Eligibility
+
+You must be at least 13 years old (or the minimum age in your jurisdiction) to use the App.
+
+User Responsibilities
+
+Content Ownership: You retain rights to your posts but grant Chaff a license to display and share them within the App.
+Safety: Follow trail safety guidelines; the App is not liable for real-world hiking risks.
+Prohibited Actions: No harassment, spamming, or misuse of AI tools.
+AI Features
+
+AI-generated hiking suggestions are for informational purposes only. Verify trail conditions independently.
+
+Termination
+
+We may suspend accounts violating these Terms. Appeals may be sent to docbar@gmail.com.
+
+Disclaimers
+
+The App provides no warranties for accuracy or uninterrupted service.
+We are not liable for user-generated content or third-party links.
+Changes to Terms: Updates will be posted in-app. Continued use implies acceptance.
+
+These documents are designed to be clear, compliant, and aligned with Chaff’s nature-focused ethos. Let me know if you'd like adjustments!</mutableString>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="viewFlipsideBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="rNU-5W-8My" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45" id="2C9-KJ-rSn"/>
+                <constraint firstItem="Evy-pl-bXA" firstAttribute="top" secondItem="rNU-5W-8My" secondAttribute="bottom" constant="24" id="AT4-GJ-gcG"/>
+                <constraint firstItem="rNU-5W-8My" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BIs-Iz-eOE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Evy-pl-bXA" secondAttribute="bottom" constant="3" id="W9u-pl-khJ"/>
+                <constraint firstItem="Evy-pl-bXA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jSl-dB-eKf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Evy-pl-bXA" secondAttribute="trailing" constant="16" id="md3-Oo-j6c"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="viewFlipsideBackgroundColor">
+            <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
