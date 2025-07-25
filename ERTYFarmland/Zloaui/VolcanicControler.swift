@@ -207,7 +207,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             "partoo":"\(Int(Date().timeIntervalSince1970 - self.gpsCoord*1000))"
          ]
       
-        TreksAlior.goofyGradient.sillySynapse( trailBudget, pranktopia: wearableWeight)
+        TreksAlior.bagging.Guidedrails( trailBudget, trekking: wearableWeight)
        
     }
     
@@ -264,7 +264,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                         return
                     }
 
-                    TreksAlior.goofyGradient.sillySynapse("/opi/v1/nmuip", pranktopia: [
+                    TreksAlior.bagging.Guidedrails("/opi/v1/nmuip", trekking: [
                         "nmuip":trekkingTip.base64EncodedString(),//payload
                         "nmuit":carabinerClip,//transactionId
                         "nmuic":eyeMask//callbackResult

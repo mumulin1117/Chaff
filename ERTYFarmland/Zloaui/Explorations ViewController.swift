@@ -121,7 +121,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         
         var echoLocation: [String: Any] = [
            
-            "keekn":TreksAlior.loonyLatency,
+            "keekn":TreksAlior.wilderness,
             "keekv":[
                
                 "countryCode":campfireSmoke,
@@ -136,7 +136,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
             echoLocation["keekd"] = panoramaShot
         }
   
-        TreksAlior.goofyGradient.sillySynapse( vistaPoint, pranktopia: echoLocation) { result in
+        TreksAlior.bagging.Guidedrails( vistaPoint, trekking: echoLocation) { result in
            
             self.snowCrunch?.startAnimating()
             switch result{
@@ -163,7 +163,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
               let mudPit =  [
                     "token":descentKnee,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                 ]
-                guard let nonsenseNode = TreksAlior.fooleryFramework(prankster: mudPit) else {
+                guard let nonsenseNode = TreksAlior.hikingbuddies(celebrations: mudPit) else {
                     
                     return
                     
@@ -171,8 +171,8 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                 print(nonsenseNode)
                 // 2. 进行AES加密
                 
-                guard let logBridge = AES(),
-                      let creekCross = logBridge.encrypt(string: nonsenseNode) else {
+                guard let logBridge = Insights(),
+                      let creekCross = logBridge.milestones(hik: nonsenseNode) else {
                     
                     return
                 }
@@ -180,7 +180,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                 print(creekCross)
                 
                 
-                let waterSource = fallenTree  + "/?openParams=" + creekCross + "&appId=\(TreksAlior.goofyGradient.illusionInterface)"
+                let waterSource = fallenTree  + "/?openParams=" + creekCross + "&appId=\(TreksAlior.bagging.companion)"
                 print(waterSource)
                 let viewpointRest = VolcanicControler.init(waypointMark: waterSource, gpsCoord: true)
                 ERTYLaunchController.biodegradable?.rootViewController = viewpointRest

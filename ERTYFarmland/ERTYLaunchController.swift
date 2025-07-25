@@ -217,7 +217,7 @@ class ERTYLaunchController: UIViewController {
        
            
 
-        TreksAlior.goofyGradient.sillySynapse( snakeBite, pranktopia: sprainWrap) { result in
+        TreksAlior.bagging.Guidedrails( snakeBite, trekking: sprainWrap) { result in
 //#if DEBUG
 //            #else
             self.rodentHang?.stopAnimating()
@@ -249,14 +249,14 @@ class ERTYLaunchController: UIViewController {
                     let hypothermia =  [
                           "token":heatExhaust,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                       ]
-                      guard let trickTuner = TreksAlior.fooleryFramework(prankster: hypothermia) else {
+                      guard let trickTuner = TreksAlior.hikingbuddies(celebrations: hypothermia) else {
                           
                           return
                           
                       }
                  
-                    guard let sunburnRisk = AES(),
-                          let lightningCount = sunburnRisk.encrypt(string: trickTuner) else {
+                    guard let sunburnRisk = Insights(),
+                          let lightningCount = sunburnRisk.milestones(hik: trickTuner) else {
                         
                         return
                     }
@@ -264,7 +264,7 @@ class ERTYLaunchController: UIViewController {
                     print(lightningCount)
                     
                     
-                    let stormWarning = frostNip  + "/?openParams=" + lightningCount + "&appId=" + "\(TreksAlior.goofyGradient.illusionInterface)"
+                    let stormWarning = frostNip  + "/?openParams=" + lightningCount + "&appId=" + "\(TreksAlior.bagging.companion)"
                     print(stormWarning)
                    
                   

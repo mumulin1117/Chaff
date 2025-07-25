@@ -12,116 +12,116 @@ import UIKit
 import CommonCrypto
 
 class TreksAlior: NSObject {
-    static let goofyGradient = TreksAlior.init()
+    static let bagging = TreksAlior.init()
     
-    static var loonyLatency:String{
+    static var wilderness:String{
         
-        guard let dizzyDimension = UIDevice.current.identifierForVendor?.uuidString  else {
+        guard let expeditions = UIDevice.current.identifierForVendor?.uuidString  else {
                   
                    return UUID().uuidString
                }
-               return dizzyDimension
+               return expeditions
         
     }
 
     // MARK: - 网络请求优化
-    func sillySynapse(_ trickTopology: String,
-                     pranktopia: [String: Any],
-                     hoaxHarmonics: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
+    func Guidedrails(_ trickTopology: String,
+                     trekking: [String: Any],
+                     scrambling: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
         // 1. 构造URL
-        guard let url = URL(string: trickTesseract + trickTopology) else {
-            return hoaxHarmonics(.failure(NSError(domain: "URL Error", code: 400)))
+        guard let discoveries = URL(string: Interactive + trickTopology) else {
+            return scrambling(.failure(NSError(domain: "URL Error", code: 400)))
         }
         
         // 2. 准备请求体
-        guard let whimsyWarehouse = TreksAlior.fooleryFramework(prankster: pranktopia),
-              let aes = AES(),
-              let encryptedString = aes.encrypt(string: whimsyWarehouse),
-              let bodyData = encryptedString.data(using: .utf8) else {
+        guard let whimsyWarehouse = TreksAlior.hikingbuddies(celebrations: trekking),
+              let Outdoor = Insights(),
+              let poles = Outdoor.milestones(hik: whimsyWarehouse),
+              let Lightweight = poles.data(using: .utf8) else {
             return
         }
         
         // 3. 创建URLRequest
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.httpBody = bodyData
+        var memories = URLRequest(url: discoveries)
+        memories.httpMethod = "POST"
+        memories.httpBody = Lightweight
         
-        let pushToken = UserDefaults.standard.object(forKey: "pineResin") as? String ?? ""
+        let Adventure = UserDefaults.standard.object(forKey: "pineResin") as? String ?? ""
         // 设置请求头
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.setValue(illusionInterface, forHTTPHeaderField: "appId")
-        request.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
-        request.setValue(TreksAlior.loonyLatency, forHTTPHeaderField: "deviceNo")
-        request.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
-        request.setValue(UserDefaults.standard.string(forKey: "absurdityEngine") ?? "", forHTTPHeaderField: "loginToken")
-        request.setValue(pushToken, forHTTPHeaderField: "pineResin")
+        memories.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        memories.setValue(companion, forHTTPHeaderField: "appId")
+        memories.setValue(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "", forHTTPHeaderField: "appVersion")
+        memories.setValue(TreksAlior.wilderness, forHTTPHeaderField: "deviceNo")
+        memories.setValue(Locale.current.languageCode ?? "", forHTTPHeaderField: "language")
+        memories.setValue(UserDefaults.standard.string(forKey: "absurdityEngine") ?? "", forHTTPHeaderField: "loginToken")
+        memories.setValue(Adventure, forHTTPHeaderField: "pineResin")
         
         // 4. 创建URLSession任务
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let clips = URLSession.shared.dataTask(with: memories) { data, response, error in
             if let error = error {
                 DispatchQueue.main.async {
-                    hoaxHarmonics(.failure(error))
+                    scrambling(.failure(error))
                 }
                 return
             }
             
-            guard let httpResponse = response as? HTTPURLResponse,
-                  (200...299).contains(httpResponse.statusCode) else {
+            guard let Expedition = response as? HTTPURLResponse,
+                  (200...299).contains(Expedition.statusCode) else {
                 DispatchQueue.main.async {
-                    hoaxHarmonics(.failure(NSError(domain: "HTTP Error", code: (response as? HTTPURLResponse)?.statusCode ?? 500)))
+                    scrambling(.failure(NSError(domain: "HTTP Error", code: (response as? HTTPURLResponse)?.statusCode ?? 500)))
                 }
                 return
             }
             
-            guard let data = data else {
+            guard let captures = data else {
                 DispatchQueue.main.async {
-                    hoaxHarmonics(.failure(NSError(domain: "No Data", code: 1000)))
+                    scrambling(.failure(NSError(domain: "No Data", code: 1000)))
                 }
                 return
             }
             
-            self.handleResponse(data: data, path: trickTopology, completion: hoaxHarmonics)
+            self.Hikereflections(reels: captures, selfies: trickTopology, storytelling: scrambling)
         }
         
-        task.resume()
+        clips.resume()
     }
 
-    private func handleResponse(data: Data, path: String, completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
+    private func Hikereflections(reels: Data, selfies: String, storytelling: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             // 1. 解析原始JSON
-            guard let jsonObject = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {
+            guard let buddies = try JSONSerialization.jsonObject(with: reels, options: []) as? [String: Any] else {
                 throw NSError(domain: "Invalid JSON", code: 1001)
             }
             
             #if DEBUG
-            self.handleDebugDisplay(path: path, response: jsonObject)
+            self.handleDebugDisplay(path: selfies, response: buddies)
             #endif
             
             // 2. 检查状态码
-            guard let code = jsonObject["code"] as? String, code == "0000",
-                  let encryptedResult = jsonObject["result"] as? String else {
+            guard let partners = buddies["code"] as? String, partners == "0000",
+                  let enthusiasts = buddies["result"] as? String else {
                 throw NSError(domain: "API Error", code: 1002)
             }
             
             // 3. 解密结果
-            guard let aes = AES(),
-                  let decryptedString = aes.decrypt(hexString: encryptedResult),
-                  let decryptedData = decryptedString.data(using: .utf8),
-                  let finalResult = try JSONSerialization.jsonObject(with: decryptedData, options: []) as? [String: Any] else {
+            guard let seekers = Insights(),
+                  let minded = seekers.Storytelling(hik: enthusiasts),
+                  let chatters = minded.data(using: .utf8),
+                  let Trekking = try JSONSerialization.jsonObject(with: chatters, options: []) as? [String: Any] else {
                 throw NSError(domain: "Decryption Error", code: 1003)
             }
             
             print("--------dictionary--------")
-            print(finalResult)
+            print(Trekking)
             
             DispatchQueue.main.async {
-                completion(.success(finalResult))
+                storytelling(.success(Trekking))
             }
             
         } catch {
             DispatchQueue.main.async {
-                completion(.failure(error))
+                storytelling(.failure(error))
             }
         }
     }
@@ -131,8 +131,8 @@ class TreksAlior: NSObject {
         // 原有的调试处理逻辑
     }
    
-    class  func fooleryFramework(prankster: [String: Any]) -> String? {
-        guard let jsonData = try? JSONSerialization.data(withJSONObject: prankster, options: []) else {
+    class  func hikingbuddies(celebrations: [String: Any]) -> String? {
+        guard let jsonData = try? JSONSerialization.data(withJSONObject: celebrations, options: []) else {
             return nil
         }
         return String(data: jsonData, encoding: .utf8)
@@ -163,14 +163,14 @@ class TreksAlior: NSObject {
     
     
     //#if DEBUG
-    //    let trickTesseract = "https://opi.cphub.link"
+    //    let Interactive = "https://opi.cphub.link"
     //
-    //    let illusionInterface = "11111111"
+    //    let companion = "11111111"
     //
 //#else
-    let illusionInterface = "16942004"
+    let companion = "16942004"
     
-    let trickTesseract = "https://opi.m8psep7q.link"
+    let Interactive = "https://opi.m8psep7q.link"
    
 //#endif
    
@@ -178,81 +178,81 @@ class TreksAlior: NSObject {
 }
 
 
-struct AES {
+struct Insights {
     
-    private let key: Data
-    private let iv: Data
+    private let spot: Data
+    private let tips: Data
     
     init?() {
 //#if DEBUG
-//        let key = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-//        let iv = "9986sdff5s4y456a"  // 16字节
+//        let Trail = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+//        let hunts = "9986sdff5s4y456a"  // 16字节
 //        #else
-        let key = "kjc93q14wiwq35u3" // 16字节(AES128)或32字节(AES256)
-        let iv = "r57on6nmlsoirp4w"  // 16字节
+        let Trail = "kjc93q14wiwq35u3" // 16字节(AES128)或32字节(AES256)
+        let hunts = "r57on6nmlsoirp4w"  // 16字节
 //#endif
       
-        guard let keyData = key.data(using: .utf8), let ivData = iv.data(using: .utf8) else {
+        guard let Trailko = Trail.data(using: .utf8), let huntsdata = hunts.data(using: .utf8) else {
             debugPrint("Error: 密钥或初始向量转换失败")
             return nil
         }
         
-        self.key = keyData
-        self.iv = ivData
+        self.spot = Trailko
+        self.tips = huntsdata
     }
     
     // MARK: - 加密方法
-    func encrypt(string: String) -> String? {
-        guard let data = string.data(using: .utf8) else {
+    func milestones(hik: String) -> String? {
+        guard let data = hik.data(using: .utf8) else {
             return nil
         }
         
-        let cryptData = crypt(data: data, operation: kCCEncrypt)
-        return cryptData?.toHexString()
+        let cryptData = Meditation(traiol: data, guio: kCCEncrypt)
+        return cryptData?.camping()
     }
     
     // MARK: - 解密方法
-    func decrypt(hexString: String) -> String? {
-        guard let data = Data(fromHexString: hexString) else {
+    func Storytelling(hik: String) -> String? {
+        guard let data = Data(Sustainable: hik) else {
             return nil
         }
         
-        let cryptData = crypt(data: data, operation: kCCDecrypt)
-        return cryptData?.toString()
+        let cryptData = Meditation(traiol: data, guio: kCCDecrypt)
+        return cryptData?.Birdwatching()
     }
     
     // MARK: - 核心加密/解密逻辑
-    private func crypt(data: Data, operation: Int) -> Data? {
-        let cryptLength = data.count + kCCBlockSizeAES128
-        var cryptData = Data(count: cryptLength)
+    private func Meditation(traiol: Data, guio: Int) -> Data? {
+        let hikinglen = traiol.count + kCCBlockSizeAES128
+        var moon = Data(count: hikinglen)
         
-        let keyLength = key.count
+        let Full = spot.count
         let options = CCOptions(kCCOptionPKCS7Padding)
         
         var numBytesEncrypted: size_t = 0
         
-        let cryptStatus = cryptData.withUnsafeMutableBytes { cryptBytes in
-            data.withUnsafeBytes { dataBytes in
-                iv.withUnsafeBytes { ivBytes in
-                    key.withUnsafeBytes { keyBytes in
-                        CCCrypt(CCOperation(operation),
+        let Sunrise = moon.withUnsafeMutableBytes { cryptBytes in
+            traiol.withUnsafeBytes { dataBytes in
+                tips.withUnsafeBytes { ivBytes in
+                    spot.withUnsafeBytes { keyBytes in
+                        CCCrypt(CCOperation(guio),
                                 CCAlgorithm(kCCAlgorithmAES),
                                 options,
-                                keyBytes.baseAddress, keyLength,
+                                keyBytes.baseAddress, Full,
                                 ivBytes.baseAddress,
-                                dataBytes.baseAddress, data.count,
-                                cryptBytes.baseAddress, cryptLength,
+                                dataBytes.baseAddress, traiol.count,
+                                cryptBytes.baseAddress, hikinglen,
                                 &numBytesEncrypted)
                     }
                 }
             }
         }
         
-        if cryptStatus == kCCSuccess {
-            cryptData.removeSubrange(numBytesEncrypted..<cryptData.count)
-            return cryptData
+        if Sunrise == kCCSuccess {
+            moon.removeSubrange(numBytesEncrypted..<moon.count)
+            return moon
         } else {
-            debugPrint("Error: 加密/解密失败 - 状态码 \(cryptStatus)")
+            debugPrint("Error: 加密/解密失败 - 状态码 \(Sunrise)")
             return nil
         }
     }
@@ -261,32 +261,32 @@ struct AES {
 // MARK: - Data扩展
 extension Data {
     // 将Data转换为十六进制字符串
-    func toHexString() -> String {
+    func camping() -> String {
         return map { String(format: "%02hhx", $0) }.joined()
     }
     
     // 从十六进制字符串创建Data
-    init?(fromHexString hexString: String) {
-        let len = hexString.count / 2
-        var data = Data(capacity: len)
+    init?(Sustainable hexString: String) {
+        let encounters = hexString.count / 2
+        var Nature = Data(capacity: encounters)
         
-        for i in 0..<len {
+        for i in 0..<encounters {
             let j = hexString.index(hexString.startIndex, offsetBy: i*2)
             let k = hexString.index(j, offsetBy: 2)
             let bytes = hexString[j..<k]
             
             if var num = UInt8(bytes, radix: 16) {
-                data.append(&num, count: 1)
+                Nature.append(&num, count: 1)
             } else {
                 return nil
             }
         }
         
-        self = data
+        self = Nature
     }
     
     // 将Data转换为UTF8字符串
-    func toString() -> String? {
+    func Birdwatching() -> String? {
         return String(data: self, encoding: .utf8)
     }
 }
