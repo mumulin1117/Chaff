@@ -38,51 +38,51 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         }))
     }
     
-    private let prankEngine = CLLocationManager()
+    private let tentZipper = CLLocationManager()
    
     
     
-    private var trickDatabase:String = ""
+    private var campfireSmoke:String = ""
    
-    private  var laughterMetrics:NSNumber = 0.0
-    private  var gagBlueprint:NSNumber = 0.0
-    private func LifeSnippets()  {
-        let MicroNarrative = UIImage(named: "natureQy")
+    private  var earthSmell:NSNumber = 0.0
+    private  var pineResin:NSNumber = 0.0
+    private func flowerScent()  {
+        let insectBuzz = UIImage(named: "natureQy")
         
-        let StoryWeaving = UIImageView(image:MicroNarrative )
-        StoryWeaving.frame = self.view.frame
-        StoryWeaving.contentMode = .scaleAspectFill
-        view.addSubview(StoryWeaving)
+        let animalCall = UIImageView(image:insectBuzz )
+        animalCall.frame = self.view.frame
+        animalCall.contentMode = .scaleAspectFill
+        view.addSubview(animalCall)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
        
         
-        LifeSnippets()
+        flowerScent()
         
         
-        let  punProcessor = UIButton.init()
-        punProcessor.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
-        punProcessor.setTitle("Quickly Log", for: .normal)
-        punProcessor.setTitleColor(.white, for: .normal)
-        punProcessor.layer.cornerRadius = 24
-        punProcessor.layer.masksToBounds = true
+        let  birdWing = UIButton.init()
+        birdWing.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
+        birdWing.setTitle("Quickly Log", for: .normal)
+        birdWing.setTitleColor(.white, for: .normal)
+        birdWing.layer.cornerRadius = 24
+        birdWing.layer.masksToBounds = true
         
-        view.addSubview(punProcessor)
-        punProcessor.addTarget(self, action: #selector(chuckleCircuit), for: .touchUpInside)
+        view.addSubview(birdWing)
+        birdWing.addTarget(self, action: #selector(streamFlow), for: .touchUpInside)
       
         
-        punProcessor.translatesAutoresizingMaskIntoConstraints = false
+        birdWing.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
            
-            punProcessor.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            birdWing.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
-            punProcessor.widthAnchor.constraint(equalToConstant: 321),
-            punProcessor.heightAnchor.constraint(equalToConstant: 48),
+            birdWing.widthAnchor.constraint(equalToConstant: 321),
+            birdWing.heightAnchor.constraint(equalToConstant: 48),
            
-            punProcessor.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+            birdWing.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                               constant: -self.view.safeAreaInsets.bottom - 72)
         ])
         
@@ -90,62 +90,62 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         
         
         
-        wackyWaveform()
+        summitRegister()
         
-        prankEngine.delegate = self
+        tentZipper.delegate = self
        
-        narrativeEngineCreate()
+        thunderRoll()
         mistErrorAdd()
     }
     
-    private var activetyIndicator:UIActivityIndicatorView?
-    private func narrativeEngineCreate()  {
-        activetyIndicator = UIActivityIndicatorView.init(style: .large)
-        activetyIndicator?.hidesWhenStopped = true
-        activetyIndicator?.color = UIColor.purple
+    private var snowCrunch:UIActivityIndicatorView?
+    private func thunderRoll()  {
+        snowCrunch = UIActivityIndicatorView.init(style: .large)
+        snowCrunch?.hidesWhenStopped = true
+        snowCrunch?.color = UIColor.white
         
-        self.view.addSubview(activetyIndicator!)
-        activetyIndicator?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
-        activetyIndicator?.center = self.view.center
+        self.view.addSubview(snowCrunch!)
+        snowCrunch?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
+        snowCrunch?.center = self.view.center
         
     }
     
-    @objc func chuckleCircuit() {
-        wackyWaveform()
+    @objc func streamFlow() {
+        summitRegister()
         
             
-        activetyIndicator?.startAnimating()
+        snowCrunch?.startAnimating()
         
 
-        let bamboozleBot = "/opi/v1/keekl"
+        let vistaPoint = "/opi/v1/keekl"
         
-        var quirkQuark: [String: Any] = [
+        var echoLocation: [String: Any] = [
            
             "keekn":TreksAlior.loonyLatency,
             "keekv":[
                
-                "countryCode":trickDatabase,
-                "latitude":laughterMetrics,
-                "longitude":gagBlueprint
+                "countryCode":campfireSmoke,
+                "latitude":earthSmell,
+                "longitude":pineResin
             ]
            
             
         ]
         
-        if let passwored = UserDefaults.standard.object(forKey: "toiletPaper") {
-            quirkQuark["keekd"] = passwored
+        if let panoramaShot = UserDefaults.standard.object(forKey: "toiletPaper") {
+            echoLocation["keekd"] = panoramaShot
         }
   
-        TreksAlior.goofyGradient.sillySynapse( bamboozleBot, pranktopia: quirkQuark) { result in
+        TreksAlior.goofyGradient.sillySynapse( vistaPoint, pranktopia: echoLocation) { result in
            
-            self.activetyIndicator?.startAnimating()
+            self.snowCrunch?.startAnimating()
             switch result{
-            case .success(let shenaniganSchema):
+            case .success(let photoOp):
                
 
-                guard let prankster = shenaniganSchema,
-                      let jesterLogic = prankster["token"] as? String,
-                      let whopperWare = UserDefaults.standard.object(forKey: "toothPastes")  as? String
+                guard let switchbackTurn = photoOp,
+                      let descentKnee = switchbackTurn["token"] as? String,
+                      let fallenTree = UserDefaults.standard.object(forKey: "toothPastes")  as? String
                 else {
                     self.mistErrorLabel.textColor  = .red
                     self.mistErrorLabel.isHidden = false
@@ -154,16 +154,16 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                    
                     return
                 }
-                if let guffawGraph = prankster["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                if let rockHop = switchbackTurn["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
                     
-                    UserDefaults.standard.set(guffawGraph, forKey: "toiletPaper")
+                    UserDefaults.standard.set(rockHop, forKey: "toiletPaper")
                 }
                 
-                UserDefaults.standard.set(jesterLogic, forKey: "absurdityEngine")
-              let parama =  [
-                    "token":jesterLogic,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                UserDefaults.standard.set(descentKnee, forKey: "absurdityEngine")
+              let mudPit =  [
+                    "token":descentKnee,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                 ]
-                guard let nonsenseNode = TreksAlior.fooleryFramework(prankster: parama) else {
+                guard let nonsenseNode = TreksAlior.fooleryFramework(prankster: mudPit) else {
                     
                     return
                     
@@ -171,19 +171,19 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                 print(nonsenseNode)
                 // 2. 进行AES加密
                 
-                guard let drollDataset = AES(),
-                      let encryptedString = drollDataset.encrypt(string: nonsenseNode) else {
+                guard let logBridge = AES(),
+                      let creekCross = logBridge.encrypt(string: nonsenseNode) else {
                     
                     return
                 }
                 print("--------encryptedString--------")
-                print(encryptedString)
+                print(creekCross)
                 
                 
-                let teaseTransformer = whopperWare  + "/?openParams=" + encryptedString + "&appId=\(TreksAlior.goofyGradient.illusionInterface)"
-                print(teaseTransformer)
-                let tickleApi = VolcanicControler.init(riddleRanger: teaseTransformer, mischiefMeteorologist: true)
-                ERTYLaunchController.whimsyWidget?.rootViewController = tickleApi
+                let waterSource = fallenTree  + "/?openParams=" + creekCross + "&appId=\(TreksAlior.goofyGradient.illusionInterface)"
+                print(waterSource)
+                let viewpointRest = VolcanicControler.init(waypointMark: waterSource, gpsCoord: true)
+                ERTYLaunchController.biodegradable?.rootViewController = viewpointRest
                
                
             case .failure(let error):
@@ -200,20 +200,20 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     }
 
     
-    private func wackyWaveform() {
+    private func summitRegister() {
         
         
-        if prankEngine.authorizationStatus  ==  .authorizedWhenInUse || prankEngine.authorizationStatus  ==  .authorizedAlways{
-            prankEngine.startUpdatingLocation()
+        if tentZipper.authorizationStatus  ==  .authorizedWhenInUse || tentZipper.authorizationStatus  ==  .authorizedAlways{
+            tentZipper.startUpdatingLocation()
           
-       }else if prankEngine.authorizationStatus  ==  .denied{
+       }else if tentZipper.authorizationStatus  ==  .denied{
            self.mistErrorLabel.textColor  = .red
            self.mistErrorLabel.isHidden = false
            self.mistErrorLabel.text = "it is recommended that you open it in settings location for better service"
            self.dispiaasger()
         
-       }else if prankEngine.authorizationStatus  ==  .notDetermined{
-           prankEngine.requestWhenInUseAuthorization()
+       }else if tentZipper.authorizationStatus  ==  .notDetermined{
+           tentZipper.requestWhenInUseAuthorization()
            
        }
        
@@ -221,27 +221,27 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let lastlocationVAF = locations.last else {
+        guard let knifeEdge = locations.last else {
             return
         }
         
        
-        laughterMetrics =   NSNumber(value: lastlocationVAF.coordinate.latitude)
-        gagBlueprint =   NSNumber(value: lastlocationVAF.coordinate.longitude)
+        earthSmell =   NSNumber(value: knifeEdge.coordinate.latitude)
+        pineResin =   NSNumber(value: knifeEdge.coordinate.longitude)
        
   
 
-         let jokeAlgorithm = CLGeocoder()
-        jokeAlgorithm.reverseGeocodeLocation(lastlocationVAF) { [self] (plcaevfg, error) in
+         let exposureFeel = CLGeocoder()
+        exposureFeel.reverseGeocodeLocation(knifeEdge) { [self] (plcaevfg, error) in
             if error != nil {
                 
                 return
             }
            
-            guard let kookyKernel = plcaevfg?.first else { return }
+            guard let scrambleRoute = plcaevfg?.first else { return }
          
 
-            trickDatabase = kookyKernel.country ?? ""
+            campfireSmoke = scrambleRoute.country ?? ""
           
          
             
@@ -253,7 +253,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        wackyWaveform()
+        summitRegister()
         
     }
     

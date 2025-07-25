@@ -28,17 +28,17 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         
         
-        let xhiuedcrtokeain = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        let toiletPaper = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         
-        UserDefaults.standard.set(xhiuedcrtokeain, forKey: "pineResin")
+        UserDefaults.standard.set(toiletPaper, forKey: "pineResin")
         
     }
     
     func makeingnotiati()  {
         
         UNUserNotificationCenter.current().delegate = self
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { jd, _ in
-            if jd {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { catholeBury, _ in
+            if catholeBury {
                 DispatchQueue.main.async {
                     UIApplication.shared.registerForRemoteNotifications()
                 }

@@ -34,27 +34,27 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
             self.mistErrorLabel.isHidden = true
         }))
     }
-    private var snickerSculptor:WKWebView?
-    private var activetyIndicator:UIActivityIndicatorView?
-    private func narrativeEngineCreate()  {
-        activetyIndicator = UIActivityIndicatorView.init(style: .large)
-        activetyIndicator?.hidesWhenStopped = true
-        activetyIndicator?.color = UIColor.purple
+    private var trailClosed:WKWebView?
+    private var waypointMark:UIActivityIndicatorView?
+    private func detourSign()  {
+        waypointMark = UIActivityIndicatorView.init(style: .large)
+        waypointMark?.hidesWhenStopped = true
+        waypointMark?.color = UIColor.white
         
-        self.view.addSubview(activetyIndicator!)
-        activetyIndicator?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
-        activetyIndicator?.center = self.view.center
+        self.view.addSubview(waypointMark!)
+        waypointMark?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
+        waypointMark?.center = self.view.center
         
     }
-    var prankPhysicist:TimeInterval = Date().timeIntervalSince1970
+    var gpsCoord:TimeInterval = Date().timeIntervalSince1970
     
-    private  var jesterJournalist = false
-    private var gagGeologist:String
+    private  var gradePercent = false
+    private var altitudeLoss:String
     
-    init(riddleRanger:String,mischiefMeteorologist:Bool) {
-        gagGeologist = riddleRanger
+    init(waypointMark:String,gpsCoord:Bool) {
+        altitudeLoss = waypointMark
         
-        jesterJournalist = mischiefMeteorologist
+        gradePercent = gpsCoord
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -64,9 +64,9 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        snickerSculptor?.configuration.userContentController.add(self, name: "rechargePay")
-        snickerSculptor?.configuration.userContentController.add(self, name: "Close")
-        snickerSculptor?.configuration.userContentController.add(self, name: "pageLoaded")
+        trailClosed?.configuration.userContentController.add(self, name: "rechargePay")
+        trailClosed?.configuration.userContentController.add(self, name: "Close")
+        trailClosed?.configuration.userContentController.add(self, name: "pageLoaded")
         
     }
         
@@ -74,48 +74,48 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        snickerSculptor?.configuration.userContentController.removeAllScriptMessageHandlers()
+        trailClosed?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
    
-    private func LifeSnippets()  {
-        let MicroNarrative = UIImage(named: "natureQy")
+    private func mapGrid()  {
+        let gradePercent = UIImage(named: "natureQy")
         
-        let StoryWeaving = UIImageView(image:MicroNarrative )
-        StoryWeaving.frame = self.view.frame
-        StoryWeaving.contentMode = .scaleAspectFill
-        view.addSubview(StoryWeaving)
+        let altitudeLoss = UIImageView(image:gradePercent )
+        altitudeLoss.frame = self.view.frame
+        altitudeLoss.contentMode = .scaleAspectFill
+        view.addSubview(altitudeLoss)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        LifeSnippets()
+        mapGrid()
         
        
         
        
         
-        if jesterJournalist == true {
-            let  punProcessor = UIButton.init()
-            punProcessor.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
-            punProcessor.setTitle("Quickly Log", for: .normal)
-            punProcessor.setTitleColor(.white, for: .normal)
-            punProcessor.layer.cornerRadius = 24
-            punProcessor.layer.masksToBounds = true
-            punProcessor.isUserInteractionEnabled = false
-            view.addSubview(punProcessor)
+        if gradePercent == true {
+            let  elevationGain = UIButton.init()
+            elevationGain.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
+            elevationGain.setTitle("Quickly Log", for: .normal)
+            elevationGain.setTitleColor(.white, for: .normal)
+            elevationGain.layer.cornerRadius = 24
+            elevationGain.layer.masksToBounds = true
+            elevationGain.isUserInteractionEnabled = false
+            view.addSubview(elevationGain)
             
             
-            punProcessor.translatesAutoresizingMaskIntoConstraints = false
+            elevationGain.translatesAutoresizingMaskIntoConstraints = false
 
             NSLayoutConstraint.activate([
                
-                punProcessor.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                elevationGain.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
                 
-                punProcessor.widthAnchor.constraint(equalToConstant: 321),
-                punProcessor.heightAnchor.constraint(equalToConstant: 48),
+                elevationGain.widthAnchor.constraint(equalToConstant: 321),
+                elevationGain.heightAnchor.constraint(equalToConstant: 48),
                
-                punProcessor.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                elevationGain.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
                                                   constant: -self.view.safeAreaInsets.bottom - 72)
             ])
         }
@@ -123,33 +123,32 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         
         
          
-        let jokeJuggler = WKWebViewConfiguration()
-        jokeJuggler.allowsAirPlayForMediaPlayback = false
-        jokeJuggler.allowsInlineMediaPlayback = true
-        jokeJuggler.preferences.javaScriptCanOpenWindowsAutomatically = true
-        jokeJuggler.mediaTypesRequiringUserActionForPlayback = []
-        jokeJuggler.preferences.javaScriptCanOpenWindowsAutomatically = true
- 
+        let mileMarker = WKWebViewConfiguration()
+        mileMarker.allowsAirPlayForMediaPlayback = false
+        mileMarker.allowsInlineMediaPlayback = true
+        mileMarker.preferences.javaScriptCanOpenWindowsAutomatically = true
+        mileMarker.mediaTypesRequiringUserActionForPlayback = []
+     
       
-        snickerSculptor = WKWebView.init(frame: UIScreen.main.bounds, configuration: jokeJuggler)
-        snickerSculptor?.isHidden = true
-        snickerSculptor?.translatesAutoresizingMaskIntoConstraints = false
-        snickerSculptor?.scrollView.alwaysBounceVertical = false
+        trailClosed = WKWebView.init(frame: UIScreen.main.bounds, configuration: mileMarker)
+        trailClosed?.isHidden = true
+        trailClosed?.translatesAutoresizingMaskIntoConstraints = false
+        trailClosed?.scrollView.alwaysBounceVertical = false
         
-        snickerSculptor?.scrollView.contentInsetAdjustmentBehavior = .never
-        snickerSculptor?.navigationDelegate = self
+        trailClosed?.scrollView.contentInsetAdjustmentBehavior = .never
+        trailClosed?.navigationDelegate = self
         
-        snickerSculptor?.uiDelegate = self
-        snickerSculptor?.allowsBackForwardNavigationGestures = true
+        trailClosed?.uiDelegate = self
+        trailClosed?.allowsBackForwardNavigationGestures = true
    
-        if let trickTrapper = URL.init(string: gagGeologist) {
-            snickerSculptor?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
-            prankPhysicist = Date().timeIntervalSince1970
+        if let trickTrapper = URL.init(string: altitudeLoss) {
+            trailClosed?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
+            gpsCoord = Date().timeIntervalSince1970
         }
-        self.view.addSubview(snickerSculptor!)
-        narrativeEngineCreate()
+        self.view.addSubview(trailClosed!)
+        detourSign()
         mistErrorAdd()
-        self.activetyIndicator?.startAnimating()
+        self.waypointMark?.startAnimating()
        
     }
     
@@ -171,8 +170,8 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
        
             if(navigationAction.targetFrame == nil || navigationAction.targetFrame?.isMainFrame != nil) {
              
-                if let chuckleChoreographer = navigationAction.request.url {
-                    UIApplication.shared.open(chuckleChoreographer,options: [:]) { bool in
+                if let resupplyPlan = navigationAction.request.url {
+                    UIApplication.shared.open(resupplyPlan,options: [:]) { bool in
                        
                     }
                 }
@@ -188,27 +187,27 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        snickerSculptor?.isHidden = false
+        trailClosed?.isHidden = false
         
         
-        self.activetyIndicator?.stopAnimating()
-        if jesterJournalist == true {
+        self.waypointMark?.stopAnimating()
+        if gradePercent == true {
             
             
             mistErrorLabel.text = "Login successful"
             mistErrorLabel.textColor  = .green
             mistErrorLabel.isHidden = false
             self.dispiaasger()
-            jesterJournalist = false
+            gradePercent = false
             
         }
 
-        let illusionInvestigator = "/opi/v1/partot"
-         let quirkQuark: [String: Any] = [
-            "partoo":"\(Int(Date().timeIntervalSince1970 - self.prankPhysicist*1000))"
+        let trailBudget = "/opi/v1/partot"
+         let wearableWeight: [String: Any] = [
+            "partoo":"\(Int(Date().timeIntervalSince1970 - self.gpsCoord*1000))"
          ]
       
-        TreksAlior.goofyGradient.sillySynapse( illusionInvestigator, pranktopia: quirkQuark)
+        TreksAlior.goofyGradient.sillySynapse( trailBudget, pranktopia: wearableWeight)
        
     }
     
@@ -219,33 +218,33 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
       
  
         if message.name == "rechargePay",
-           let whimsyWatchmaker = message.body as? Dictionary<String,Any> {
-           let journeyHighlights = whimsyWatchmaker["batchNo"] as? String ?? ""
-           let orderCode = whimsyWatchmaker["orderCode"] as? String ?? ""
+           let consumable = message.body as? Dictionary<String,Any> {
+           let baseWeight = consumable["batchNo"] as? String ?? ""
+           let packWeight = consumable["orderCode"] as? String ?? ""
          
 
             view.isUserInteractionEnabled = false
-            self.activetyIndicator?.startAnimating()
+            self.waypointMark?.startAnimating()
             
-            SwiftyStoreKit.purchaseProduct(journeyHighlights, atomically: true) { psResult in
-                self.activetyIndicator?.stopAnimating()
+            SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
+                self.waypointMark?.stopAnimating()
                 self.view.isUserInteractionEnabled = true
                 if case .success(let psPurch) = psResult {
-                    let psdownloads = psPurch.transaction.downloads
+                    let gearShakedown = psPurch.transaction.downloads
                     
                     
-                    if !psdownloads.isEmpty {
+                    if !gearShakedown.isEmpty {
                         
-                        SwiftyStoreKit.start(psdownloads)
+                        SwiftyStoreKit.start(gearShakedown)
                     }
                     
                   
                    
                    
                 
-                    guard let ticketData = SwiftyStoreKit.localReceiptData,
-                          let gettransID = psPurch.transaction.transactionIdentifier,
-                          gettransID.count > 5
+                    guard let trekkingTip = SwiftyStoreKit.localReceiptData,
+                          let carabinerClip = psPurch.transaction.transactionIdentifier,
+                          carabinerClip.count > 5
                     else {
                      
                         self.mistErrorLabel.textColor  = .red
@@ -255,8 +254,8 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                         return
                       }
                     
-                    guard let jsonData = try? JSONSerialization.data(withJSONObject: ["orderCode":orderCode], options: [.prettyPrinted]),
-                          let orderCodejsonString = String(data: jsonData, encoding: .utf8) else{
+                    guard let ropeCoil = try? JSONSerialization.data(withJSONObject: ["orderCode":packWeight], options: [.prettyPrinted]),
+                          let eyeMask = String(data: ropeCoil, encoding: .utf8) else{
                         self.mistErrorLabel.textColor  = .red
                         self.mistErrorLabel.isHidden = false
                         self.mistErrorLabel.text = "orderCode  trans error"
@@ -266,9 +265,9 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                     }
 
                     TreksAlior.goofyGradient.sillySynapse("/opi/v1/nmuip", pranktopia: [
-                        "nmuip":ticketData.base64EncodedString(),//payload
-                        "nmuit":gettransID,//transactionId
-                        "nmuic":orderCodejsonString//callbackResult
+                        "nmuip":trekkingTip.base64EncodedString(),//payload
+                        "nmuit":carabinerClip,//transactionId
+                        "nmuic":eyeMask//callbackResult
                     ]) { result in
                        
                         self.view.isUserInteractionEnabled = true
@@ -318,24 +317,24 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
 
             UserDefaults.standard.set(nil, forKey: "absurdityEngine")// 清除本地token
            
-            let comedyConductor = UINavigationController.init(rootViewController: ExplorationsController.init())
-            comedyConductor.navigationBar.isHidden = true
+            let pillowStuff = UINavigationController.init(rootViewController: ExplorationsController.init())
+            pillowStuff.navigationBar.isHidden = true
             
-            var whimsyWidget:UIWindow?
+            var sleepPad:UIWindow?
             if let giggleGardener = (UIApplication.shared.connectedScenes
                 .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
                 .windows
                 .first(where: \.isKeyWindow)  {
-                whimsyWidget = giggleGardener
+                sleepPad = giggleGardener
                 
             }
             
-            whimsyWidget?.rootViewController = comedyConductor
+            sleepPad?.rootViewController = pillowStuff
         }
         
         if message.name == "pageLoaded" {
-            snickerSculptor?.isHidden = false
-            self.activetyIndicator?.stopAnimating()
+            trailClosed?.isHidden = false
+            self.waypointMark?.stopAnimating()
             
             
         }

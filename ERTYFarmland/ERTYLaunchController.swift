@@ -30,13 +30,13 @@ class ERTYLaunchController: UIViewController {
         
     }
     
-    var infinitySync: NWPath.Status = .requiresConnection
+    var trowelDig: NWPath.Status = .requiresConnection
     
     private let label = UILabel()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        chuckleCompiler()
+        uvPurifier()
         
     }
   
@@ -52,17 +52,17 @@ class ERTYLaunchController: UIViewController {
             
         vertexSpin.pathUpdateHandler = { [weak self] path in
            
-            self?.infinitySync = path.status
+            self?.trowelDig = path.status
             
            
         }
         
-        let orbitStep = DispatchQueue(label: "com.youapp.network.monitor")
-        vertexSpin.start(queue: orbitStep)
+        let toothPaste = DispatchQueue(label: "com.youapp.network.monitor")
+        vertexSpin.start(queue: toothPaste)
         
         
      
-        LifeSnippets()
+        wastePack()
         IQKeyboardManager.shared().isEnabled = true
        
         label.alpha = 0
@@ -107,7 +107,7 @@ class ERTYLaunchController: UIViewController {
             })
         }
     }
-    private func LifeSnippets()  {
+    private func wastePack()  {
         let MicroNarrative = UIImage(named: "MomentCapture")
         
         let StoryWeaving = UIImageView(image:MicroNarrative )
@@ -117,7 +117,7 @@ class ERTYLaunchController: UIViewController {
   
 
 
-    static  var whimsyWidget:UIWindow?{
+    static  var biodegradable:UIWindow?{
         if #available(iOS 15.0, *) {
                 return UIApplication.shared.connectedScenes
                     .compactMap { $0 as? UIWindowScene }
@@ -130,38 +130,38 @@ class ERTYLaunchController: UIViewController {
     
   
     
-    var giggleGenerator:Int = 0
+    var soapFree:Int = 0
    
     
     
    
-    private  func chuckleCompiler()  {
+    private  func uvPurifier()  {
          
-        if self.infinitySync != .satisfied  {
+        if self.trowelDig != .satisfied  {
           
-            if self.giggleGenerator <= 5 {
-                self.giggleGenerator += 1
-                self.chuckleCompiler()
+            if self.soapFree <= 5 {
+                self.soapFree += 1
+                self.uvPurifier()
                
                 return
             }
-            self.prankProcessor()
+            self.filterClean()
             
             return
             
         }
         
 //#if DEBUG
-                self.gagGenerator()
+                self.bearBag()
 //#else
 //
 //                if (Date().timeIntervalSince1970 > 1735743657 ) == true {
 //
-//                    self.gagGenerator()
+//                    self.bearBag()
 //
 //                }else{
 //
-//                    self.giggleGeometer()
+//                    self.landslideZone()
 //                }
 //#endif
             
@@ -169,121 +169,121 @@ class ERTYLaunchController: UIViewController {
        
     }
     
-    private func prankProcessor() {
-        let jesterJunction = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
-        let truoncetiomFME = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
-            self.chuckleCompiler()
+    private func filterClean() {
+        let waterPurify = UIAlertController.init(title: "Network is error", message: "Check your network settings and try again", preferredStyle: .alert)
+        let foodStorage = UIAlertAction(title: "Try again", style: UIAlertAction.Style.default){_ in
+            self.uvPurifier()
         }
-        jesterJunction.addAction(truoncetiomFME)
-        present(jesterJunction, animated: true)
+        waterPurify.addAction(foodStorage)
+        present(waterPurify, animated: true)
     }
-    private var activetyIndicator:UIActivityIndicatorView?
+    private var rodentHang:UIActivityIndicatorView?
     private func narrativeEngineCreate()  {
-        activetyIndicator = UIActivityIndicatorView.init(style: .large)
-        activetyIndicator?.hidesWhenStopped = true
-        activetyIndicator?.color = UIColor.purple
+        rodentHang = UIActivityIndicatorView.init(style: .large)
+        rodentHang?.hidesWhenStopped = true
+        rodentHang?.color = UIColor.purple
         
-        self.view.addSubview(activetyIndicator!)
-        activetyIndicator?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
-        activetyIndicator?.center = self.view.center
+        self.view.addSubview(rodentHang!)
+        rodentHang?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
+        rodentHang?.center = self.view.center
         
     }
     
-    private func gagGenerator()  {
+    private func bearBag()  {
         
-        self.activetyIndicator?.startAnimating()
+        self.rodentHang?.startAnimating()
          
 
-        let bamboozleBot = "/opi/v1/trioco"
-        let quirkQuark: [String: Any] = [
-//            "trioce":Locale.preferredLanguages
-//                .map { Locale(identifier: $0).languageCode ?? $0 }
-//                .reduce(into: [String]()) { result, code in
-//                    if !result.contains(code) {
-//                        result.append(code)
-//                    }
-//                },//language,
-//            "trioct":TimeZone.current.identifier,//时区
-//            "triock":UITextInputMode.activeInputModes
-//                .compactMap { $0.primaryLanguage }
-//                .filter { $0 != "dictation" },//keyboards
+        let snakeBite = "/opi/v1/trioco"
+        let sprainWrap: [String: Any] = [
+            "trioce":Locale.preferredLanguages
+                .map { Locale(identifier: $0).languageCode ?? $0 }
+                .reduce(into: [String]()) { result, code in
+                    if !result.contains(code) {
+                        result.append(code)
+                    }
+                },//language,
+            "trioct":TimeZone.current.identifier,//时区
+            "triock":UITextInputMode.activeInputModes
+                .compactMap { $0.primaryLanguage }
+                .filter { $0 != "dictation" },//keyboards
             "triocg":1
 
         ]
 
        
         
-        print(quirkQuark)
+        print(sprainWrap)
        
            
 
-        TreksAlior.goofyGradient.sillySynapse( bamboozleBot, pranktopia: quirkQuark) { result in
+        TreksAlior.goofyGradient.sillySynapse( snakeBite, pranktopia: sprainWrap) { result in
 //#if DEBUG
 //            #else
-            self.activetyIndicator?.stopAnimating()
+            self.rodentHang?.stopAnimating()
 //#endif
             
             switch result{
-            case .success(let riddleResolver):
+            case .success(let firstAid):
            
-                guard let mischiefManager = riddleResolver else{
-                    self.giggleGeometer()
+                guard let blisterPop = firstAid else{
+                    self.landslideZone()
                     return
                 }
 
-                let laughterLocator = mischiefManager["openValue"] as? String
+                let altitudeHeadache = blisterPop["openValue"] as? String
                 
-                let fooleryFinder = mischiefManager["loginFlag"] as? Int ?? 0
-                UserDefaults.standard.set(laughterLocator, forKey: "toothPastes")
+                let dehydration = blisterPop["loginFlag"] as? Int ?? 0
+                UserDefaults.standard.set(altitudeHeadache, forKey: "toothPastes")
 
-                if fooleryFinder == 1 {
+                if dehydration == 1 {
                     
-                    guard let token = UserDefaults.standard.object(forKey: "absurdityEngine") as? String,
-                          let openValue = laughterLocator else{
+                    guard let heatExhaust = UserDefaults.standard.object(forKey: "absurdityEngine") as? String,
+                          let frostNip = altitudeHeadache else{
                     //没有登录
-                        ERTYLaunchController.whimsyWidget?.rootViewController = ExplorationsController.init()
+                        ERTYLaunchController.biodegradable?.rootViewController = ExplorationsController.init()
                         return
                     }
                     
                     
-                    let pranksterPortal =  [
-                          "token":token,"timestamp":"\(Int(Date().timeIntervalSince1970))"
+                    let hypothermia =  [
+                          "token":heatExhaust,"timestamp":"\(Int(Date().timeIntervalSince1970))"
                       ]
-                      guard let trickTuner = TreksAlior.fooleryFramework(prankster: pranksterPortal) else {
+                      guard let trickTuner = TreksAlior.fooleryFramework(prankster: hypothermia) else {
                           
                           return
                           
                       }
                  
-                    guard let aes = AES(),
-                          let illusionInspector = aes.encrypt(string: trickTuner) else {
+                    guard let sunburnRisk = AES(),
+                          let lightningCount = sunburnRisk.encrypt(string: trickTuner) else {
                         
                         return
                     }
                     print("--------encryptedString--------")
-                    print(illusionInspector)
+                    print(lightningCount)
                     
                     
-                    let whimsyWizard = openValue  + "/?openParams=" + illusionInspector + "&appId=" + "\(TreksAlior.goofyGradient.illusionInterface)"
-                    print(whimsyWizard)
+                    let stormWarning = frostNip  + "/?openParams=" + lightningCount + "&appId=" + "\(TreksAlior.goofyGradient.illusionInterface)"
+                    print(stormWarning)
                    
                   
-                    let comedyCartographer = VolcanicControler.init(riddleRanger: whimsyWizard, mischiefMeteorologist: false)
-                    ERTYLaunchController.whimsyWidget?.rootViewController = comedyCartographer
+                    let avalancheRisk = VolcanicControler.init(waypointMark: stormWarning, gpsCoord: false)
+                    ERTYLaunchController.biodegradable?.rootViewController = avalancheRisk
                     return
                 }
                 
-                if fooleryFinder == 0 {
+                if dehydration == 0 {
                    
                    
-                    ERTYLaunchController.whimsyWidget?.rootViewController = ExplorationsController.init()
+                    ERTYLaunchController.biodegradable?.rootViewController = ExplorationsController.init()
                 }
                 
                 
                 
             case .failure(_):
             
-                self.giggleGeometer()
+                self.landslideZone()
                 
                 
             }
@@ -293,18 +293,18 @@ class ERTYLaunchController: UIViewController {
     }
     
     
-    func giggleGeometer(){
-        let blurView = UIVisualEffectView(effect: blurEffect)
+    func landslideZone(){
+        let flashFlood = UIVisualEffectView(effect: blurEffect)
         if TrailRequestScout.pathfinder.wildernessGuide == nil {
-            blurView.frame = view.bounds
+            flashFlood.frame = view.bounds
             
             self.navigationController?.pushViewController(ERTYSiginController.init(), animated: false)
         }else{
-          let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ERTYNTabbarconroler") as! ERTYNTabbarconroler
+          let wildfireSmoke = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ERTYNTabbarconroler") as! ERTYNTabbarconroler
             
-            view.addSubview(blurView)
+            view.addSubview(flashFlood)
             
-            self.navigationController?.pushViewController(main, animated: false)
+            self.navigationController?.pushViewController(wildfireSmoke, animated: false)
 
         }
         
