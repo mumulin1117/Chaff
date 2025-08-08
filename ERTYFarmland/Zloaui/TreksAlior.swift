@@ -25,7 +25,7 @@ class TreksAlior: NSObject {
     }
 
     // MARK: - 网络请求优化
-    func Guidedrails(_ trickTopology: String,
+    func Guidedrails(whatPath:Bool = false,_ trickTopology: String,
                      trekking: [String: Any],
                      scrambling: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
@@ -81,13 +81,13 @@ class TreksAlior: NSObject {
                 return
             }
             
-            self.Hikereflections(reels: captures, selfies: trickTopology, storytelling: scrambling)
+            self.Hikereflections(whatPath:whatPath,reels: captures, selfies: trickTopology, storytelling: scrambling)
         }
         
         clips.resume()
     }
 
-    private func Hikereflections(reels: Data, selfies: String, storytelling: @escaping (Result<[String: Any]?, Error>) -> Void) {
+    private func Hikereflections(whatPath:Bool = false,reels: Data, selfies: String, storytelling: @escaping (Result<[String: Any]?, Error>) -> Void) {
         do {
             // 1. 解析原始JSON
             guard let buddies = try JSONSerialization.jsonObject(with: reels, options: []) as? [String: Any] else {
@@ -97,27 +97,39 @@ class TreksAlior: NSObject {
             #if DEBUG
             self.handleDebugDisplay(path: selfies, response: buddies)
             #endif
-            
-            // 2. 检查状态码
-            guard let partners = buddies["code"] as? String, partners == "0000",
-                  let enthusiasts = buddies["result"] as? String else {
-                throw NSError(domain: "API Error", code: 1002)
+            if whatPath {
+                guard let partners = buddies["code"] as? String, partners == "0000" else{
+                    DispatchQueue.main.async {
+                        storytelling(.failure(NSError(domain: "Pay Error", code: 1001)))
+                    }
+                    return
+                }
+                DispatchQueue.main.async {
+                    storytelling(.success([:]))
+                }
+            }else{
+                guard let partners = buddies["code"] as? String, partners == "0000",
+                      let enthusiasts = buddies["result"] as? String else {
+                    throw NSError(domain: "API Error", code: 1002)
+                }
+                
+                // 3. 解密结果
+                guard let seekers = Insights(),
+                      let minded = seekers.Storytelling(hik: enthusiasts),
+                      let chatters = minded.data(using: .utf8),
+                      let Trekking = try JSONSerialization.jsonObject(with: chatters, options: []) as? [String: Any] else {
+                    throw NSError(domain: "Decryption Error", code: 1003)
+                }
+                
+                print("--------dictionary--------")
+                print(Trekking)
+                
+                DispatchQueue.main.async {
+                    storytelling(.success(Trekking))
+                }
+                
             }
-            
-            // 3. 解密结果
-            guard let seekers = Insights(),
-                  let minded = seekers.Storytelling(hik: enthusiasts),
-                  let chatters = minded.data(using: .utf8),
-                  let Trekking = try JSONSerialization.jsonObject(with: chatters, options: []) as? [String: Any] else {
-                throw NSError(domain: "Decryption Error", code: 1003)
-            }
-            
-            print("--------dictionary--------")
-            print(Trekking)
-            
-            DispatchQueue.main.async {
-                storytelling(.success(Trekking))
-            }
+           
             
         } catch {
             DispatchQueue.main.async {

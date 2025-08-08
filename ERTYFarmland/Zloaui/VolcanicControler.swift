@@ -264,7 +264,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                         return
                     }
 
-                    TreksAlior.bagging.Guidedrails("/opi/v1/nmuip", trekking: [
+                    TreksAlior.bagging.Guidedrails(whatPath: true,"/opi/v1/nmuip", trekking: [
                         "nmuip":trekkingTip.base64EncodedString(),//payload
                         "nmuit":carabinerClip,//transactionId
                         "nmuic":eyeMask//callbackResult
