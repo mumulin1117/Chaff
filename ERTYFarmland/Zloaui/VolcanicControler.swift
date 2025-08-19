@@ -143,7 +143,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
    
         if let trickTrapper = URL.init(string: altitudeLoss) {
             trailClosed?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
-            gpsCoord = Date().timeIntervalSince1970
+            gpsCoord = Date().timeIntervalSince1970*1000
         }
         self.view.addSubview(trailClosed!)
         detourSign()
@@ -204,7 +204,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
 
         let trailBudget = "/opi/v1/partot"
          let wearableWeight: [String: Any] = [
-            "partoo":"\(Int(Date().timeIntervalSince1970 - self.gpsCoord*1000))"
+            "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.gpsCoord))"
          ]
       
         TreksAlior.bagging.Guidedrails( trailBudget, trekking: wearableWeight)
