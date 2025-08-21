@@ -9,16 +9,16 @@ import UIKit
 import SwiftyStoreKit
 
 import WebKit
+import StoreKit
 
 
 class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WKScriptMessageHandler {
-    lazy var mistErrorLabel: UILabel = {
+   
+    
+    private lazy var mistErrorLabel: UILabel = {
         let lalnl = UILabel.init()
         lalnl.textAlignment = .center
-        lalnl.textColor = .red
-        lalnl.isHidden = true
-        lalnl.numberOfLines = 0
-        lalnl.font = UIFont.systemFont(ofSize: 21, weight: .medium)
+        
         return lalnl
     }()
     
@@ -29,20 +29,26 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         self.mistErrorLabel.center = self.view.center
        
     }
-    private func dispiaasger() {
+     func dispiaasger() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             self.mistErrorLabel.isHidden = true
         }))
     }
-    private var trailClosed:WKWebView?
-    private var waypointMark:UIActivityIndicatorView?
+     var trailClosed:WKWebView?
+     var waypointMark:UIActivityIndicatorView?
+    
     private func detourSign()  {
         waypointMark = UIActivityIndicatorView.init(style: .large)
+        mistErrorLabel.textColor = .red
+       
         waypointMark?.hidesWhenStopped = true
         waypointMark?.color = UIColor.white
-        
+        mistErrorLabel.isHidden = true
+       
         self.view.addSubview(waypointMark!)
         waypointMark?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
+        mistErrorLabel.numberOfLines = 0
+       
         waypointMark?.center = self.view.center
         
     }
@@ -62,99 +68,170 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         fatalError("init(coder:) has not been implemented")
     }
     override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-        trailClosed?.configuration.userContentController.add(self, name: "rechargePay")
-        trailClosed?.configuration.userContentController.add(self, name: "Close")
-        trailClosed?.configuration.userContentController.add(self, name: "pageLoaded")
+            super.viewWillAppear(animated)
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
+        mistErrorLabel.font = UIFont.systemFont(ofSize: 21, weight: .medium)
+            self.configureScriptMessageHandlers()
+        }
         
-    }
-        
-        
+        private func configureScriptMessageHandlers() {
+            mistErrorLabel.font = UIFont.systemFont(ofSize: 21, weight: .medium)
+            let messageNames = ["rechargePay", "Close", "pageLoaded"]
+            for name in messageNames {
+                trailClosed?.configuration.userContentController.add(self, name: name)
+            }
+        }
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-        trailClosed?.configuration.userContentController.removeAllScriptMessageHandlers()
+            super.viewWillDisappear(animated)
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+            trailClosed?.configuration.userContentController.removeAllScriptMessageHandlers()
        
     }
  
-   
-    private func mapGrid()  {
+    private func mapGrid()->UIImageView  {
         let gradePercent = UIImage(named: "natureQy")
         
         let altitudeLoss = UIImageView(image:gradePercent )
-        altitudeLoss.frame = self.view.frame
-        altitudeLoss.contentMode = .scaleAspectFill
-        view.addSubview(altitudeLoss)
+        
+        return altitudeLoss
+        
+    }
+    let elevationGain = UIButton.init()
+    
+    func Forestbathing()  {
+        elevationGain.setTitleColor(.white, for: .normal)
+        elevationGain.layer.masksToBounds = true
+        
+            elevationGain.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    
+    func Naturelegends() {
+        elevationGain.setTitle("Quickly Log", for: .normal)
+       
+        elevationGain.layer.cornerRadius = 24
+        
+        elevationGain.isUserInteractionEnabled = false
+    }
+    private func Sacredmountains() {
+            
+        Naturelegends()
+        elevationGain.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
+       
+        view.addSubview(elevationGain)
+        
+        Untouchedvalleys()
+    }
+    
+    private func Untouchedvalleys()  {
+        Forestbathing()
+            
+        NSLayoutConstraint.activate([
+            elevationGain.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            elevationGain.widthAnchor.constraint(equalToConstant: 290),
+            elevationGain.heightAnchor.constraint(equalToConstant: 49),
+            elevationGain.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                               constant: -self.view.safeAreaInsets.bottom - 68)
+        ])
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        mapGrid()
-        
        
         
+       let altitudeLoss = mapGrid()
+        
        
+        altitudeLoss.frame = self.view.frame
+        altitudeLoss.contentMode = .scaleAspectFill
+        view.addSubview(altitudeLoss)
+        
+        
+        setupNavigationFlow()
         
         if gradePercent == true {
-            let  elevationGain = UIButton.init()
-            elevationGain.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
-            elevationGain.setTitle("Quickly Log", for: .normal)
-            elevationGain.setTitleColor(.white, for: .normal)
-            elevationGain.layer.cornerRadius = 24
-            elevationGain.layer.masksToBounds = true
-            elevationGain.isUserInteractionEnabled = false
-            view.addSubview(elevationGain)
-            
-            
-            elevationGain.translatesAutoresizingMaskIntoConstraints = false
-
-            NSLayoutConstraint.activate([
-               
-                elevationGain.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                
-                elevationGain.widthAnchor.constraint(equalToConstant: 321),
-                elevationGain.heightAnchor.constraint(equalToConstant: 48),
-               
-                elevationGain.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                                  constant: -self.view.safeAreaInsets.bottom - 72)
-            ])
+            Sacredmountains()
         }
         
         
-        
-         
-        let mileMarker = WKWebViewConfiguration()
-        mileMarker.allowsAirPlayForMediaPlayback = false
+        setupWebViewConfiguration()
+        setupActivityIndicator()
+        mistErrorAdd()
+        self.waypointMark?.startAnimating()
+       
+    }
+    let mileMarker = WKWebViewConfiguration()
+    
+    func precautionslorations() {
         mileMarker.allowsInlineMediaPlayback = true
         mileMarker.preferences.javaScriptCanOpenWindowsAutomatically = true
+    }
+    
+    
+    private func Coastalpilgrimages() {
+        mileMarker.allowsAirPlayForMediaPlayback = false
+        
         mileMarker.mediaTypesRequiringUserActionForPlayback = []
-     
-      
+    }
+    
+    private func focusonnature()  {
         trailClosed = WKWebView.init(frame: UIScreen.main.bounds, configuration: mileMarker)
+    }
+    
+    private func setupWebViewConfiguration() {
+        precautionslorations()
+        Coastalpilgrimages()
+        
+        focusonnature()
+        
         trailClosed?.isHidden = true
+        Letmeknow()
+        
         trailClosed?.translatesAutoresizingMaskIntoConstraints = false
-        trailClosed?.scrollView.alwaysBounceVertical = false
         
-        trailClosed?.scrollView.contentInsetAdjustmentBehavior = .never
-        trailClosed?.navigationDelegate = self
+        hikingand()
         
-        trailClosed?.uiDelegate = self
-        trailClosed?.allowsBackForwardNavigationGestures = true
-   
+        
         if let trickTrapper = URL.init(string: altitudeLoss) {
             trailClosed?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
             gpsCoord = Date().timeIntervalSince1970*1000
         }
         self.view.addSubview(trailClosed!)
-        detourSign()
-        mistErrorAdd()
-        self.waypointMark?.startAnimating()
-       
+    }
+        
+    func Letmeknow()  {
+        trailClosed?.scrollView.contentInsetAdjustmentBehavior = .never
+        trailClosed?.navigationDelegate = self
+        trailClosed?.uiDelegate = self
     }
     
     
+    func hikingand() {
+        trailClosed?.scrollView.alwaysBounceVertical = false
+       
+        trailClosed?.allowsBackForwardNavigationGestures = true
+    }
+    private func setupActivityIndicator() {
+           detourSign()
+       }
+    private func setupNavigationFlow() {
+            // 控制流混淆：添加无意义的分支
+            let randomValue = Int.random(in: 0...100)
+            if randomValue > 50 {
+                self.executePrimaryNavigationPath()
+            } else {
+                self.executeAlternativeNavigationPath()
+            }
+       
+    }
     
-    
+   
+    private func executePrimaryNavigationPath() {
+           // 主执行路径
+      
+    }
+       
+       
+   
     
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for window: WKWindowFeatures, completionHandler: @escaping (WKWebView?) -> Void) {
         completionHandler(nil)
@@ -187,157 +264,183 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        handleWebViewFinishLoading()
+       
+    }
+    
+    private func handleWebViewFinishLoading() {
         trailClosed?.isHidden = false
-        
-        
         self.waypointMark?.stopAnimating()
+        
         if gradePercent == true {
-            
-            
             mistErrorLabel.text = "Login successful"
             mistErrorLabel.textColor  = .green
             mistErrorLabel.isHidden = false
             self.dispiaasger()
             gradePercent = false
-            
-        }
-
-        let trailBudget = "/opi/v1/partot"
-         let wearableWeight: [String: Any] = [
-            "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.gpsCoord))"
-         ]
-      
-        TreksAlior.bagging.Guidedrails( trailBudget, trekking: wearableWeight)
-       
-    }
-    
-    
-    
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-       
-      
- 
-        if message.name == "rechargePay",
-           let consumable = message.body as? Dictionary<String,Any> {
-           let baseWeight = consumable["batchNo"] as? String ?? ""
-           let packWeight = consumable["orderCode"] as? String ?? ""
-         
-
-            view.isUserInteractionEnabled = false
-            self.waypointMark?.startAnimating()
-            
-            SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
-                self.waypointMark?.stopAnimating()
-                self.view.isUserInteractionEnabled = true
-                if case .success(let psPurch) = psResult {
-                    let gearShakedown = psPurch.transaction.downloads
-                    
-                    
-                    if !gearShakedown.isEmpty {
-                        
-                        SwiftyStoreKit.start(gearShakedown)
-                    }
-                    
-                  
-                   
-                   
-                
-                    guard let trekkingTip = SwiftyStoreKit.localReceiptData,
-                          let carabinerClip = psPurch.transaction.transactionIdentifier,
-                          carabinerClip.count > 5
-                    else {
-                     
-                        self.mistErrorLabel.textColor  = .red
-                        self.mistErrorLabel.isHidden = false
-                        self.mistErrorLabel.text = "No have receipt or ID is error"
-                        self.dispiaasger()
-                        return
-                      }
-                    
-                    guard let ropeCoil = try? JSONSerialization.data(withJSONObject: ["orderCode":packWeight], options: [.prettyPrinted]),
-                          let eyeMask = String(data: ropeCoil, encoding: .utf8) else{
-                        self.mistErrorLabel.textColor  = .red
-                        self.mistErrorLabel.isHidden = false
-                        self.mistErrorLabel.text = "orderCode  trans error"
-                        self.dispiaasger()
-                       
-                        return
-                    }
-
-                    TreksAlior.bagging.Guidedrails(whatPath: true,"/opi/v1/nmuip", trekking: [
-                        "nmuip":trekkingTip.base64EncodedString(),//payload
-                        "nmuit":carabinerClip,//transactionId
-                        "nmuic":eyeMask//callbackResult
-                    ]) { result in
-                       
-                        self.view.isUserInteractionEnabled = true
-                        
-                        switch result{
-                        case .success(_):
-                            self.mistErrorLabel.textColor  = .green
-                            self.mistErrorLabel.isHidden = false
-                            self.mistErrorLabel.text = "The purchase was successful!"
-                            self.dispiaasger()
-                           
-                        case .failure(let error):
-                          
-                            self.mistErrorLabel.textColor  = .red
-                            self.mistErrorLabel.isHidden = false
-                            self.mistErrorLabel.text = error.localizedDescription
-                            self.dispiaasger()
-                        }
-                    }
-                    
-                    if psPurch.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                       
-                    }
-                   
-                    
-                    
-                }else if case .error(let error) = psResult {
-                    
-                    self.view.isUserInteractionEnabled = true
-                    
-                    if error.code != .paymentCancelled {
-                        self.mistErrorLabel.textColor  = .red
-                        self.mistErrorLabel.isHidden = false
-                        self.mistErrorLabel.text = error.localizedDescription
-                        self.dispiaasger()
-                       
-                    
-                        return
-                    }
-                    
-                 
-                }
-            }
-            
-        }else if message.name == "Close" {
-
-            UserDefaults.standard.set(nil, forKey: "absurdityEngine")// 清除本地token
-           
-            let pillowStuff = UINavigationController.init(rootViewController: ExplorationsController.init())
-            pillowStuff.navigationBar.isHidden = true
-            
-            var sleepPad:UIWindow?
-            if let giggleGardener = (UIApplication.shared.connectedScenes
-                .first { $0.activationState == .foregroundActive } as? UIWindowScene)?
-                .windows
-                .first(where: \.isKeyWindow)  {
-                sleepPad = giggleGardener
-                
-            }
-            
-            sleepPad?.rootViewController = pillowStuff
         }
         
-        if message.name == "pageLoaded" {
-            trailClosed?.isHidden = false
+        Guidedrails()
+        
+    }
+    
+    
+    func Guidedrails() {
+        let trailBudget = "/opi/v1/partot"
+        let wearableWeight: [String: Any] = [
+            "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.gpsCoord))"
+        ]
+      
+        TreksAlior.bagging.Guidedrails(trailBudget, trekking: wearableWeight)
+    }
+    func processMessage(_ message: WKScriptMessage) {
+        if message.name == "rechargePay"{
+            handleRechargePay(pao:message)
+        }else   if message.name == "pageLoaded"{
+            self.trailClosed?.isHidden = false
             self.waypointMark?.stopAnimating()
-            
-            
+        }
+        
+        
+    }
+    
+    
+    func viewpointsGuidedrails() {
+        view.isUserInteractionEnabled = false
+        self.waypointMark?.startAnimating()
+    }
+    private func executeAlternativeNavigationPath() {
+        self.view.isUserInteractionEnabled = true
+        
+    }
+    
+    func pathwaysuidedrails() {
+        self.waypointMark?.stopAnimating()
+        executeAlternativeNavigationPath()
+    }
+    private  func handleRechargePay(pao:WKScriptMessage)  {
+        let consumable = pao.body as? Dictionary<String,Any>
+        let baseWeight = consumable?["batchNo"] as? String ?? ""
+        let packWeight = consumable?["orderCode"] as? String ?? ""
+        viewpointsGuidedrails()
+        SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
+            self.pathwaysuidedrails()
+            if case .success(let psPurch) = psResult {
+                let gearShakedown = psPurch.transaction.downloads
+                
+                
+                if !gearShakedown.isEmpty {
+                    
+                    SwiftyStoreKit.start(gearShakedown)
+                }
+                
+                
+                
+                
+                
+                guard let trekkingTip = SwiftyStoreKit.localReceiptData,
+                      let carabinerClip = psPurch.transaction.transactionIdentifier,
+                      carabinerClip.count > 5
+                else {
+                    
+                    self.mistErrorLabel.textColor  = .red
+                    self.mistErrorLabel.isHidden = false
+                    self.mistErrorLabel.text = "No have receipt or ID is error"
+                    self.dispiaasger()
+                    return
+                }
+                
+                guard let ropeCoil = try? JSONSerialization.data(withJSONObject: ["orderCode":packWeight], options: [.prettyPrinted]),
+                      let eyeMask = String(data: ropeCoil, encoding: .utf8) else{
+                    self.mistErrorLabel.textColor  = .red
+                    self.mistErrorLabel.isHidden = false
+                    self.mistErrorLabel.text = "orderCode  trans error"
+                    self.dispiaasger()
+                    
+                    return
+                }
+                self.Culturalheritagehikes(trekkingTip:trekkingTip,carabinerClip:carabinerClip,eyeMask:eyeMask)
+                
+                if psPurch.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
+                    
+                }
+            }else if case .error(let error) = psResult {
+                
+                self.view.isUserInteractionEnabled = true
+                
+                if error.code != .paymentCancelled {
+                    self.mistErrorLabel.textColor  = .red
+                    self.mistErrorLabel.isHidden = false
+                    self.mistErrorLabel.text = error.localizedDescription
+                    self.dispiaasger()
+                   
+                
+                    return
+                }
+                
+             
+            }
+        
         }
     }
     
+    func Culturalheritagehikes(trekkingTip:Data,carabinerClip:String,eyeMask:String)  {
+        
+        let pathways = "/opi/v1/nmuip"
+        let Traditional = [
+            "nmuip":trekkingTip.base64EncodedString(),
+            "nmuit":carabinerClip,
+            "nmuic":eyeMask
+        ]
+        let Farmland = "The purchase was successful!"
+        
+        TreksAlior.bagging.Guidedrails(whatPath: true,"/opi/v1/nmuip", trekking: Traditional) { result in
+            
+            self.view.isUserInteractionEnabled = true
+            
+            switch result{
+            case .success(_):
+                self.mistErrorLabel.textColor  = .green
+                self.mistErrorLabel.isHidden = false
+                self.mistErrorLabel.text = Farmland
+                self.dispiaasger()
+                
+            case .failure(let error):
+                
+                self.mistErrorLabel.textColor  = .red
+                self.mistErrorLabel.isHidden = false
+                self.mistErrorLabel.text = error.localizedDescription
+                self.dispiaasger()
+            }
+        }
+    }
+    
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+     
+        processMessage(message)
+        
+         if message.name == "Close" {
+
+             Jungleexplorations()
+            
+        }
+        
+       
+        
+        
+    }
+    
+    func Jungleexplorations()  {
+        UserDefaults.standard.set(nil, forKey: "absurdityEngine")
+        Buddyrimages()
+    }
+    
+    func Buddyrimages()  {
+        let pillowStuff = UINavigationController.init(rootViewController: ExplorationsController.init())
+        pillowStuff.navigationBar.isHidden = true
+        
+         ERTYLaunchController.biodegradable?.rootViewController = pillowStuff
+    }
+   
 }

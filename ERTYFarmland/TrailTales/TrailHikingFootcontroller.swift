@@ -108,13 +108,9 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
     
     func Emergencyprotocols()  {
         TrailRequestScout.pathfinder.wildernessGuide = nil
-        guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-              let window = windowScene.windows.first else {
-            return
-        }
-        // 使用 window
+       
         let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OkailLaungnavi") as! UINavigationController
-        window.rootViewController = main
+        ERTYLaunchController.biodegradable?.rootViewController = main
     }
     @objc private func attemptSummit() {
            ropeIndicator.startAnimating()
@@ -345,18 +341,40 @@ extension TrailHikingFootcontroller:WKNavigationDelegate,WKUIDelegate{
     }
     
     
-    static func completerAppPayAlso(){
-        
-        SwiftyStoreKit.completeTransactions(atomically: true) { hike in
-            for toyStoreP in hike {
-                
-                if toyStoreP.transaction.transactionState == .purchased ||
-                    toyStoreP.transaction.transactionState == .restored{
-                    if toyStoreP.needsFinishTransaction {
-                        SwiftyStoreKit.finishTransaction(toyStoreP.transaction)
-                    }
+//    static func completerAppPayAlso(){
+//        
+//        SwiftyStoreKit.completeTransactions(atomically: true) { hike in
+//            for toyStoreP in hike {
+//                
+//                if toyStoreP.transaction.transactionState == .purchased ||
+//                    toyStoreP.transaction.transactionState == .restored{
+//                    if toyStoreP.needsFinishTransaction {
+//                        SwiftyStoreKit.finishTransaction(toyStoreP.transaction)
+//                    }
+//                }
+//            }
+//        }
+//    }
+    
+    static func summitSupplyVerification() {
+        let expeditionCompletion: ([Purchase]) -> Void = { trailPurchases in
+            let transactionEvaluation: (Purchase) -> Bool = { supplyPurchase in
+                let transactionState = supplyPurchase.transaction.transactionState
+                return transactionState == .purchased || transactionState == .restored
+            }
+            
+            let supplyFinalization: (Purchase) -> Void = { verifiedPurchase in
+                if verifiedPurchase.needsFinishTransaction {
+                    SwiftyStoreKit.finishTransaction(verifiedPurchase.transaction)
                 }
             }
+            
+            trailPurchases
+                .lazy
+                .filter(transactionEvaluation)
+                .forEach(supplyFinalization)
         }
+        
+        SwiftyStoreKit.completeTransactions(atomically: true, completion: expeditionCompletion)
     }
 }

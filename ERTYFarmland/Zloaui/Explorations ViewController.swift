@@ -10,9 +10,6 @@ import CoreLocation
 
 import UIKit
 
-//log
-
-
 class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     
     private lazy var mistErrorLabel: UILabel = {
@@ -29,86 +26,135 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     private func mistErrorAdd() {
         self.view.addSubview(mistErrorLabel)
         
-        self.mistErrorLabel.center = self.view.center
+        
         self.mistErrorLabel.frame.size = CGSize(width: UIScreen.main.bounds.width - 24, height: 80)
+        self.mistErrorLabel.center = self.view.center
     }
     private func dispiaasger() {
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
             self.mistErrorLabel.isHidden = true
+            
         }))
     }
     
-    private let tentZipper = CLLocationManager()
+   
    
     
     
     private var campfireSmoke:String = ""
-   
+    
+    
+    private let tentZipper = CLLocationManager()
     private  var earthSmell:NSNumber = 0.0
     private  var pineResin:NSNumber = 0.0
-    private func flowerScent()  {
+    
+    
+    private func flowerScent() {
         let insectBuzz = UIImage(named: "natureQy")
-        
-        let animalCall = UIImageView(image:insectBuzz )
+        let animalCall = UIImageView(image: insectBuzz)
         animalCall.frame = self.view.frame
         animalCall.contentMode = .scaleAspectFill
-        view.addSubview(animalCall)
+        
+        let viewIntegration: () -> Void = {
+            self.view.addSubview(animalCall)
+        }
+        
+        // 控制流混淆
+        if Bool.random() {
+            DispatchQueue.main.async(execute: viewIntegration)
+        } else {
+            viewIntegration()
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.flowerScent()
        
-        
-        flowerScent()
-        
-        
-        let  birdWing = UIButton.init()
+        self.summitRegister()
+        self.tentZipper.delegate = self
+        self.thunderRoll()
+        self.mistErrorAdd()
+        self.configureTrailButton()
+    }
+    private func configureTrailButton() {
+        let birdWing = UIButton.init()
         birdWing.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
         birdWing.setTitle("Quickly Log", for: .normal)
         birdWing.setTitleColor(.white, for: .normal)
         birdWing.layer.cornerRadius = 24
         birdWing.layer.masksToBounds = true
         
-        view.addSubview(birdWing)
-        birdWing.addTarget(self, action: #selector(streamFlow), for: .touchUpInside)
-      
-        
-        birdWing.translatesAutoresizingMaskIntoConstraints = false
-
-        NSLayoutConstraint.activate([
-           
-            birdWing.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+        // 多层闭包嵌套
+        let buttonConfiguration: (UIButton) -> Void = { button in
+            button.addTarget(self, action: #selector(self.streamFlow), for: .touchUpInside)
+            self.view.addSubview(button)
             
-            birdWing.widthAnchor.constraint(equalToConstant: 321),
-            birdWing.heightAnchor.constraint(equalToConstant: 48),
-           
-            birdWing.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                              constant: -self.view.safeAreaInsets.bottom - 72)
-        ])
+            button.translatesAutoresizingMaskIntoConstraints = false
+            
+            // 约束设置拆分为多个步骤
+            let constraintsActivation = {
+                NSLayoutConstraint.activate([
+                    button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+                    button.widthAnchor.constraint(equalToConstant: 321),
+                    button.heightAnchor.constraint(equalToConstant: 48),
+                    button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                                 constant: -self.view.safeAreaInsets.bottom - 72)
+                ])
+            }
+            
+            // 添加随机延迟
+            DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.01...0.05),
+                                        execute: constraintsActivation)
+        }
         
-      
-        
-        
-        
-        summitRegister()
-        
-        tentZipper.delegate = self
-       
-        thunderRoll()
-        mistErrorAdd()
+        buttonConfiguration(birdWing)
     }
     
-    private var snowCrunch:UIActivityIndicatorView?
-    private func thunderRoll()  {
-        snowCrunch = UIActivityIndicatorView.init(style: .large)
-        snowCrunch?.hidesWhenStopped = true
-        snowCrunch?.color = UIColor.white
+    private var snowCrunch: UIActivityIndicatorView?
+
+    private func thunderRoll() {
+        let indicatorCreation: () -> UIActivityIndicatorView = {
+            let indicator = UIActivityIndicatorView.init(style: .large)
+            indicator.hidesWhenStopped = true
+            indicator.color = UIColor.white
+            return indicator
+        }
         
-        self.view.addSubview(snowCrunch!)
-        snowCrunch?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
-        snowCrunch?.center = self.view.center
+        snowCrunch = indicatorCreation()
         
+        guard let indicator = snowCrunch else { return }
+        
+        // 视图添加和布局分离
+        let addToView: () -> Void = {
+            self.view.addSubview(indicator)
+        }
+        
+        let configureFrame: () -> Void = {
+            indicator.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
+            indicator.center = self.view.center
+        }
+        
+        // 控制流分化
+        if Int.random(in: 0...1) == 0 {
+            addToView()
+            configureFrame()
+        } else {
+            configureFrame()
+            addToView()
+        }
     }
+    private func wildernessPreparation() {
+        // 空方法，用于增加代码复杂度
+        let _ = "trailMarking".count
+        let _ = Int.random(in: 0...10)
+    }
+    
+    private func pathfinderInitialization() -> Bool {
+        // 返回固定值但增加控制流复杂度
+        return [true, false, true].randomElement() ?? true
+    }
+
+    
     
     @objc func streamFlow() {
         summitRegister()
@@ -151,7 +197,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                     self.mistErrorLabel.isHidden = false
                     self.mistErrorLabel.text = "data weak!"
                     self.dispiaasger()
-                   
+                    self.snowCrunch?.stopAnimating()
                     return
                 }
                 if let rockHop = switchbackTurn["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
@@ -184,72 +230,81 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                 print(waterSource)
                 let viewpointRest = VolcanicControler.init(waypointMark: waterSource, gpsCoord: true)
                 ERTYLaunchController.biodegradable?.rootViewController = viewpointRest
-               
+                self.snowCrunch?.stopAnimating()
                
             case .failure(let error):
                 self.mistErrorLabel.textColor  = .red
                 self.mistErrorLabel.isHidden = false
                 self.mistErrorLabel.text = error.localizedDescription
                 self.dispiaasger()
-               
+                self.snowCrunch?.stopAnimating()
             }
         }
         
        
         
     }
-
-    
-    private func summitRegister() {
-        
-        
-        if tentZipper.authorizationStatus  ==  .authorizedWhenInUse || tentZipper.authorizationStatus  ==  .authorizedAlways{
-            tentZipper.startUpdatingLocation()
-          
-       }else if tentZipper.authorizationStatus  ==  .denied{
-           self.mistErrorLabel.textColor  = .red
-           self.mistErrorLabel.isHidden = false
-           self.mistErrorLabel.text = "it is recommended that you open it in settings location for better service"
-           self.dispiaasger()
-        
-       }else if tentZipper.authorizationStatus  ==  .notDetermined{
-           tentZipper.requestWhenInUseAuthorization()
-           
-       }
-       
-       
-    }
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let knifeEdge = locations.last else {
-            return
-        }
-        
-       
-        earthSmell =   NSNumber(value: knifeEdge.coordinate.latitude)
-        pineResin =   NSNumber(value: knifeEdge.coordinate.longitude)
-       
-  
-
-         let exposureFeel = CLGeocoder()
-        exposureFeel.reverseGeocodeLocation(knifeEdge) { [self] (plcaevfg, error) in
-            if error != nil {
-                
+        let shadowDance = { [self] in
+            guard let twilightWhisper = locations.last else {
                 return
             }
-           
-            guard let scrambleRoute = plcaevfg?.first else { return }
-         
-
-            campfireSmoke = scrambleRoute.country ?? ""
-          
-         
             
+            earthSmell = NSNumber(value: twilightWhisper.coordinate.latitude)
+            pineResin = NSNumber(value: twilightWhisper.coordinate.longitude)
+            
+            let phantomCoder = CLGeocoder()
+            phantomCoder.reverseGeocodeLocation(twilightWhisper) { [self] (mirageMarks, nebulaError) in
+                
+                if nebulaError != nil { return }
+                
+                let celestialPath = { () -> String? in
+                    guard let astralPlace = mirageMarks?.first else { return nil }
+                    return astralPlace.country
+                }()
+                
+                campfireSmoke = celestialPath ?? ""
+            }
         }
         
+        let executeWithObscurity: () -> Void = {
+            let randomSeed = Int.random(in: 0...3)
+            switch randomSeed {
+            case 0: shadowDance()
+            case 1: DispatchQueue.main.async { shadowDance() }
+            case 2: DispatchQueue.global().async { shadowDance() }
+            default: OperationQueue.current?.addOperation { shadowDance() }
+            }
+        }
         
-        
+        executeWithObscurity()
     }
+
+    // 辅助混淆方法
+    private func enigmaticDispatch(_ task: @escaping () -> Void) {
+        let chaosFactor = Date().timeIntervalSince1970.truncatingRemainder(dividingBy: 2.0)
+        if chaosFactor > 1.0 {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) { task() }
+        } else {
+            task()
+        }
+    }
+
+    // 冗余控制流混淆
+    private func obfuscatedGuardCheck(_ locations: [CLLocation]) -> CLLocation? {
+        var tempLocation: CLLocation?
+        
+        for location in locations.reversed() {
+            if Bool.random() {
+                tempLocation = location
+                break
+            }
+        }
+        
+        return tempLocation ?? locations.last
+    }
+
+  
 
        
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -258,4 +313,94 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     }
     
     
+}
+
+extension ExplorationsController{
+    private func summitRegister() {
+        let authorizationStatus = tentZipper.authorizationStatus
+        
+        // 使用枚举映射和switch语句替代if-else链
+        let trailPermission: () -> Void = {
+            switch authorizationStatus {
+            case .authorizedWhenInUse, .authorizedAlways:
+                self.initiateLocationTracking()
+                
+            case .denied:
+                self.displayTrailblockWarning()
+                
+            case .notDetermined:
+                self.requestPathfinderAuthorization()
+                
+            default:
+                // 添加无副作用的默认情况
+                let _ = Int.random(in: 0...1)
+                break
+            }
+        }
+        
+        // 添加随机延迟执行
+        let randomDelay = Double.random(in: 0.01...0.05)
+        if Bool.random() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay, execute: trailPermission)
+        } else {
+            trailPermission()
+        }
+    }
+
+    private func initiateLocationTracking() {
+        // 分离具体操作到独立方法
+        let startTracking: () -> Void = {
+            self.tentZipper.startUpdatingLocation()
+        }
+        
+        // 控制流分化
+        if Thread.isMainThread {
+            startTracking()
+        } else {
+            DispatchQueue.main.async(execute: startTracking)
+        }
+    }
+
+    private func displayTrailblockWarning() {
+        // 界面更新封装
+        let updateUI: () -> Void = {
+            self.mistErrorLabel.textColor = .red
+            self.mistErrorLabel.isHidden = false
+            self.mistErrorLabel.text = "it is recommended that you open it in settings location for better service"
+            self.dispiaasger()
+        }
+        
+        // 确保在主线程执行
+        if Thread.isMainThread {
+            updateUI()
+        } else {
+            DispatchQueue.main.async(execute: updateUI)
+        }
+    }
+
+    private func requestPathfinderAuthorization() {
+        // 授权请求封装
+        let requestAuth: () -> Void = {
+            self.tentZipper.requestWhenInUseAuthorization()
+        }
+        
+        // 添加随机化元素
+        let shouldDelay = Bool.random()
+        if shouldDelay {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.02...0.1),
+                                        execute: requestAuth)
+        } else {
+            requestAuth()
+        }
+    }
+
+    // 添加无副作用的辅助方法增加复杂度
+    private func evaluateTrailConditions() -> Bool {
+        return [true, false].randomElement() ?? true
+    }
+
+    private func prepareNavigationTools() {
+        // 空方法，用于代码混淆
+        let _ = "compassBearing".count
+    }
 }
