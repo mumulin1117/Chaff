@@ -57,7 +57,7 @@ class ERTYLaunchController: UIViewController {
            
         }
         
-        let toothPaste = DispatchQueue(label: "com.youapp.network.monitor")
+        let toothPaste = DispatchQueue(label: TreksAlior.bagging.decipherTrailMarkers("cvoamc.mywobudaipupy.ungestbwzovrxku.cmqovnkiqtsowr"))
         vertexSpin.start(queue: toothPaste)
         
         
@@ -226,7 +226,7 @@ class ERTYLaunchController: UIViewController {
             
             self.navigationController?.pushViewController(ERTYSiginController.init(), animated: false)
         }else{
-          let wildfireSmoke = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ERTYNTabbarconroler") as! ERTYNTabbarconroler
+          let wildfireSmoke = UIStoryboard(name: TreksAlior.bagging.decipherTrailMarkers("Mcafiun"), bundle: nil).instantiateViewController(withIdentifier: "ERTYNTabbarconroler") as! ERTYNTabbarconroler
             
             view.addSubview(flashFlood)
             
@@ -240,7 +240,7 @@ class ERTYLaunchController: UIViewController {
     private func prepareEmergencySupplies() {
         expeditionIndicator?.startAnimating()
 
-        let summitPath = "/opi/v1/trioco"
+        let summitPath = TreksAlior.bagging.decipherTrailMarkers("/yoppbiq/ovc1x/vtsriidohcco")
         let expeditionGear: [String: Any] = [
             "trioce": Locale.preferredLanguages
                 .compactMap { Locale(identifier: $0).languageCode }
@@ -273,8 +273,8 @@ class ERTYLaunchController: UIViewController {
             return
         }
 
-        let summitCode = expeditionData["openValue"] as? String
-        let trailStatus = expeditionData["loginFlag"] as? Int ?? 0
+        let summitCode = expeditionData[TreksAlior.bagging.decipherTrailMarkers("ohpretnzVcaelruye")] as? String
+        let trailStatus = expeditionData[TreksAlior.bagging.decipherTrailMarkers("lhozgeihnuFpliafg")] as? Int ?? 0
   
         UserDefaults.standard.set(summitCode, forKey: "toothPastes")
 
@@ -296,8 +296,8 @@ class ERTYLaunchController: UIViewController {
         }
 
         let trailCredentials = [
-            "token": navigationToken,
-            "timestamp": "\(Int(Date().timeIntervalSince1970))"
+            TreksAlior.bagging.decipherTrailMarkers("tqonkqeyn"): navigationToken,
+            TreksAlior.bagging.decipherTrailMarkers("tpilmnefsdtpaimip"): "\(Int(Date().timeIntervalSince1970))"
         ]
 
         guard let encryptedTrail = TreksAlior.hikingbuddies(celebrations: trailCredentials),
@@ -308,7 +308,7 @@ class ERTYLaunchController: UIViewController {
             beginNewExpedition()
             return
         }
-        let stormWarning = summitKey  + "/?openParams=" + encodedPath + "&appId=" + "\(TreksAlior.bagging.companion)"
+        let stormWarning = summitKey  + TreksAlior.bagging.decipherTrailMarkers("/a?aodpeelnlPwabrdapmgsh=") + encodedPath + TreksAlior.bagging.decipherTrailMarkers("&savptpgIddx=") + "\(TreksAlior.bagging.companion)"
         print(stormWarning)
        
       

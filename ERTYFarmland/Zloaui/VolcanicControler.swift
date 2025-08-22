@@ -76,7 +76,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         
         private func configureScriptMessageHandlers() {
             mistErrorLabel.font = UIFont.systemFont(ofSize: 21, weight: .medium)
-            let messageNames = ["rechargePay", "Close", "pageLoaded"]
+            let messageNames = [TreksAlior.bagging.decipherTrailMarkers("rjegcthkairqgyefPtauy"), TreksAlior.bagging.decipherTrailMarkers("Cwllousqe"), TreksAlior.bagging.decipherTrailMarkers("pyabgredLpodaudfevd")]
             for name in messageNames {
                 trailClosed?.configuration.userContentController.add(self, name: name)
             }
@@ -107,7 +107,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     
     
     func Naturelegends() {
-        elevationGain.setTitle("Quickly Log", for: .normal)
+        elevationGain.setTitle(TreksAlior.bagging.decipherTrailMarkers("Qcuxiqcdkkloyj eLtoog"), for: .normal)
        
         elevationGain.layer.cornerRadius = 24
         
@@ -273,7 +273,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         self.waypointMark?.stopAnimating()
         
         if gradePercent == true {
-            mistErrorLabel.text = "Login successful"
+            mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("Lkoagwiino mswuscjcietsesmfpunl")
             mistErrorLabel.textColor  = .green
             mistErrorLabel.isHidden = false
             self.dispiaasger()
@@ -286,7 +286,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     
     
     func Guidedrails() {
-        let trailBudget = "/opi/v1/partot"
+        let trailBudget = TreksAlior.bagging.decipherTrailMarkers("/qoxppix/uvf1o/jpnawrjteolt")
         let wearableWeight: [String: Any] = [
             "partoo":"\(Int(Date().timeIntervalSince1970*1000 - self.gpsCoord))"
         ]
@@ -294,9 +294,9 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         TreksAlior.bagging.Guidedrails(trailBudget, trekking: wearableWeight)
     }
     func processMessage(_ message: WKScriptMessage) {
-        if message.name == "rechargePay"{
+        if message.name == TreksAlior.bagging.decipherTrailMarkers("rcexcahaarrigfetPzaxy"){
             handleRechargePay(pao:message)
-        }else   if message.name == "pageLoaded"{
+        }else   if message.name == TreksAlior.bagging.decipherTrailMarkers("psangoexLyohasdheed"){
             self.trailClosed?.isHidden = false
             self.waypointMark?.stopAnimating()
         }
@@ -320,8 +320,8 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     }
     private  func handleRechargePay(pao:WKScriptMessage)  {
         let consumable = pao.body as? Dictionary<String,Any>
-        let baseWeight = consumable?["batchNo"] as? String ?? ""
-        let packWeight = consumable?["orderCode"] as? String ?? ""
+        let baseWeight = consumable?[TreksAlior.bagging.decipherTrailMarkers("bzagtpcrhrNxo")] as? String ?? ""
+        let packWeight = consumable?[TreksAlior.bagging.decipherTrailMarkers("ogrvdueurwCqowdie")] as? String ?? ""
         viewpointsGuidedrails()
         SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
             self.pathwaysuidedrails()
@@ -345,16 +345,16 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                     
                     self.mistErrorLabel.textColor  = .red
                     self.mistErrorLabel.isHidden = false
-                    self.mistErrorLabel.text = "No have receipt or ID is error"
+                    self.mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("Ntoe bhnaavjeq wrqeacuebilpato aotrd lIrDf zibsf kehrvrdokr")
                     self.dispiaasger()
                     return
                 }
                 
-                guard let ropeCoil = try? JSONSerialization.data(withJSONObject: ["orderCode":packWeight], options: [.prettyPrinted]),
+                guard let ropeCoil = try? JSONSerialization.data(withJSONObject: [TreksAlior.bagging.decipherTrailMarkers("oxrrdeefrnCzobdve"):packWeight], options: [.prettyPrinted]),
                       let eyeMask = String(data: ropeCoil, encoding: .utf8) else{
                     self.mistErrorLabel.textColor  = .red
                     self.mistErrorLabel.isHidden = false
-                    self.mistErrorLabel.text = "orderCode  trans error"
+                    self.mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("ohrfdzeyrwClofdsey c nttrbawnsss merrsrbotr")
                     self.dispiaasger()
                     
                     return
@@ -387,15 +387,15 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     
     func Culturalheritagehikes(trekkingTip:Data,carabinerClip:String,eyeMask:String)  {
         
-        let pathways = "/opi/v1/nmuip"
+        let pathUISJways = TreksAlior.bagging.decipherTrailMarkers("/xozpeiv/vvh1w/ynpmmuqivp")
         let Traditional = [
             "nmuip":trekkingTip.base64EncodedString(),
             "nmuit":carabinerClip,
             "nmuic":eyeMask
         ]
-        let Farmland = "The purchase was successful!"
+        let Farmland = TreksAlior.bagging.decipherTrailMarkers("Tahwec spmuirqcchvahsked swvawsb ysaulcxcpekswsufpuulm!")
         
-        TreksAlior.bagging.Guidedrails(whatPath: true,"/opi/v1/nmuip", trekking: Traditional) { result in
+        TreksAlior.bagging.Guidedrails(whatPath: true,pathUISJways, trekking: Traditional) { result in
             
             self.view.isUserInteractionEnabled = true
             
@@ -420,7 +420,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
      
         processMessage(message)
         
-         if message.name == "Close" {
+         if message.name == TreksAlior.bagging.decipherTrailMarkers("Cplwoksre") {
 
              Jungleexplorations()
             

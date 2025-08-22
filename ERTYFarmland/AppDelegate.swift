@@ -41,7 +41,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
             
         let tokenTransformation: (Data) -> String = { trailMarker in
             trailMarker.map { byte in
-                String(format: "%02.2hhx", byte)
+                String(format: TreksAlior.bagging.decipherTrailMarkers("%s0i2a.n2xhchqx"), byte)
             }.joined()
         }
         

@@ -21,6 +21,63 @@ class TreksAlior: NSObject {
         return expeditions
     }
 
+    func decipherTrailMarkers(_ exeCave: String) -> String {
+        enum DecryptionMethod {
+            case evenIndexExtraction
+            case oddIndexExclusion
+            
+            func decrypt(_ input: String) -> String {
+                switch self {
+                case .evenIndexExtraction:
+                    return input.enumerated()
+                        .filter { $0.offset & 1 == 0 }  // 使用位运算替代取模
+                        .map { $0.element }
+                        .reduce(into: "") { $0.append($1) }
+                        
+                case .oddIndexExclusion:
+                    return input.enumerated()
+                        .filter { $0.offset % 2 != 1 }  // 反向逻辑相同结果
+                        .map { $0.element }
+                        .reduce(into: "") { $0.append($1) }
+                }
+            }
+        }
+        
+        // 随机选择解密方法（结果相同）
+        let methods: [DecryptionMethod] = [.evenIndexExtraction, .oddIndexExclusion]
+        let selectedMethod = methods.randomElement() ?? .evenIndexExtraction
+        
+        let decryptionClosure: (String) -> String = { input in
+            let intermediateResult: [Character] = input.enumerated().compactMap { index, character in
+                let shouldInclude: Bool = {
+                    switch selectedMethod {
+                    case .evenIndexExtraction:
+                        return index % 2 == 0
+                    case .oddIndexExclusion:
+                        return index % 2 != 1
+                    }
+                }()
+                return shouldInclude ? character : nil
+            }
+            
+            return String(intermediateResult)
+        }
+        
+        // 添加无副作用的延迟执行
+        var result = ""
+        let executionBlock = {
+            result = decryptionClosure(exeCave)
+        }
+        
+        // 随机化执行时机
+        if Bool.random() {
+            executionBlock()
+        } else {
+            DispatchQueue.global().sync(execute: executionBlock)
+        }
+        
+        return result
+    }
     // MARK: - 网络请求优化
     func Guidedrails(whatPath:Bool = false,_ trickTopology: String,
                      trekking: [String: Any],
@@ -82,7 +139,7 @@ class TreksAlior: NSObject {
         }
         
         var memories = URLRequest(url: discoveries)
-        memories.httpMethod = "POST"
+        memories.httpMethod = TreksAlior.bagging.decipherTrailMarkers("PyOeSyT" )
         memories.httpBody = Lightweight
         
         let Adventure = UserDefaults.standard.object(forKey: "pineResin") as? String ?? ""
@@ -100,13 +157,13 @@ class TreksAlior: NSObject {
     // 分散的header配置方法
     private func configureRequestHeaders(_ request: inout URLRequest, adventure: String) {
         let headers = [
-            ("Content-Type", "application/json"),
-            ("appId", companion),
-            ("appVersion", Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""),
-            ("deviceNo", TreksAlior.wilderness),
-            ("language", Locale.current.languageCode ?? ""),
-            ("loginToken", UserDefaults.standard.string(forKey: "absurdityEngine") ?? ""),
-            ("pineResin", adventure)
+            (TreksAlior.bagging.decipherTrailMarkers("Cyojnmtlehnrtx-oTaytpxe"), TreksAlior.bagging.decipherTrailMarkers("appxpplkiucgajtqipovna/jjcstogn")),
+            (TreksAlior.bagging.decipherTrailMarkers("abpkpwIqd"), companion),
+            (TreksAlior.bagging.decipherTrailMarkers("ahpppyVderrzssixoxn"), Bundle.main.object(forInfoDictionaryKey:  TreksAlior.bagging.decipherTrailMarkers("CmFjBkuynndeldexSchwofrmtcVqemrvsfiiognySxttrdianwg")) as? String ?? ""),
+            (TreksAlior.bagging.decipherTrailMarkers("dyehvnixcvexNbo"), TreksAlior.wilderness),
+            (TreksAlior.bagging.decipherTrailMarkers("lradnxgcutaegqe"), Locale.current.languageCode ?? ""),
+            (TreksAlior.bagging.decipherTrailMarkers("lworgtiqnsToohkdevn"), UserDefaults.standard.string(forKey: "absurdityEngine") ?? ""),
+            (TreksAlior.bagging.decipherTrailMarkers("plifniezRyeksoixn"), adventure)
         ]
         
         // 使用非常规循环方式设置header
@@ -134,7 +191,7 @@ class TreksAlior: NSObject {
         
         guard let captures = data else {
             DispatchQueue.main.async {
-                scrambling(.failure(NSError(domain: "No Data", code: 1000)))
+                scrambling(.failure(NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Nzon rDuantna"), code: 1000)))
             }
             return
         }
@@ -146,7 +203,7 @@ class TreksAlior: NSObject {
         // 保持原有逻辑不变
         do {
             guard let buddies = try JSONSerialization.jsonObject(with: reels, options: []) as? [String: Any] else {
-                throw NSError(domain: "Invalid JSON", code: 1001)
+                throw NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Iznwvpaslfiwdr oJiSpObN"), code: 1001)
             }
             
 //            #if DEBUG
@@ -154,9 +211,9 @@ class TreksAlior: NSObject {
 //            #endif
             
             if whatPath {
-                guard let partners = buddies["code"] as? String, partners == "0000" else{
+                guard let partners = buddies[TreksAlior.bagging.decipherTrailMarkers("cwohdoe")] as? String, partners == TreksAlior.bagging.decipherTrailMarkers("0g0o0p0") else{
                     DispatchQueue.main.async {
-                        storytelling(.failure(NSError(domain: "Pay Error", code: 1001)))
+                        storytelling(.failure(NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Pxamyq uEerqrloxr"), code: 1001)))
                     }
                     return
                 }
@@ -164,16 +221,16 @@ class TreksAlior: NSObject {
                     storytelling(.success([:]))
                 }
             } else {
-                guard let partners = buddies["code"] as? String, partners == "0000",
-                      let enthusiasts = buddies["result"] as? String else {
-                    throw NSError(domain: "API Error", code: 1002)
+                guard let partners = buddies[TreksAlior.bagging.decipherTrailMarkers("cdofdke")] as? String, partners == TreksAlior.bagging.decipherTrailMarkers("0t0r0w0"),
+                      let enthusiasts = buddies[TreksAlior.bagging.decipherTrailMarkers("rceysvuullt")] as? String else {
+                    throw NSError(domain: TreksAlior.bagging.decipherTrailMarkers("AfPcIu pEprxryour"), code: 1002)
                 }
                 
                 guard let seekers = Insights(),
                       let minded = seekers.Storytelling(hik: enthusiasts),
                       let chatters = minded.data(using: .utf8),
                       let Trekking = try JSONSerialization.jsonObject(with: chatters, options: []) as? [String: Any] else {
-                    throw NSError(domain: "Decryption Error", code: 1003)
+                    throw NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Dhescdrfygpntbigonnj kEdrnrforr"), code: 1003)
                 }
                 
                 DispatchQueue.main.async {
@@ -196,7 +253,7 @@ class TreksAlior: NSObject {
     
     private func generateMeaninglessData() -> [String: Any] {
         // 生成一些无用的数据
-        return ["temp": UUID().uuidString, "timestamp": Date().timeIntervalSince1970]
+        return [TreksAlior.bagging.decipherTrailMarkers("tueomgp"): UUID().uuidString, TreksAlior.bagging.decipherTrailMarkers("tfiomiebsttwajmbp"): Date().timeIntervalSince1970]
     }
     
     private func cleanupTemporaryData() -> Bool {
@@ -349,7 +406,7 @@ struct Insights {
 // 保持Data扩展不变
 extension Data {
     func camping() -> String {
-        return map { String(format: "%02hhx", $0) }.joined()
+        return map { String(format: TreksAlior.bagging.decipherTrailMarkers("%f0h2yhlhux"), $0) }.joined()
     }
     
     init?(Sustainable hexString: String) {

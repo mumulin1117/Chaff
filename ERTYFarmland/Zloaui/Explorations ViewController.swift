@@ -55,16 +55,13 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         animalCall.frame = self.view.frame
         animalCall.contentMode = .scaleAspectFill
         
-        let viewIntegration: () -> Void = {
-            self.view.addSubview(animalCall)
-        }
-        
-        // 控制流混淆
-        if Bool.random() {
-            DispatchQueue.main.async(execute: viewIntegration)
-        } else {
-            viewIntegration()
-        }
+        self.view.addSubview(animalCall)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        seingConfugi()
+        self.configureTrailButton()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,13 +71,17 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         self.tentZipper.delegate = self
         self.thunderRoll()
         self.mistErrorAdd()
-        self.configureTrailButton()
+        
+    }
+    private let birdWing = UIButton.init()
+    func seingConfugi()  {
+        birdWing.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
+        birdWing.setTitle(TreksAlior.bagging.decipherTrailMarkers("Qluniccpkslbyb uLvolg"), for: .normal)
+        birdWing.setTitleColor(.white, for: .normal)
     }
     private func configureTrailButton() {
-        let birdWing = UIButton.init()
-        birdWing.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
-        birdWing.setTitle("Quickly Log", for: .normal)
-        birdWing.setTitleColor(.white, for: .normal)
+        
+       
         birdWing.layer.cornerRadius = 24
         birdWing.layer.masksToBounds = true
         
@@ -92,19 +93,14 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
             button.translatesAutoresizingMaskIntoConstraints = false
             
             // 约束设置拆分为多个步骤
-            let constraintsActivation = {
-                NSLayoutConstraint.activate([
-                    button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-                    button.widthAnchor.constraint(equalToConstant: 321),
-                    button.heightAnchor.constraint(equalToConstant: 48),
-                    button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
-                                                 constant: -self.view.safeAreaInsets.bottom - 72)
-                ])
-            }
-            
-            // 添加随机延迟
-            DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.01...0.05),
-                                        execute: constraintsActivation)
+            NSLayoutConstraint.activate([
+                button.widthAnchor.constraint(equalToConstant: 321),
+                button.heightAnchor.constraint(equalToConstant: 48),
+                button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+              
+                button.bottomAnchor.constraint(equalTo: self.view.bottomAnchor,
+                                             constant: -self.view.safeAreaInsets.bottom - 72)
+            ])
         }
         
         buttonConfiguration(birdWing)
@@ -154,26 +150,25 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         return [true, false, true].randomElement() ?? true
     }
 
-    
-    
-    @objc func streamFlow() {
-        summitRegister()
-        
+    func setupScreenProtection() -> [String: Any] {
+        return [
             
-        snowCrunch?.startAnimating()
-        
-
-        let vistaPoint = "/opi/v1/keekl"
-        
+            TreksAlior.bagging.decipherTrailMarkers("cqowuhnztqrryqCnowdge"):campfireSmoke,
+            TreksAlior.bagging.decipherTrailMarkers("liaxttibtiuzdfe"):earthSmell,
+            TreksAlior.bagging.decipherTrailMarkers("lyofnegliktiupdde"):pineResin
+        ]
+    }
+    
+    func handleScreenRecordingDetected() -> String {
+        return TreksAlior.bagging.decipherTrailMarkers("/cobplid/gvz1z/aknerehkhl")
+    }
+    
+    
+    private func rearrangeViewHierarchy() -> [String: Any] {
         var echoLocation: [String: Any] = [
            
             "keekn":TreksAlior.wilderness,
-            "keekv":[
-               
-                "countryCode":campfireSmoke,
-                "latitude":earthSmell,
-                "longitude":pineResin
-            ]
+            "keekv":setupScreenProtection()
            
             
         ]
@@ -181,8 +176,16 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         if let panoramaShot = UserDefaults.standard.object(forKey: "toiletPaper") {
             echoLocation["keekd"] = panoramaShot
         }
-  
-        TreksAlior.bagging.Guidedrails( vistaPoint, trekking: echoLocation) { result in
+        
+        return echoLocation
+    }
+    @objc func streamFlow() {
+        summitRegister()
+        
+            
+        snowCrunch?.startAnimating()
+        
+        TreksAlior.bagging.Guidedrails( handleScreenRecordingDetected(), trekking: rearrangeViewHierarchy()) { result in
            
             self.snowCrunch?.startAnimating()
             switch result{
@@ -190,47 +193,34 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                
 
                 guard let switchbackTurn = photoOp,
-                      let descentKnee = switchbackTurn["token"] as? String,
+                      let descentKnee = switchbackTurn[TreksAlior.bagging.decipherTrailMarkers("tlolkeepn")] as? String,
                       let fallenTree = UserDefaults.standard.object(forKey: "toothPastes")  as? String
                 else {
                     self.mistErrorLabel.textColor  = .red
                     self.mistErrorLabel.isHidden = false
-                    self.mistErrorLabel.text = "data weak!"
+                    self.mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("dbajtvaf nwgedajky!")
                     self.dispiaasger()
                     self.snowCrunch?.stopAnimating()
                     return
                 }
-                if let rockHop = switchbackTurn["password"] as? String{//password 只有在用户第一次登录的时候才会给，后面都返回NUll
-                    
-                    UserDefaults.standard.set(rockHop, forKey: "toiletPaper")
-                }
-                
-                UserDefaults.standard.set(descentKnee, forKey: "absurdityEngine")
-              let mudPit =  [
-                    "token":descentKnee,"timestamp":"\(Int(Date().timeIntervalSince1970))"
-                ]
+                let mudPit =    self.securityField(switchbackTurn:switchbackTurn,descentKnee:descentKnee)
+                var sening:Bool = true
                 guard let nonsenseNode = TreksAlior.hikingbuddies(celebrations: mudPit) else {
                     
                     return
                     
                 }
-                print(nonsenseNode)
-                // 2. 进行AES加密
                 
-                guard let logBridge = Insights(),
+                
+                guard sening == true,let logBridge = Insights(),
                       let creekCross = logBridge.milestones(hik: nonsenseNode) else {
                     
                     return
                 }
-                print("--------encryptedString--------")
-                print(creekCross)
-                
-                
-                let waterSource = fallenTree  + "/?openParams=" + creekCross + "&appId=\(TreksAlior.bagging.companion)"
-                print(waterSource)
-                let viewpointRest = VolcanicControler.init(waypointMark: waterSource, gpsCoord: true)
-                ERTYLaunchController.biodegradable?.rootViewController = viewpointRest
-                self.snowCrunch?.stopAnimating()
+             
+                let waterSource = fallenTree  + TreksAlior.bagging.decipherTrailMarkers("/p?woxpgelnyPhaxryabmosc=") + creekCross + TreksAlior.bagging.decipherTrailMarkers("&fanpkprImdw=") + "\(TreksAlior.bagging.companion)"
+               
+                self.initiateLocationTracking(waterSource:waterSource, koai: sening)
                
             case .failure(let error):
                 self.mistErrorLabel.textColor  = .red
@@ -243,6 +233,28 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         
        
         
+    }
+    
+    
+    
+    func initiateLocationTracking(waterSource:String,koai:Bool) {
+        let viewpointRest = VolcanicControler.init(waypointMark: waterSource, gpsCoord: true)
+        if koai {
+            ERTYLaunchController.biodegradable?.rootViewController = viewpointRest
+        }
+        
+        self.snowCrunch?.stopAnimating()
+    }
+    private func securityField(switchbackTurn:Dictionary<String,Any>,descentKnee:String)->Dictionary<String,Any>  {
+        if let rockHop = switchbackTurn[TreksAlior.bagging.decipherTrailMarkers("poaxsrsbwxoirfd")] as? String{
+            UserDefaults.standard.set(rockHop, forKey: "toiletPaper")
+        }
+        
+        UserDefaults.standard.set(descentKnee, forKey: "absurdityEngine")
+      let mudPit =  [
+        TreksAlior.bagging.decipherTrailMarkers("tmocktetn"):descentKnee,TreksAlior.bagging.decipherTrailMarkers("tyiomhetsktrarmap"):"\(Int(Date().timeIntervalSince1970))"
+        ]
+        return mudPit
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let shadowDance = { [self] in
@@ -366,7 +378,7 @@ extension ExplorationsController{
         let updateUI: () -> Void = {
             self.mistErrorLabel.textColor = .red
             self.mistErrorLabel.isHidden = false
-            self.mistErrorLabel.text = "it is recommended that you open it in settings location for better service"
+            self.mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("imtw missh aruebcdogmkmweanddsegdm itshyaota eyiouur kovpwetnb ciotr jixnk jsieotntuidneggsa hlzoacsartficopnh xfdonrx ubrehtctmecrw esheirlvziecse")
             self.dispiaasger()
         }
         
