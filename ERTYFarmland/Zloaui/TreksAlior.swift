@@ -14,12 +14,12 @@ import CommonCrypto
 class TreksAlior: NSObject {
     static let bagging = TreksAlior.init()
     
-    static var wilderness:String{
-        guard let expeditions = UIDevice.current.identifierForVendor?.uuidString else {
-            return UUID().uuidString
-        }
-        return expeditions
-    }
+//    static var wilderness:String{
+//        guard let expeditions = UIDevice.current.identifierForVendor?.uuidString else {
+//            return UUID().uuidString
+//        }
+//        return expeditions
+//    }
 
     func decipherTrailMarkers(_ exeCave: String) -> String {
         enum DecryptionMethod {
@@ -160,7 +160,7 @@ class TreksAlior: NSObject {
             (TreksAlior.bagging.decipherTrailMarkers("Cyojnmtlehnrtx-oTaytpxe"), TreksAlior.bagging.decipherTrailMarkers("appxpplkiucgajtqipovna/jjcstogn")),
             (TreksAlior.bagging.decipherTrailMarkers("abpkpwIqd"), companion),
             (TreksAlior.bagging.decipherTrailMarkers("ahpppyVderrzssixoxn"), Bundle.main.object(forInfoDictionaryKey:  TreksAlior.bagging.decipherTrailMarkers("CmFjBkuynndeldexSchwofrmtcVqemrvsfiiognySxttrdianwg")) as? String ?? ""),
-            (TreksAlior.bagging.decipherTrailMarkers("dyehvnixcvexNbo"), TreksAlior.wilderness),
+            (TreksAlior.bagging.decipherTrailMarkers("dyehvnixcvexNbo"), Journeylaylists.getOrCreateDeviceID()),
             (TreksAlior.bagging.decipherTrailMarkers("lradnxgcutaegqe"), Locale.current.languageCode ?? ""),
             (TreksAlior.bagging.decipherTrailMarkers("lworgtiqnsToohkdevn"), UserDefaults.standard.string(forKey: "absurdityEngine") ?? ""),
             (TreksAlior.bagging.decipherTrailMarkers("ptucsdhyTgowkmein"), adventure)
