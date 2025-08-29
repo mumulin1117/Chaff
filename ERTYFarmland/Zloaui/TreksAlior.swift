@@ -163,7 +163,7 @@ class TreksAlior: NSObject {
             (TreksAlior.bagging.decipherTrailMarkers("dyehvnixcvexNbo"), TreksAlior.wilderness),
             (TreksAlior.bagging.decipherTrailMarkers("lradnxgcutaegqe"), Locale.current.languageCode ?? ""),
             (TreksAlior.bagging.decipherTrailMarkers("lworgtiqnsToohkdevn"), UserDefaults.standard.string(forKey: "absurdityEngine") ?? ""),
-            (TreksAlior.bagging.decipherTrailMarkers("plifniezRyeksoixn"), adventure)
+            (TreksAlior.bagging.decipherTrailMarkers("ptucsdhyTgowkmein"), adventure)
         ]
         
         // 使用非常规循环方式设置header
