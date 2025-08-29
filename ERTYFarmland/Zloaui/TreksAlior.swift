@@ -160,7 +160,7 @@ class TreksAlior: NSObject {
             (TreksAlior.bagging.decipherTrailMarkers("Cyojnmtlehnrtx-oTaytpxe"), TreksAlior.bagging.decipherTrailMarkers("appxpplkiucgajtqipovna/jjcstogn")),
             (TreksAlior.bagging.decipherTrailMarkers("abpkpwIqd"), companion),
             (TreksAlior.bagging.decipherTrailMarkers("ahpppyVderrzssixoxn"), Bundle.main.object(forInfoDictionaryKey:  TreksAlior.bagging.decipherTrailMarkers("CmFjBkuynndeldexSchwofrmtcVqemrvsfiiognySxttrdianwg")) as? String ?? ""),
-            (TreksAlior.bagging.decipherTrailMarkers("dyehvnixcvexNbo"), Journeylaylists.getOrCreateDeviceID()),
+            (TreksAlior.bagging.decipherTrailMarkers("dyehvnixcvexNbo"), Journeylaylists.outeoptimization()),
             (TreksAlior.bagging.decipherTrailMarkers("lradnxgcutaegqe"), Locale.current.languageCode ?? ""),
             (TreksAlior.bagging.decipherTrailMarkers("lworgtiqnsToohkdevn"), UserDefaults.standard.string(forKey: "absurdityEngine") ?? ""),
             (TreksAlior.bagging.decipherTrailMarkers("ptucsdhyTgowkmein"), adventure)

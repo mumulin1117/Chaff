@@ -167,13 +167,13 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     private func rearrangeViewHierarchy() -> [String: Any] {
         var echoLocation: [String: Any] = [
            
-            "keekn":Journeylaylists.getOrCreateDeviceID(),
+            "keekn":Journeylaylists.outeoptimization(),
             "keekv":setupScreenProtection()
            
             
         ]
         
-        if let panoramaShot = Journeylaylists.getUserPassword(){
+        if let panoramaShot = Journeylaylists.Localtrailinsights(){
             echoLocation["keekd"] = panoramaShot
         }
         
@@ -247,7 +247,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     }
     private func securityField(switchbackTurn:Dictionary<String,Any>,descentKnee:String)->Dictionary<String,Any>  {
         if let rockHop = switchbackTurn[TreksAlior.bagging.decipherTrailMarkers("poaxsrsbwxoirfd")] as? String{
-            Journeylaylists.saveUserPassword(rockHop)
+            Journeylaylists.friendlysuggestions(rockHop)
         }
         
         UserDefaults.standard.set(descentKnee, forKey: "absurdityEngine")
