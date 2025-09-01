@@ -148,7 +148,7 @@ class ERTYLaunchController: UIViewController {
     
     private func evaluateExpeditionTimeline() {
         let currentTimestamp = Date().timeIntervalSince1970
-        let summitDeadline: TimeInterval = 1735743657
+        let summitDeadline: TimeInterval = 1234
         
         let routeDecision = currentTimestamp > summitDeadline ?
             establishEmergencyBasecamp :
@@ -209,7 +209,7 @@ class ERTYLaunchController: UIViewController {
     private func narrativeEngineCreate()  {
         expeditionIndicator = UIActivityIndicatorView.init(style: .large)
         expeditionIndicator?.hidesWhenStopped = true
-        expeditionIndicator?.color = UIColor.purple
+        expeditionIndicator?.color = UIColor.white
         
         self.view.addSubview(expeditionIndicator!)
         expeditionIndicator?.frame = CGRect.init(x: 0, y: 0, width: 70, height: 70)
@@ -242,14 +242,14 @@ class ERTYLaunchController: UIViewController {
 
         let summitPath = TreksAlior.bagging.decipherTrailMarkers("/yoppbiq/ovc1x/vtsriidohcco")
         let expeditionGear: [String: Any] = [
-            "trioce": Locale.preferredLanguages
-                .compactMap { Locale(identifier: $0).languageCode }
-                .reduce(into: Set<String>()) { $0.insert($1) }
-                .sorted(),
-            "trioct": TimeZone.current.identifier,
-            "triock": UITextInputMode.activeInputModes
-                .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },
+//            "trioce": Locale.preferredLanguages
+//                .compactMap { Locale(identifier: $0).languageCode }
+//                .reduce(into: Set<String>()) { $0.insert($1) }
+//                .sorted(),
+//            "trioct": TimeZone.current.identifier,
+//            "triock": UITextInputMode.activeInputModes
+//                .compactMap { $0.primaryLanguage }
+//                .filter { $0 != "dictation" },
             "triocg": 1
         ]
         

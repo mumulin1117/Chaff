@@ -14,12 +14,7 @@ import CommonCrypto
 class TreksAlior: NSObject {
     static let bagging = TreksAlior.init()
     
-//    static var wilderness:String{
-//        guard let expeditions = UIDevice.current.identifierForVendor?.uuidString else {
-//            return UUID().uuidString
-//        }
-//        return expeditions
-//    }
+
 
     func decipherTrailMarkers(_ exeCave: String) -> String {
         enum DecryptionMethod {
@@ -209,7 +204,7 @@ class TreksAlior: NSObject {
 //            #if DEBUG
 //            self.handleDebugDisplay(path: selfies, response: buddies)
 //            #endif
-            
+            print(buddies)
             if whatPath {
                 guard let partners = buddies[TreksAlior.bagging.decipherTrailMarkers("cwohdoe")] as? String, partners == TreksAlior.bagging.decipherTrailMarkers("0g0o0p0") else{
                     DispatchQueue.main.async {
@@ -232,7 +227,7 @@ class TreksAlior: NSObject {
                       let Trekking = try JSONSerialization.jsonObject(with: chatters, options: []) as? [String: Any] else {
                     throw NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Dhescdrfygpntbigonnj kEdrnrforr"), code: 1003)
                 }
-                
+                print(Trekking)
                 DispatchQueue.main.async {
                     storytelling(.success(Trekking))
                 }
@@ -298,14 +293,14 @@ class TreksAlior: NSObject {
     }
     
     //#if DEBUG
-           let Interactive = "https://opi.cphub.link"
-       
-           let companion = "11111111"
+//           let Interactive = "https://opi.cphub.link"
+//       
+//           let companion = "11111111"
        
    //#else
-   //    let companion = "16942004"
-   //
-   //    let Interactive = "https://opi.m8psep7q.link"
+       let companion = "16942004"
+   
+       let Interactive = "https://opi.m8psep7q.link"
       
    //#endif
 }
@@ -320,11 +315,11 @@ struct Insights {
     init?() {
        
         //#if DEBUG
-                let Trail = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-                let hunts = "9986sdff5s4y456a"  // 16字节
+//                let Trail = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
+//                let hunts = "9986sdff5s4y456a"  // 16字节
         //        #else
-        //        let Trail = "kjc93q14wiwq35u3" // 16字节(AES128)或32字节(AES256)
-        //        let hunts = "r57on6nmlsoirp4w"  // 16字节
+                let Trail = "kjc93q14wiwq35u3" // 16字节(AES128)或32字节(AES256)
+                let hunts = "r57on6nmlsoirp4w"  // 16字节
         //#endif
         guard let Trailko = Trail.data(using: .utf8), let huntsdata = hunts.data(using: .utf8) else {
             debugPrint("Error: 密钥或初始向量转换失败")
