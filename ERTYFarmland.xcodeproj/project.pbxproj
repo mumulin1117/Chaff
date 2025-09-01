@@ -226,7 +226,7 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "In order to send voice messages and make audio and video calls, Chaff needs access to your photo album";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload dynamic images, videos, and personal avatars from the local album. Chaff needs access to your album permissions";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -267,7 +267,7 @@
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "In order to send voice messages and make audio and video calls, Chaff needs access to your photo album";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Upload dynamic images, videos, and personal avatars from the local album. Chaff needs access to your album permissions";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

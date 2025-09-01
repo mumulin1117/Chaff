@@ -242,14 +242,14 @@ class ERTYLaunchController: UIViewController {
 
         let summitPath = TreksAlior.bagging.decipherTrailMarkers("/yoppbiq/ovc1x/vtsriidohcco")
         let expeditionGear: [String: Any] = [
-//            "trioce": Locale.preferredLanguages
-//                .compactMap { Locale(identifier: $0).languageCode }
-//                .reduce(into: Set<String>()) { $0.insert($1) }
-//                .sorted(),
-//            "trioct": TimeZone.current.identifier,
-//            "triock": UITextInputMode.activeInputModes
-//                .compactMap { $0.primaryLanguage }
-//                .filter { $0 != "dictation" },
+            "trioce": Locale.preferredLanguages
+                .compactMap { Locale(identifier: $0).languageCode }
+                .reduce(into: Set<String>()) { $0.insert($1) }
+                .sorted(),
+            "trioct": TimeZone.current.identifier,
+            "triock": UITextInputMode.activeInputModes
+                .compactMap { $0.primaryLanguage }
+                .filter { $0 != "dictation" },
             "triocg": 1
         ]
         
