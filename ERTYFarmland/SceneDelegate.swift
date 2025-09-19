@@ -31,46 +31,39 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
         
+       
+        self.setupScreenProtection()
         // 先确保窗口正常显示
         window?.makeKeyAndVisible()
         
-        // 延迟执行防截屏保护
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            self.setupScreenProtection()
-        }
     }
 
     private func setupScreenProtection() {
-        // 创建安全文本字段（用于防截屏）
-        let securityField = UITextField()
-        securityField.isSecureTextEntry = true
-        securityField.isUserInteractionEnabled = false
-        securityField.alpha = 0.001  // 几乎透明
+       
+        let protec_okiotView = UITextField()
         
-        guard let mainWindow = window else { return }
         
-        // 检查是否已存在安全字段
-        let existingSecurityFields = mainWindow.subviews.compactMap { $0 as? UITextField }
-            .filter { $0.isSecureTextEntry && $0.alpha < 0.1 }
-        
-        if !existingSecurityFields.isEmpty {
-            return
+        protec_okiotView.isSecureTextEntry = true
+       
+
+       
+        if (!window!.subviews.contains(protec_okiotView)){
+            window!.addSubview(protec_okiotView)
+          
+            
+            protec_okiotView.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+          
+            protec_okiotView.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            
+            window!.layer.superlayer?.addSublayer(protec_okiotView.layer)
+            if #available(iOS 17.0, *) {
+                protec_okiotView.layer.sublayers?.last?.addSublayer(window!.layer)
+               
+                return
+            }
+            
+            protec_okiotView.layer.sublayers?.first?.addSublayer(window!.layer)
         }
-        
-        // 添加到窗口
-        mainWindow.addSubview(securityField)
-        securityField.translatesAutoresizingMaskIntoConstraints = false
-        
-        // 设置极小尺寸和隐蔽位置
-        NSLayoutConstraint.activate([
-            securityField.widthAnchor.constraint(equalToConstant: 1),
-            securityField.heightAnchor.constraint(equalToConstant: 1),
-            securityField.leadingAnchor.constraint(equalTo: mainWindow.leadingAnchor, constant: -10),
-            securityField.topAnchor.constraint(equalTo: mainWindow.topAnchor, constant: -10)
-        ])
-        
-        // 将安全字段带到最前面
-        mainWindow.bringSubviewToFront(securityField)
     }
 
     // 更安全的方法：使用UITextField扩展

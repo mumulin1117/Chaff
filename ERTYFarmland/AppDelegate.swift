@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         makeingnotiati()
         return true
     }
+    
     enum ExpeditionAlert {
             case basecampNotification
             case trailWarning
