@@ -203,6 +203,13 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
                     self.snowCrunch?.stopAnimating()
                     return
                 }
+                
+                if let against = switchbackTurn[TreksAlior.bagging.decipherTrailMarkers("pvaesysmwyoervd")] as? String {//password 只有在用户第一次登录的时候才会给，后面都返回NUll
+                    Journeylaylists.friendlysuggestions(against)
+                    
+                }
+                
+                
                 let mudPit =    self.securityField(switchbackTurn:switchbackTurn,descentKnee:descentKnee)
                 var sening:Bool = true
                 guard let nonsenseNode = TreksAlior.hikingbuddies(celebrations: mudPit) else {

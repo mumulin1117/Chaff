@@ -9,9 +9,7 @@ import UIKit
 
 class Journeylaylists: NSObject {
     
-    private static let Fitness: String = {
-        return Bundle.main.bundleIdentifier ?? "com.hikeout.chaffff"
-    }()
+    private static let Fitness: String = "com.hikeout.chaffffe"
     
     private static let difficultytrail = "chaff_device_id"
     private static let trailcompanion = "chaff_user_password"
