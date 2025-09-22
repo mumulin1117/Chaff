@@ -11,18 +11,17 @@ import CoreLocation
 import UIKit
 
 class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
-    
+    private let tentZipper = CLLocationManager()
     private lazy var mistErrorLabel: UILabel = {
         let lalnl = UILabel.init()
         lalnl.textAlignment = .center
-        lalnl.textColor = .red
-        lalnl.isHidden = true
-        lalnl.numberOfLines = 0
+       
         lalnl.font = UIFont.systemFont(ofSize: 21, weight: .medium)
         return lalnl
     }()
     
-    
+   
+    private  var earthSmell:NSNumber = 0.0
     private func mistErrorAdd() {
         self.view.addSubview(mistErrorLabel)
         
@@ -44,32 +43,38 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     private var campfireSmoke:String = ""
     
     
-    private let tentZipper = CLLocationManager()
-    private  var earthSmell:NSNumber = 0.0
+   
     private  var pineResin:NSNumber = 0.0
     
     
     private func flowerScent() {
-        let insectBuzz = UIImage(named: "natureQy")
+        let insectBuzz = UIImage(named: "18oipuj")
         let animalCall = UIImageView(image: insectBuzz)
-        animalCall.frame = self.view.frame
+        
         animalCall.contentMode = .scaleAspectFill
         
         self.view.addSubview(animalCall)
+        
+        
+        animalCall.frame = self.view.frame
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         seingConfugi()
+        mistErrorLabel.textColor = .red
+       
         self.configureTrailButton()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.flowerScent()
+        mistErrorLabel.isHidden = true
        
         self.summitRegister()
         self.tentZipper.delegate = self
         self.thunderRoll()
+        mistErrorLabel.numberOfLines = 0
         self.mistErrorAdd()
         
     }

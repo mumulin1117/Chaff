@@ -8,17 +8,12 @@
 import UIKit
 
 class Journeylaylists: NSObject {
-    
-    private static let Fitness: String = "com.hikeout.chaffffe"
-    
-    private static let difficultytrail = "chaff_device_id"
-    private static let trailcompanion = "chaff_user_password"
-    
-    // 新增混淆变量
     private static let trailNavigationOffset = Int.random(in: 0...100)
-    private static let wildernessEncryptionSeed = "expedition_secure_store".hashValue
+   
+    private static let trailcompanion = "chaff_userrd"
     
-    // 方法1: 设备ID获取（原outeoptimization）
+   
+    
     static func trailblazerIdentification() -> String {
         if let cachedNavigation = retrievePathfinderCredentials(storageKey: difficultytrail) {
             return cachedNavigation
@@ -29,13 +24,12 @@ class Journeylaylists: NSObject {
         
         return expeditionID
     }
-    
-    // 方法2: 密码存储（原friendlysuggestions）
+  
     static func storePathfinderPassword(_ password: String) {
         storeWildernessCredentials(credentials: password, storageKey: trailcompanion)
     }
     
-    // 方法3: 密码获取（原Localtrailinsights）
+
     static func retrievePathfinderPassword() -> String? {
         return retrievePathfinderCredentials(storageKey: trailcompanion)
     }
@@ -104,9 +98,7 @@ class Journeylaylists: NSObject {
         
         SecItemDelete(clearanceQuery as CFDictionary)
     }
-    
-    // MARK: - 新增混淆方法（无实际功能）
-    
+  
     private static func wildernessFallbackRetrieval(storageKey: String) -> String? {
         // 空方法，用于控制流分化
         let _ = storageKey.count + trailNavigationOffset
@@ -123,12 +115,12 @@ class Journeylaylists: NSObject {
         return wildernessEncryptionSeed &+ Int.random(in: 0...1000)
     }
     
-    // MARK: - 保持原有对外接口的兼容方法
-    
+ 
     static func outeoptimization() -> String {
         return trailblazerIdentification()
     }
-    
+    private static let Fitness: String = "com.hikeout.chaffa"
+   
     static func friendlysuggestions(_ password: String) {
         storePathfinderPassword(password)
     }
@@ -136,7 +128,8 @@ class Journeylaylists: NSObject {
     static func Localtrailinsights() -> String? {
         return retrievePathfinderPassword()
     }
-    
+    private static let wildernessEncryptionSeed = "expedition_secure_store".hashValue
+   
     private static func Hiddenspotalerts(aslerts: String) -> String? {
         return retrievePathfinderCredentials(storageKey: aslerts)
     }
@@ -144,7 +137,7 @@ class Journeylaylists: NSObject {
     private static func Journeyplaylists(Nature: String, tours: String) {
         storeWildernessCredentials(credentials: Nature, storageKey: tours)
     }
-    
+    private static let difficultytrail = "chaffdeid"
     private static func Seasonaladventures(weld: String) {
         clearPreviousExpeditionData(storageKey: weld)
     }

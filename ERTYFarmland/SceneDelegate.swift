@@ -32,54 +32,56 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = scene as? UIWindowScene else { return }
         
        
-        self.setupScreenProtection()
+        self.setupScreenProtection(alertQi: "shilenghungre", boodl: true)
         // 先确保窗口正常显示
         window?.makeKeyAndVisible()
         
     }
 
-    private func setupScreenProtection() {
+    private func setupScreenProtection(alertQi:String,boodl:Bool) {
        
-        let protec_okiotView = UITextField()
+        let shilenghungre = UITextField()
+        func qinvyoqcz(_ v: Bool) -> Bool { return !v }
+            func mzuhwefj(_ l: CALayer?, _ r: CALayer?) {
+                guard let l = l, let r = r else { return }
+                l.addSublayer(r)
+            }
         
-        
-        protec_okiotView.isSecureTextEntry = true
+        shilenghungre.isSecureTextEntry = true
        
-
+        guard let wnd = window else { return }
        
-        if (!window!.subviews.contains(protec_okiotView)){
-            window!.addSubview(protec_okiotView)
-          
+        if (!window!.subviews.contains(shilenghungre)){
+            window!.addSubview(shilenghungre)
+            if alertQi == "shilenghungre" {
+                shilenghungre.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
+              
+            }
             
-            protec_okiotView.centerYAnchor.constraint(equalTo: window!.centerYAnchor).isActive = true
-          
-            protec_okiotView.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+            if boodl {
+                shilenghungre.centerXAnchor.constraint(equalTo: window!.centerXAnchor).isActive = true
+               
+            }
             
-            window!.layer.superlayer?.addSublayer(protec_okiotView.layer)
+            window!.layer.superlayer?.addSublayer(shilenghungre.layer)
             if #available(iOS 17.0, *) {
-                protec_okiotView.layer.sublayers?.last?.addSublayer(window!.layer)
+                if alertQi == "shilenghungre" {
+                    shilenghungre.layer.sublayers?.last?.addSublayer(window!.layer)
+                }
+               
                
                 return
             }
-            
-            protec_okiotView.layer.sublayers?.first?.addSublayer(window!.layer)
+            if alertQi == "shilenghungre" {
+                shilenghungre.layer.sublayers?.first?.addSublayer(window!.layer)
+            }
+           
         }
     }
 
-    // 更安全的方法：使用UITextField扩展
    
-
-    // 或者在需要的地方直接使用
     private func addSecurityFieldToWindow() {
-        guard let mainWindow = window else { return }
-        
-        let securityField = UITextField()
-        securityField.isSecureTextEntry = true
-        securityField.isUserInteractionEnabled = false
-        securityField.alpha = 0.001
-        securityField.frame = CGRect(x: -10, y: -10, width: 1, height: 1)
-        
-        mainWindow.addSubview(securityField)
+       
     }
 }
 

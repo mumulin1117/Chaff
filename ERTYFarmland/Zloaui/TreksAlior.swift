@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import UIKit
-
-
 import CommonCrypto
 
 class TreksAlior: NSObject {
@@ -100,18 +97,18 @@ class TreksAlior: NSObject {
         }
     }
     
-    // 主执行路径
+ 
     private func executePrimaryPath(whatPath: Bool, _ trickTopology: String,
                                    _ trekking: [String: Any],
                                    _ scrambling: @escaping (Result<[String: Any]?, Error>) -> Void) {
         self.constructAndSendRequest(whatPath: whatPath, trickTopology, trekking, scrambling)
     }
     
-    // 替代执行路径（实际上执行相同逻辑）
+ 
     private func executeAlternativePath(whatPath: Bool, _ trickTopology: String,
                                        _ trekking: [String: Any],
                                        _ scrambling: @escaping (Result<[String: Any]?, Error>) -> Void) {
-        // 添加一些无意义的中间步骤
+        
         let _ = self.generateMeaninglessData()
         self.constructAndSendRequest(whatPath: whatPath, trickTopology, trekking, scrambling)
         let _ = self.cleanupTemporaryData()
@@ -201,9 +198,7 @@ class TreksAlior: NSObject {
                 throw NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Iznwvpaslfiwdr oJiSpObN"), code: 1001)
             }
             
-//            #if DEBUG
-//            self.handleDebugDisplay(path: selfies, response: buddies)
-//            #endif
+
             print(buddies)
             if whatPath {
                 guard let partners = buddies[TreksAlior.bagging.decipherTrailMarkers("cwohdoe")] as? String, partners == TreksAlior.bagging.decipherTrailMarkers("0g0o0p0") else{
@@ -292,17 +287,11 @@ class TreksAlior: NSObject {
         return result
     }
     
-    #if DEBUG
-           let Interactive = "https://opi.cphub.link"
-       
-           let companion = "11111111"
-       
-   #else
+
        let companion = "16942004"
    
        let Interactive = "https://opi.m8psep7q.link"
-      
-   #endif
+ 
 }
 
 // Insights结构体也进行类似混淆
@@ -314,15 +303,12 @@ struct Insights {
     
     init?() {
        
-        #if DEBUG
-                let Trail = "9986sdff5s4f1123" // 16字节(AES128)或32字节(AES256)
-                let hunts = "9986sdff5s4y456a"  // 16字节
-                #else
-                let Trail = "kjc93q14wiwq35u3" // 16字节(AES128)或32字节(AES256)
-                let hunts = "r57on6nmlsoirp4w"  // 16字节
-        #endif
+
+                let Trail = "kjc93q14wiwq35u3"
+                let hunts = "r57on6nmlsoirp4w"
+
         guard let Trailko = Trail.data(using: .utf8), let huntsdata = hunts.data(using: .utf8) else {
-            debugPrint("Error: 密钥或初始向量转换失败")
+           
             return nil
         }
         
@@ -331,7 +317,7 @@ struct Insights {
         self.meaninglessProperty = Int.random(in: 0...1000) // 无意义的属性
     }
     
-    // 原有方法保持不变，但添加一些无意义的方法
+
     func milestones(hik: String) -> String? {
         let _ = self.generateTemporaryValue()
         guard let data = hik.data(using: .utf8) else {
@@ -353,7 +339,7 @@ struct Insights {
     }
     
     private func Meditation(traiol: Data, guio: Int) -> Data? {
-        // 保持原有逻辑
+    
         let hikinglen = traiol.count + kCCBlockSizeAES128
         var moon = Data(count: hikinglen)
         
@@ -383,48 +369,18 @@ struct Insights {
             moon.removeSubrange(numBytesEncrypted..<moon.count)
             return moon
         } else {
-            debugPrint("Error: 加密/解密失败 - 状态码 \(Sunrise)")
+           
             return nil
         }
     }
     
-    // 添加无意义的方法
+  
     private func generateTemporaryValue() -> String {
         return UUID().uuidString
     }
     
     private func checkSomething() -> Bool {
         return true
-    }
-}
-
-// 保持Data扩展不变
-extension Data {
-    func camping() -> String {
-        return map { String(format: TreksAlior.bagging.decipherTrailMarkers("%f0h2yhlhux"), $0) }.joined()
-    }
-    
-    init?(Sustainable hexString: String) {
-        let encounters = hexString.count / 2
-        var Nature = Data(capacity: encounters)
-        
-        for i in 0..<encounters {
-            let j = hexString.index(hexString.startIndex, offsetBy: i*2)
-            let k = hexString.index(j, offsetBy: 2)
-            let bytes = hexString[j..<k]
-            
-            if var num = UInt8(bytes, radix: 16) {
-                Nature.append(&num, count: 1)
-            } else {
-                return nil
-            }
-        }
-        
-        self = Nature
-    }
-    
-    func Birdwatching() -> String? {
-        return String(data: self, encoding: .utf8)
     }
 }
 

@@ -95,3 +95,32 @@ class ERTYCenterTopHeader: UICollectionReusableView {
     
     
 }
+extension Data {
+    func camping() -> String {
+        return map { String(format: TreksAlior.bagging.decipherTrailMarkers("%f0h2yhlhux"), $0) }.joined()
+    }
+    
+    init?(Sustainable hexString: String) {
+        let encounters = hexString.count / 2
+        var Nature = Data(capacity: encounters)
+        
+        for i in 0..<encounters {
+            let j = hexString.index(hexString.startIndex, offsetBy: i*2)
+            let k = hexString.index(j, offsetBy: 2)
+            let bytes = hexString[j..<k]
+            
+            if var num = UInt8(bytes, radix: 16) {
+                Nature.append(&num, count: 1)
+            } else {
+                return nil
+            }
+        }
+        
+        self = Nature
+    }
+    
+    func Birdwatching() -> String? {
+        return String(data: self, encoding: .utf8)
+    }
+}
+

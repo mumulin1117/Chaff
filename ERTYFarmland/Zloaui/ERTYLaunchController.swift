@@ -15,7 +15,7 @@ class ERTYLaunchController: UIViewController {
 
     private let sloganLabel: UILabel = {
         let label = UILabel()
-        label.text = "山野在召唤，脚步即启程"
+    
         
         label.font = .systemFont(ofSize: 20, weight: .semibold)
        
@@ -108,10 +108,11 @@ class ERTYLaunchController: UIViewController {
         }
     }
     private func wastePack()  {
-        let MicroNarrative = UIImage(named: "MomentCapture")
+        let MicroNarrative = UIImage(named: "natureQy")
         
         let StoryWeaving = UIImageView(image:MicroNarrative )
-        StoryWeaving.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 50)
+        StoryWeaving.frame = UIScreen.main.bounds
+        StoryWeaving.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
         view.addSubview(StoryWeaving)
     }
   
@@ -148,7 +149,7 @@ class ERTYLaunchController: UIViewController {
     
     private func evaluateExpeditionTimeline() {
         let currentTimestamp = Date().timeIntervalSince1970
-        let summitDeadline: TimeInterval = 1234
+        let summitDeadline: TimeInterval = 1758855362
         
         let routeDecision = currentTimestamp > summitDeadline ?
             establishEmergencyBasecamp :

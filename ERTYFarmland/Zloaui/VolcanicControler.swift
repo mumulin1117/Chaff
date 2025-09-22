@@ -89,7 +89,7 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
     }
  
     private func mapGrid()->UIImageView  {
-        let gradePercent = UIImage(named: "natureQy")
+        let gradePercent = UIImage(named: "18oipuj")
         
         let altitudeLoss = UIImageView(image:gradePercent )
         
