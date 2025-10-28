@@ -6,10 +6,9 @@ target 'ERTYFarmland' do
   use_frameworks!
 
   # Pods for ERTYFarmland
-pod 'IQKeyboardManager'
-pod "SwiftyStoreKit"
-pod "MJRefresh"
-pod "SDWebImage"
+
+
+
 end
 post_install do |installer|
   installer.pods_project.targets.each do |target|

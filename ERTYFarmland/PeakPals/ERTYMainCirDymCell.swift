@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SDWebImage
+
 protocol reportContetnDelegate {
     func reportHikingContent()
 }
@@ -79,12 +79,12 @@ class ERTYMainCirDymCell: UITableViewCell {
         foolowNCounteLabel.text = "\(noemalDic["screeSliding"] as? Int ?? 0) Followers"
         if let imglink = (noemalDic["snowfieldCross"] as? String),let uri = URL(string: imglink) {
           
-            trailsImageview.setminImge(url:uri)
+            trailsImageview.chopiRideSetImage(url:uri)
         }
         
         
         if let imglink = (noemalDic["orienteering"] as? Array<String>)?.first,let uri = URL(string: imglink) {
-            contendetailImage.setminImge(url:uri)
+            contendetailImage.chopiRideSetImage(url:uri)
             
         }
         
@@ -111,15 +111,50 @@ class CompanionBubbleButton: UIButton {
     }
 }
 
-extension  UIImageView {
-    func setminImge(url:URL)  {
-        let sizer = SDImageResizingTransformer(
-            size: CGSize(width: 450, height: 450),
-            scaleMode: .aspectFill
-        )
-        self.sd_setImage(with: url,
-                                     placeholderImage: nil,
-                                    options: .continueInBackground,
-                                    context: [.imageTransformer: sizer,.storeCacheType : SDImageCacheType.memory.rawValue])
+//extension  UIImageView {
+//    func chopiRDffaImage(url:URL)  {
+//        let sizer = SDImageResizingTransformer(
+//            size: CGSize(width: 450, height: 450),
+//            scaleMode: .aspectFill
+//        )
+//        self.sd_setImage(with: url,
+//                                     placeholderImage: nil,
+//                                    options: .continueInBackground,
+//                                    context: [.imageTransformer: sizer,.storeCacheType : SDImageCacheType.memory.rawValue])
+//    }
+//    
+//    
+//}
+
+
+extension UIImageView {
+    
+    func chopiRideSetImage(url: URL) {
+        
+       
+        let cache = URLCache.shared
+        let request = URLRequest(url: url)
+        
+        if let cached = cache.cachedResponse(for: request),
+           let cachedImage = UIImage(data: cached.data) {
+            self.image = cachedImage
+            return
+        }
+        
+        // Fetch asynchronously
+        URLSession.shared.dataTask(with: request) { [weak self] data, response, _ in
+            guard let data = data,
+                  let image = UIImage(data: data),
+                  let response = response else { return }
+            
+            // Cache response
+            let cachedData = CachedURLResponse(response: response, data: data)
+            cache.storeCachedResponse(cachedData, for: request)
+            
+            // Update on main thread
+            DispatchQueue.main.async {
+                self?.image = image
+            }
+        }.resume()
     }
 }

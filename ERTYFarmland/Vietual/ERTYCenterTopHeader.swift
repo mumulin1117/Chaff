@@ -80,8 +80,8 @@ class ERTYCenterTopHeader: UICollectionReusableView {
        
         if let imglink = (noemalDic["dehydratedMeal"] as? String),let uri = URL(string: imglink) {
           
-            waterSource.setminImge(url:uri)
-            creekCross.setminImge(url:uri)
+            waterSource.chopiRideSetImage(url:uri)
+            creekCross.chopiRideSetImage(url:uri)
         }
         
         

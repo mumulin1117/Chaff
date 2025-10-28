@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MJRefresh
+
 class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     private let trailMapView = UIView()
        
@@ -111,7 +111,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
            actionText: "获取智能路线"
        ))
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":10,"leaveNoTrace":aIHikeAdvisor,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
-            self.RockyView.mj_header?.endRefreshing()
+            
             let sampleStories = (1...5).map { _ in TrailStoryCard() }
                    
             let stackView = UIStackView(arrangedSubviews: sampleStories)
@@ -133,7 +133,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
             self.RockyView.reloadData()
             stackView.spacing = 16
         } onObstacle: { error in
-            self.RockyView.mj_header?.endRefreshing()
+            
         }
     }
     private func loadTrailLogs() {
@@ -154,7 +154,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
     }
     func requestForHikeuserAll()  {
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ajnmxapjrisziauz/eegygoz",provisions:["trailBlazing":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
-            self.RockyView.mj_header?.endRefreshing()
+           
             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
                   let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
@@ -172,7 +172,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
             self.mistErrorLabel.isHidden = true
             self.hikiuserView.reloadData()
         } onObstacle: { error in
-            self.RockyView.mj_header?.endRefreshing()
+           
             self.mistErrorLabel.textColor  = .red
             self.mistErrorLabel.isHidden = false
             self.mistErrorLabel.text = error.localizedDescription
@@ -219,7 +219,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         RockyView.register(UINib(nibName: "ERTYMainCirDymCell", bundle: nil), forCellReuseIdentifier: "ERTYMainCirDymCell")
         RockyView.showsVerticalScrollIndicator = false
         RockyView.separatorStyle = .none
-        RockyView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(requestForDymAllHikeData))
+      
     }
     
     
@@ -242,8 +242,8 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         sender.isSelected = true
         sender.backgroundColor = UIColor(red: 1, green: 0.48, blue: 0.17, alpha: 1)
         self.aIHikeAdvisor = sender.tag - 2
-        
-        self.RockyView.mj_header?.beginRefreshing()
+        requestForDymAllHikeData()
+//        self.RockyView.mj_header?.beginRefreshing()
     }
     struct Configuration {
             let avatar: UIImage

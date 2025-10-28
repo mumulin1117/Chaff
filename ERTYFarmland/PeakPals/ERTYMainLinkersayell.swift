@@ -32,7 +32,7 @@ class ERTYMainLinkersayell: UICollectionViewCell {
         
         if let imglink = (noemalDic["forestBathing"] as? String),let uri = URL(string: imglink) {
           
-            trailsImageview.setminImge(url:uri)
+            trailsImageview.chopiRideSetImage(url:uri)
         }
         
         

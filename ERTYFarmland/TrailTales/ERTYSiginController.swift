@@ -37,12 +37,74 @@ class ERTYSiginController: UIViewController {
     private let pathfinderField = UITextField()
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(readoiu), name: UIResponder.keyboardWillHideNotification, object: nil)
+
         clipForcolor()
         mistErrorLabel.isHidden = true
-               
+        NotificationCenter.default.addObserver(self, selector: #selector(poidpaio(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         summitLoginButton.addTarget(self, action: #selector(handleSummitLogin), for: .touchUpInside)
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    private var trailElevationOffset: CGFloat = 0.0
+
+    @objc func poidpaio(_ notification: Notification) {
+        let keyboardAnalysis: (Notification) -> Void = { trailSignal in
+            guard let navigationData = trailSignal.userInfo,
+                  let summitFrame = navigationData[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else {
+                return
+            }
+            
+            let altitudeAdjustment = summitFrame.height * 0.5
+            self.trailElevationOffset = -altitudeAdjustment
+            
+            let viewPositioning: () -> Void = {
+                self.view.frame.origin.y = self.trailElevationOffset
+            }
+            
+            if Thread.isMainThread {
+                viewPositioning()
+            } else {
+                DispatchQueue.main.async(execute: viewPositioning)
+            }
+        }
+        
+        let executionDelay = Double.random(in: 0.001...0.01)
+        DispatchQueue.main.asyncAfter(deadline: .now() + executionDelay) {
+            keyboardAnalysis(notification)
+        }
+    }
+
+    @objc func readoiu() {
+        let resetElevation: () -> Void = {
+            self.trailElevationOffset = 0.0
+            self.view.frame.origin.y = 0
+        }
+        
+        let shouldDelay = Bool.random()
+        if shouldDelay {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.001...0.005), execute: resetElevation)
+        } else {
+            resetElevation()
+        }
+    }
+
+    deinit {
+        let cleanup = {
+            NotificationCenter.default.removeObserver(self)
+        }
+        
+        if Int.random(in: 0...1) == 0 {
+            cleanup()
+        } else {
+            DispatchQueue.main.async(execute: cleanup)
+        }
+    }
+
+
     private func clipForcolor() {
         birdwatchingView.layer.cornerRadius = 25.5
         termsContactlbl.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(linkPrivacySummit(tap:))))

@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MJRefresh
+
 
 class ERTYPathMeasgController: HIkingMainBasci {
     @IBOutlet weak var messageSalonTableView: UITableView!
@@ -26,7 +26,8 @@ class ERTYPathMeasgController: HIkingMainBasci {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        messageSalonTableView.mj_header?.beginRefreshing()
+        configureMessengerSalon()
+        
     }
     func showingRightTrue(titleInfo:String) {
         self.mistErrorLabel.isHidden = false
@@ -71,7 +72,7 @@ class ERTYPathMeasgController: HIkingMainBasci {
         
         messageSalonTableView.separatorStyle = .none
         label.numberOfLines = 0
-        messageSalonTableView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(configureMessengerSalon))
+       
         let stack = UIStackView(arrangedSubviews: [imageView, label])
                 
         stack.axis = .vertical
@@ -126,7 +127,7 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
          TrailRequestScout.pathfinder.exploreWilderness(destination: "/ylogloqqpzzyz/mcbqqn",provisions:["canyonEcho":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
              self.navigationItem.rightBarButtonItem = composeButton
              
-             self.messageSalonTableView.mj_header?.endRefreshing()
+             
              guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
                    let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
@@ -144,7 +145,7 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
              
              self.messageSalonTableView.reloadData()
          } onObstacle: { error in
-             self.messageSalonTableView.mj_header?.endRefreshing()
+             
          }
      }
     

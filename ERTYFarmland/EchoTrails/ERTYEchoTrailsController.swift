@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import MJRefresh
+
 
 class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , reportContetnDelegate {
     private var fogNavigation:(Int,Array<Dictionary<String,Any>>)  = (10,Array<Dictionary<String,Any>>())
@@ -26,8 +26,8 @@ class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         trendTitleLabel.text = "Fashion Week Spotlight"
+        requestForDymAllHikeData()
        
-        self.shareingContetnView.mj_header?.beginRefreshing()
         trendTitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: 18)
     }
     
@@ -109,7 +109,7 @@ class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , 
         layer.trailDelegate = self
         let stackView = UIStackView(arrangedSubviews: [runwayImageView])
                
-        shareingContetnView.mj_header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(requestForDymAllHikeData))
+       
         shareingContetnView.collectionViewLayout = layer
         stackView.axis = .vertical
        
@@ -167,7 +167,6 @@ extension ERTYEchoTrailsController:UICollectionViewDelegate,UICollectionViewData
        trailMapView.layer.cornerRadius = 12
      
         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":20,"leaveNoTrace":1,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
-            self.shareingContetnView.mj_header?.endRefreshing()
             
             
             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
@@ -176,7 +175,7 @@ extension ERTYEchoTrailsController:UICollectionViewDelegate,UICollectionViewData
                     
             else {
                 self.designerLoungeCard.layer.borderWidth = 0.5
-                self.shareingContetnView.mj_header?.endRefreshing()
+                
                 return
             }
             self.BasecampData(dafindL:hikedata)
@@ -185,7 +184,7 @@ extension ERTYEchoTrailsController:UICollectionViewDelegate,UICollectionViewData
             self.shareingContetnView.reloadData()
         } onObstacle: { error in
             self.designerLoungeCard.layer.borderWidth = 0.5
-            self.shareingContetnView.mj_header?.endRefreshing()
+           
         }
     }
     

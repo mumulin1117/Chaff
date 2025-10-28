@@ -58,12 +58,12 @@ class ERTYChatingTravelCell: UICollectionViewCell {
         
         if let imglink = (noemalDic["snowfieldCross"] as? String),let uri = URL(string: imglink) {
           
-            trailsImageview.setminImge(url:uri)
+            trailsImageview.chopiRideSetImage(url:uri)
         }
         
         
         if let imglink = noemalDic["windbreaker"] as? String,let uri = URL(string: imglink) {
-            explorations.setminImge(url:uri)
+            explorations.chopiRideSetImage(url:uri)
             
         }
         

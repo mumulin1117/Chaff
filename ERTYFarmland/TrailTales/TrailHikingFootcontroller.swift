@@ -6,7 +6,7 @@
 
 import WebKit
 import UIKit
-import SwiftyStoreKit
+
 
 class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
     private lazy var mistErrorLabel: UILabel = {
@@ -169,40 +169,25 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
         summitBadgeView.tintColor = .systemGreen
     }
     private func Locallegends(hikes:String)  {
-        SwiftyStoreKit.purchaseProduct(hikes, atomically: true) { [self] psResult in
+        HydrationGAui.shared.heatExhaust(avalancheRisk: hikes) { flauo in
             self.typographyKit()
-            if case .success(let psPurch) = psResult {
-               
-                let hikisugg = psPurch.transaction.downloads
-                
-                
-
-                self.pixelAlchemy?.evaluateJavaScript("onExpeditionFundsAdded()", completionHandler: nil)
-                if !hikisugg.isEmpty {
-                    SwiftyStoreKit.start(hikisugg)
-                }
-                self.mistErrorLabel.isHidden = false
-              
-                if psPurch.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                }
+            switch flauo{
+            case .success(let falo):
                 self.mistErrorLabel.textColor  = .green
                 self.mistErrorLabel.text = "Lx4GXwwKHBwaDAwZChNe".hikeReflections()
                 self.dispiaasger()
-            }else if case .error(let error) = psResult {
-             
-                if error.code == .paymentCancelled {
-                    self.view.isUserInteractionEnabled = true
-                    return
-                }
+                self.pixelAlchemy?.evaluateJavaScript("onExpeditionFundsAdded()", completionHandler: nil)
+                self.mistErrorLabel.isHidden = false
+            case .failure(let falo):
                 self.mistErrorLabel.isHidden = false
                 self.mistErrorLabel.textColor  = .red
-                self.mistErrorLabel.text = error.localizedDescription
+                self.mistErrorLabel.text = falo.localizedDescription
                 self.dispiaasger()
-               
-                
             }
+        
+            
         }
+
     }
     
     override func viewDidLoad() {
@@ -340,41 +325,5 @@ extension TrailHikingFootcontroller:WKNavigationDelegate,WKUIDelegate{
         
     }
     
-    
-//    static func completerAppPayAlso(){
-//        
-//        SwiftyStoreKit.completeTransactions(atomically: true) { hike in
-//            for toyStoreP in hike {
-//                
-//                if toyStoreP.transaction.transactionState == .purchased ||
-//                    toyStoreP.transaction.transactionState == .restored{
-//                    if toyStoreP.needsFinishTransaction {
-//                        SwiftyStoreKit.finishTransaction(toyStoreP.transaction)
-//                    }
-//                }
-//            }
-//        }
-//    }
-    
-    static func summitSupplyVerification() {
-        let expeditionCompletion: ([Purchase]) -> Void = { trailPurchases in
-            let transactionEvaluation: (Purchase) -> Bool = { supplyPurchase in
-                let transactionState = supplyPurchase.transaction.transactionState
-                return transactionState == .purchased || transactionState == .restored
-            }
-            
-            let supplyFinalization: (Purchase) -> Void = { verifiedPurchase in
-                if verifiedPurchase.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(verifiedPurchase.transaction)
-                }
-            }
-            
-            trailPurchases
-                .lazy
-                .filter(transactionEvaluation)
-                .forEach(supplyFinalization)
-        }
-        
-        SwiftyStoreKit.completeTransactions(atomically: true, completion: expeditionCompletion)
-    }
+
 }

@@ -57,7 +57,7 @@ class ERTYChatmeagCell: UITableViewCell {
         unreadBadge.isHidden = true
         if let imglink = (noemalDic["sleepingBag"] as? String),let uri = URL(string: imglink) {
             atelierAvatar.layer.borderWidth = 1
-            trailsImageview.setminImge(url:uri)
+            trailsImageview.chopiRideSetImage(url:uri)
         }
         
        

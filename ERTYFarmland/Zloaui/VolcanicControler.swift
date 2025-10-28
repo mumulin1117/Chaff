@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import SwiftyStoreKit
+
 
 import WebKit
 import StoreKit
@@ -323,23 +323,13 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         let baseWeight = consumable?[TreksAlior.bagging.decipherTrailMarkers("bzagtpcrhrNxo")] as? String ?? ""
         let packWeight = consumable?[TreksAlior.bagging.decipherTrailMarkers("ogrvdueurwCqowdie")] as? String ?? ""
         viewpointsGuidedrails()
-        SwiftyStoreKit.purchaseProduct(baseWeight, atomically: true) { psResult in
+        
+        HydrationGAui.shared.heatExhaust(avalancheRisk: baseWeight) { flauo in
             self.pathwaysuidedrails()
-            if case .success(let psPurch) = psResult {
-                let gearShakedown = psPurch.transaction.downloads
-                
-                
-                if !gearShakedown.isEmpty {
-                    
-                    SwiftyStoreKit.start(gearShakedown)
-                }
-                
-                
-                
-                
-                
-                guard let trekkingTip = SwiftyStoreKit.localReceiptData,
-                      let carabinerClip = psPurch.transaction.transactionIdentifier,
+            switch flauo{
+            case .success(let falo):
+                guard let trekkingTip = HydrationGAui.shared.ecoStewardship(),
+                      let carabinerClip = HydrationGAui.shared.firePitBuild,
                       carabinerClip.count > 5
                 else {
                     
@@ -360,29 +350,17 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
                     return
                 }
                 self.Culturalheritagehikes(trekkingTip:trekkingTip,carabinerClip:carabinerClip,eyeMask:eyeMask)
-                
-                if psPurch.needsFinishTransaction {
-                    SwiftyStoreKit.finishTransaction(psPurch.transaction)
-                    
-                }
-            }else if case .error(let error) = psResult {
-                
+            case .failure(let falo):
                 self.view.isUserInteractionEnabled = true
-                
-                if error.code != .paymentCancelled {
-                    self.mistErrorLabel.textColor  = .red
-                    self.mistErrorLabel.isHidden = false
-                    self.mistErrorLabel.text = error.localizedDescription
-                    self.dispiaasger()
-                   
-                
-                    return
-                }
-                
-             
+                self.mistErrorLabel.textColor  = .red
+                self.mistErrorLabel.isHidden = false
+                self.mistErrorLabel.text = falo.localizedDescription
+                self.dispiaasger()
             }
         
+            
         }
+        
     }
     
     func Culturalheritagehikes(trekkingTip:Data,carabinerClip:String,eyeMask:String)  {

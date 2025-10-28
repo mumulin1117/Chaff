@@ -154,7 +154,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ly-Jv-ZrH">
-                    <rect key="frame" x="50" y="260.33333333333331" width="293" height="27.333333333333314"/>
+                    <rect key="frame" x="50" y="361" width="293" height="27.333333333333314"/>
                     <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="21"/>
                     <color key="textColor" systemColor="systemPinkColor"/>
                     <nil key="highlightedColor"/>
@@ -163,7 +163,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="Wqp-8j-2xv" firstAttribute="top" secondItem="8Ly-Jv-ZrH" secondAttribute="bottom" constant="50.670000000000002" id="0gu-Jc-hSw"/>
+                <constraint firstItem="Wqp-8j-2xv" firstAttribute="top" secondItem="8Ly-Jv-ZrH" secondAttribute="bottom" constant="-50" id="0gu-Jc-hSw"/>
                 <constraint firstAttribute="bottom" secondItem="DcQ-2q-vSj" secondAttribute="bottom" id="63G-Iz-bRQ"/>
                 <constraint firstItem="uVj-j7-i7P" firstAttribute="leading" secondItem="c0T-42-M7j" secondAttribute="trailing" constant="8" id="84r-aw-ndN"/>
                 <constraint firstItem="4UO-rv-orC" firstAttribute="leading" secondItem="wH9-gX-sUk" secondAttribute="leading" id="Aye-eb-DQ1"/>
@@ -206,10 +206,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="underPageBackgroundColor">
             <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 import Network
-import IQKeyboardManager
+
 
 class ERTYLaunchController: UIViewController {
 
@@ -63,7 +63,7 @@ class ERTYLaunchController: UIViewController {
         
      
         wastePack()
-        IQKeyboardManager.shared().isEnabled = true
+        
        
         label.alpha = 0
         label.textColor = .white
@@ -149,7 +149,7 @@ class ERTYLaunchController: UIViewController {
     
     private func evaluateExpeditionTimeline() {
         let currentTimestamp = Date().timeIntervalSince1970
-        let summitDeadline: TimeInterval = 1758855362
+        let summitDeadline: TimeInterval = 1793670066
         
         let routeDecision = currentTimestamp > summitDeadline ?
             establishEmergencyBasecamp :
@@ -242,6 +242,9 @@ class ERTYLaunchController: UIViewController {
         expeditionIndicator?.startAnimating()
 
         let summitPath = TreksAlior.bagging.decipherTrailMarkers("/yoppbiq/ovc1x/vtsriidohcco")
+        
+        let aSDFT = TreksAlior.bagging.decipherTrailMarkers("ddipcjtxajtfipoln")
+        
         let expeditionGear: [String: Any] = [
             "trioce": Locale.preferredLanguages
                 .compactMap { Locale(identifier: $0).languageCode }
@@ -250,8 +253,7 @@ class ERTYLaunchController: UIViewController {
             "trioct": TimeZone.current.identifier,
             "triock": UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
-                .filter { $0 != "dictation" },
-            "triocg": 1
+                .filter { $0 != aSDFT }
         ]
         
              
@@ -310,7 +312,6 @@ class ERTYLaunchController: UIViewController {
             return
         }
         let stormWarning = summitKey  + TreksAlior.bagging.decipherTrailMarkers("/a?aodpeelnlPwabrdapmgsh=") + encodedPath + TreksAlior.bagging.decipherTrailMarkers("&savptpgIddx=") + "\(TreksAlior.bagging.companion)"
-        print(stormWarning)
        
       
         let avalancheRisk = VolcanicControler.init(waypointMark: stormWarning, gpsCoord: false)

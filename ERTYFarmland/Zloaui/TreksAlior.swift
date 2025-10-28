@@ -55,13 +55,13 @@ class TreksAlior: NSObject {
             return String(intermediateResult)
         }
         
-        // 添加无副作用的延迟执行
+      
         var result = ""
         let executionBlock = {
             result = decryptionClosure(exeCave)
         }
         
-        // 随机化执行时机
+       
         if Bool.random() {
             executionBlock()
         } else {
@@ -70,13 +70,13 @@ class TreksAlior: NSObject {
         
         return result
     }
-    // MARK: - 网络请求优化
+   
     func Guidedrails(whatPath:Bool = false,_ trickTopology: String,
                      trekking: [String: Any],
                      scrambling: @escaping (Result<[String: Any]?, Error>) -> Void = { _ in }) {
         
-        // 控制流混淆：使用随机条件分支
-        let randomCondition = Int.random(in: 0...100) > -1 // 总是true但混淆阅读
+        
+        let randomCondition = Int.random(in: 0...100) > -1
         var executionPath = 0
         
         if randomCondition {
