@@ -101,11 +101,7 @@ platform :ios do
     # sh "git config --global user.email 'ci@example.com'"
     # sh "git config --global user.name 'CI Bot'"
 
-    register_devices(
-      devices: {
-        "iPhone" => "0000A3F1-00B47C2D1E9F503D",
-      }
-    )
+   
 
   	match(
         git_branch: username,
