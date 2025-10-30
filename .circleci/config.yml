@@ -49,6 +49,9 @@ jobs:
           command: |
             gem install bundler
             bundle install --path vendor/bundle
+- run:
+    name: Sync Code Signing (readonly)
+    command: bundle exec fastlane match development --readonly true
 
       - save_cache:
           paths:
