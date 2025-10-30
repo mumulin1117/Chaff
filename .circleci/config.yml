@@ -1,4 +1,3 @@
-# .circleci/config.yml
 version: 2.1
 
 jobs:
@@ -7,16 +6,10 @@ jobs:
       xcode: "16.4.0"
 
     environment:
-      BUNDLE_PATH: vendor/bundle # Bundler 安装路径，方便缓存
+      BUNDLE_PATH: vendor/bundle
       FL_OUTPUT_DIR: build
-
       LC_ALL: en_US.UTF-8
       LANG: en_US.UTF-8
-#      FASTLANE_USER: "${FASTLANE_USER}"
-#      ASC_KEY_ID: "${ASC_KEY_ID}"
-#      ASC_ISSUER_ID: "${ASC_ISSUER_ID}"
-#      ASC_KEY_CONTENT: "${ASC_KEY_CONTENT}"
-#      MATCH_PASSWORD: "${MATCH_PASSWORD}"
 
     steps:
       - checkout
@@ -56,7 +49,7 @@ jobs:
           key: v1-bundle-{{ checksum "Gemfile.lock" }}
 
       - run:
-          name: Run Fastlane
+          name: Build IPA only
           command: bundle exec fastlane release
 
       - store_artifacts:
@@ -70,4 +63,4 @@ workflows:
           filters:
             branches:
               only:
-                - main # 或你指定的发布分支，如 release/production
+                - main
