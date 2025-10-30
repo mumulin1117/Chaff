@@ -64,12 +64,12 @@ platform :ios do
       clean: true,
       silent: true,
       )
-    deliver(
-      skip_metadata: true,
-      skip_screenshots: true,
-      submit_for_review: false
-    ) if export_method == "app-store"
-    pgyer(api_key: pgy_api_key) if export_method == "ad-hoc"
+         # deliver(
+            #skip_metadata: true,
+            #skip_screenshots: true,
+            #submit_for_review: false
+          #) if export_method == "app-store"
+          #pgyer(api_key: pgy_api_key) if export_method == "ad-hoc"
   end
 
   lane :on_match do
