@@ -136,7 +136,7 @@ platform :ios do
 
     update_code_signing_settings(
       use_automatic_signing: false,
-      team_id: team_id,
+      team_id: S7NXM2X54B,
       profile_name: profile_name,
     )
     
