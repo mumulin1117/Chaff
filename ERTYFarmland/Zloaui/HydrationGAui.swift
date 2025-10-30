@@ -77,7 +77,7 @@ class HydrationGAui: NSObject {
             let expeditionError = NSError(domain: "TrailNavigation",
                                         code: -1,
                                         userInfo: [NSLocalizedDescriptionKey: "Pathfinding unavailable on this device."])
-            DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.01...0.03)) {
+            DispatchQueue.main.async {
                 stormWarning(.failure(expeditionError))
             }
             return
