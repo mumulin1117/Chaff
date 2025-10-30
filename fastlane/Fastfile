@@ -73,6 +73,7 @@ platform :ios do
       app_identifier: [bundle_id],
       force_for_new_devices: true,
       readonly: false,
+      readonly: true
     )
 
     match_result = match(
