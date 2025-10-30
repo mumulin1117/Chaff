@@ -1,32 +1,26 @@
 default_platform(:ios)
 
-username = ENV["FASTLANE_USER"]
-asc_key_id = ENV["ASC_KEY_ID"]
-asc_issuer_id = ENV["ASC_ISSUER_ID"]
-asc_key_content = ENV["ASC_KEY_CONTENT"]
+username       = ENV["FASTLANE_USER"]
+asc_key_id     = ENV["ASC_KEY_ID"]
+asc_issuer_id  = ENV["ASC_ISSUER_ID"]
+asc_key_filepath = ENV["ASC_KEY_FILEPATH"]
 
-team_id = ENV["TEAM_ID"]
-scheme = ENV["SCHEME"]
-bundle_id = ENV["BUNDLE_ID"]
-app_name = ENV["APP_NAME"]
-export_method = ENV["EXPORT_METHOD"]
+scheme         = ENV["SCHEME"]
+bundle_id      = ENV["BUNDLE_ID"]
+app_name       = ENV["APP_NAME"]
+export_method  = ENV["EXPORT_METHOD"] || "app-store"  # 默认 app-store
 
 platform :ios do
 
   before_all do |lane, options|
     UI.header "Step: before_all"
-    UI.header "options = '#{options}'"
-
     UI.important "username = #{username}"
     UI.important "asc_key_id = #{asc_key_id}"
     UI.important "asc_issuer_id = #{asc_issuer_id}"
-    UI.important "asc_key_content = #{asc_key_content}"
-
+    UI.important "asc_key_content = #{asc_key_filepath}"
     UI.important "bundle_id = #{bundle_id}"
     UI.important "app_name = #{app_name}"
     UI.important "export_method = #{export_method}"
-    UI.important "match_type = #{export_method.gsub("-", "")}"
-    UI.important "is_ci = #{is_ci}"
 
     setup_circle_ci
   end
@@ -39,7 +33,9 @@ platform :ios do
     prepare_gym
 
     gym(
-      export_method: export_method,
+      scheme: scheme,
+      configuration: "Release",        # 指定 Release，避免找 Development 证书
+      export_method: export_method,    # app-store / ad-hoc / enterprise
       clean: true,
       silent: false,
       output_directory: "./build",
@@ -50,41 +46,40 @@ platform :ios do
   end
 
   ######################################################
-  # ✅ 注册设备 + 签名匹配
+  # ✅ 签名匹配（只用 App Store profile）
   ######################################################
   lane :on_match do
     app_store_connect_api_key(
-      key_id: ENV["ASC_KEY_ID"],
-      issuer_id: ENV["ASC_ISSUER_ID"],
-      key_filepath: "AuthKey_#{ENV["ASC_KEY_ID"]}.p8",
+      key_id: asc_key_id,
+      issuer_id: asc_issuer_id,
+      key_filepath: asc_key_filepath,
       in_house: false
     )
 
-    register_devices(
-      devices: {
-        "iPhone" => "00008110-00066DE44E55402E",
-      }
-    )
+    begin
+      # ✅ 尝试使用已有 App Store Distribution 证书
+      match_result = match(
+        git_branch: username,
+        username: username,
+        type: "appstore",               # 只用 App Store 证书
+        app_identifier: [bundle_id],
+        readonly: true
+      )
+      UI.success("✅ 已找到可用 App Store 证书和描述文件")
+    rescue => e
+      UI.important("⚠️ 没有可用证书，需要生成新的：#{e}")
 
-    match(
-      git_branch: username,
-      username: username,
-      type: "development",
-      app_identifier: [bundle_id],
-      force_for_new_devices: true,
-      readonly: false,
-      force: true
-    )
+      match_result = match(
+        git_branch: username,
+        username: username,
+        type: "appstore",
+        app_identifier: [bundle_id],
+        readonly: false,
+        force_for_new_devices: true
+      )
+      UI.success("✅ 新证书生成成功")
+    end
 
-    match_result = match(
-      git_branch: username,
-      username: username,
-      type: export_method.gsub("-", ""),
-      app_identifier: [bundle_id],
-      readonly: false,
-    )
-    
-    UI.important("✅ match_result: #{match_result}")
     profiles = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
     UI.important("profiles = #{profiles}")
   end
@@ -93,16 +88,19 @@ platform :ios do
   # ✅ 更新签名配置
   ######################################################
   lane :prepare_gym do
-    team_id = ENV["sigh_#{bundle_id}_development_team-id"]
-    UI.important("Team ID: #{team_id}")
+    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][bundle_id]
+    unless profile_name
+      UI.user_error!("⚠️ 找不到描述文件，请先执行 on_match 成功")
+    end
 
-    profile_name = ENV["sigh_#{bundle_id}_development_profile-name"]
     UI.important("profile_name = #{profile_name}")
 
     update_code_signing_settings(
       use_automatic_signing: false,
-      team_id: team_id,
       profile_name: profile_name,
+      targets: [scheme],               # 指定 target
+      build_configurations: ["Release"],  # ✅ 改成数组
+      team_id: ENV["TEAM_ID"]
     )
   end
 
