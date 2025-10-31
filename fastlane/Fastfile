@@ -1,3 +1,7 @@
+require 'dotenv'
+dotenv
+
+
 default_platform(:ios)
 
 username       = ENV["FASTLANE_USER"]
