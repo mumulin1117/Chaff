@@ -1,67 +1,54 @@
-require 'dotenv'
-Dotenv.load('.env')   # ✅ 自动加载 .env 文件内容
-
 default_platform(:ios)
 
-username          = ENV["FASTLANE_USER"]
-asc_key_id        = ENV["ASC_KEY_ID"]
-asc_issuer_id     = ENV["ASC_ISSUER_ID"]
-asc_key_filepath  = ENV["ASC_KEY_FILEPATH"]
+username       = ENV["FASTLANE_USER"]
+asc_key_id     = ENV["ASC_KEY_ID"]
+asc_issuer_id  = ENV["ASC_ISSUER_ID"]
+asc_key_filepath = ENV["ASC_KEY_FILEPATH"]
 
-scheme            = ENV["SCHEME"]
-bundle_id         = ENV["BUNDLE_ID"]
-app_name          = ENV["APP_NAME"]
-export_method     = ENV["EXPORT_METHOD"] || "app-store"
-team_id           = ENV["TEAM_ID"]
+scheme         = ENV["SCHEME"]
+bundle_id      = ENV["BUNDLE_ID"]
+app_name       = ENV["APP_NAME"]
+export_method  = ENV["EXPORT_METHOD"] || "app-store"  # 默认 app-store
 
 platform :ios do
 
-  ######################################################
-  # 🔹 公共预处理
-  ######################################################
   before_all do |lane, options|
-    UI.header "🚀 Start Build Environment Setup"
-    UI.important "👤 FASTLANE_USER: #{username}"
-    UI.important "🔑 ASC_KEY_ID: #{asc_key_id}"
-    UI.important "🏢 TEAM_ID: #{team_id}"
-    UI.important "📦 BUNDLE_ID: #{bundle_id}"
-    UI.important "📱 SCHEME: #{scheme}"
-    UI.important "🧾 EXPORT_METHOD: #{export_method}"
+    UI.header "Step: before_all"
+    UI.important "username = #{username}"
+    UI.important "asc_key_id = #{asc_key_id}"
+    UI.important "asc_issuer_id = #{asc_issuer_id}"
+    UI.important "asc_key_content = #{asc_key_filepath}"
+    UI.important "bundle_id = #{bundle_id}"
+    UI.important "app_name = #{app_name}"
+    UI.important "export_method = #{export_method}"
+
     setup_circle_ci
   end
 
   ######################################################
-  # ✅ 主发布 Lane：签名 + 打包
+  # ✅ 只打包 IPA（不上传）
   ######################################################
   lane :release do
     on_match
     prepare_gym
 
-    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][bundle_id]
-
     gym(
       scheme: scheme,
-      configuration: "Release",
+      configuration: "Release",        # 指定 Release，避免找 Development 证书
+      export_method: export_method,    # app-store / ad-hoc / enterprise
       clean: true,
-      export_method: export_method,
+      silent: false,
       output_directory: "./build",
-      output_name: "#{app_name}.ipa",
-      export_options: {
-        provisioningProfiles: {
-          bundle_id => profile_name
-        }
-      }
+      output_name: "#{app_name}.ipa"
     )
 
     UI.success("✅ 打包完成！IPA 文件已输出到 ./build/#{app_name}.ipa")
   end
 
   ######################################################
-  # ✅ 自动签名匹配（支持自愈）
+  # ✅ 签名匹配（只用 App Store profile）
   ######################################################
   lane :on_match do
-    UI.header "🔐 Checking Signing Certificates..."
-
     app_store_connect_api_key(
       key_id: asc_key_id,
       issuer_id: asc_issuer_id,
@@ -70,51 +57,51 @@ platform :ios do
     )
 
     begin
-      UI.important("🧭 尝试使用现有 App Store 证书和描述文件...")
+      # ✅ 尝试使用已有 App Store Distribution 证书
       match_result = match(
         git_branch: username,
         username: username,
-        type: "appstore",
+        type: "appstore",               # 只用 App Store 证书
         app_identifier: [bundle_id],
         readonly: true
       )
       UI.success("✅ 已找到可用 App Store 证书和描述文件")
     rescue => e
-      UI.important("⚠️ 证书可能已失效或被撤销，准备重新生成...")
+      UI.important("⚠️ 没有可用证书，需要生成新的：#{e}")
+
       match_result = match(
         git_branch: username,
         username: username,
         type: "appstore",
         app_identifier: [bundle_id],
-        readonly: false,                 # ✅ 允许自动修复
+        readonly: false,
         force_for_new_devices: true
       )
-      UI.success("✅ 新的签名证书和描述文件已成功创建")
+      UI.success("✅ 新证书生成成功")
     end
 
     profiles = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
-    UI.important("📜 当前使用的描述文件映射: #{profiles}")
+    UI.important("profiles = #{profiles}")
   end
 
   ######################################################
-  # ✅ 更新 Xcode 签名配置
+  # ✅ 更新签名配置
   ######################################################
   lane :prepare_gym do
-    UI.header "🧩 Preparing Code Signing Settings..."
     profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][bundle_id]
     unless profile_name
-      UI.user_error!("⚠️ 没有找到描述文件，请先执行 on_match 成功后重试")
+      UI.user_error!("⚠️ 找不到描述文件，请先执行 on_match 成功")
     end
+
+    UI.important("profile_name = #{profile_name}")
 
     update_code_signing_settings(
       use_automatic_signing: false,
       profile_name: profile_name,
-      targets: [scheme],
-      build_configurations: ["Release"],
-      team_id: team_id
+      targets: [scheme],               # 指定 target
+      build_configurations: ["Release"],  # ✅ 改成数组
+      team_id: ENV["TEAM_ID"]
     )
-
-    UI.success("✅ 签名配置已更新，准备打包")
   end
 
 end
