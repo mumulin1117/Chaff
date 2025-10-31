@@ -1,6 +1,5 @@
 require 'dotenv'
-dotenv
-
+Dotenv.load('.env')   # ✅ 自动加载 .env 文件内容
 
 default_platform(:ios)
 
