@@ -1,17 +1,14 @@
-require 'dotenv'
-Dotenv.load('.env')   # ✅ 自动加载 .env 文件内容
-
 default_platform(:ios)
 
-username         = ENV["FASTLANE_USER"]
-asc_key_id       = ENV["ASC_KEY_ID"]
-asc_issuer_id    = ENV["ASC_ISSUER_ID"]
+username       = ENV["FASTLANE_USER"]
+asc_key_id     = ENV["ASC_KEY_ID"]
+asc_issuer_id  = ENV["ASC_ISSUER_ID"]
 asc_key_filepath = ENV["ASC_KEY_FILEPATH"]
 
-scheme        = ENV["SCHEME"]
-bundle_id     = ENV["BUNDLE_ID"]
-app_name      = ENV["APP_NAME"]
-export_method = ENV["EXPORT_METHOD"] || "app-store"  # 默认 app-store
+scheme         = ENV["SCHEME"]
+bundle_id      = ENV["BUNDLE_ID"]
+app_name       = ENV["APP_NAME"]
+export_method  = ENV["EXPORT_METHOD"] || "app-store"  # 默认 app-store
 
 platform :ios do
 
@@ -29,62 +26,82 @@ platform :ios do
   end
 
   ######################################################
-  # 🛠 一键修复证书 + 打包 IPA
+  # ✅ 只打包 IPA（不上传）
   ######################################################
   lane :release do
-    # 1️⃣ 检查证书
-    UI.header("Step 1️⃣: 检查证书有效性")
-    begin
-      match_result = match(
-        type: "appstore",
-        readonly: true,
-        app_identifier: [bundle_id],
-        username: username
-      )
-      UI.success("✅ 找到可用证书")
-    rescue => e
-      UI.important("⚠️ 没有可用证书或证书过期: #{e}")
+    on_match
+    prepare_gym
 
-      # 2️⃣ 生成新证书 + 描述文件
-      UI.header("Step 2️⃣: 生成新证书和描述文件")
-      match_result = match(
-        type: "appstore",
-        readonly: false,
-        force_for_new_devices: true,
-        app_identifier: [bundle_id],
-        username: username
-      )
-      UI.success("✅ 新证书和描述文件生成完成")
-    end
-
-    # 3️⃣ 更新项目签名配置
-    UI.header("Step 3️⃣: 更新签名配置")
-    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][bundle_id]
-    unless profile_name
-      UI.user_error!("❌ 找不到描述文件，请确认 match 成功")
-    end
-
-    update_code_signing_settings(
-      use_automatic_signing: false,
-      profile_name: profile_name,
-      targets: [scheme],
-      build_configurations: ["Release"],
-      team_id: ENV["TEAM_ID"]
-    )
-    UI.success("✅ 签名配置已更新")
-
-    # 4️⃣ 打包 IPA
-    UI.header("Step 4️⃣: 打包 IPA")
     gym(
       scheme: scheme,
-      configuration: "Release",
-      export_method: export_method,
+      configuration: "Release",        # 指定 Release，避免找 Development 证书
+      export_method: export_method,    # app-store / ad-hoc / enterprise
       clean: true,
+      silent: false,
       output_directory: "./build",
       output_name: "#{app_name}.ipa"
     )
 
-    UI.success("🎉 打包完成！IPA 文件已输出到 ./build/#{app_name}.ipa")
+    UI.success("✅ 打包完成！IPA 文件已输出到 ./build/#{app_name}.ipa")
+  end
+
+  ######################################################
+  # ✅ 签名匹配（只用 App Store profile）
+  ######################################################
+  lane :on_match do
+    app_store_connect_api_key(
+      key_id: asc_key_id,
+      issuer_id: asc_issuer_id,
+      key_filepath: asc_key_filepath,
+      in_house: false
+    )
+
+    begin
+      # ✅ 尝试使用已有 App Store Distribution 证书
+      match_result = match(
+        git_branch: username,
+        username: username,
+        type: "appstore",               # 只用 App Store 证书
+        app_identifier: [bundle_id],
+        readonly: true
+      )
+      UI.success("✅ 已找到可用 App Store 证书和描述文件")
+    rescue => e
+      UI.important("⚠️ 没有可用证书，需要生成新的：#{e}")
+
+      match_result = match(
+        git_branch: username,
+        username: username,
+        type: "appstore",
+        app_identifier: [bundle_id],
+        readonly: false,
+        force_for_new_devices: true
+      )
+      UI.success("✅ 新证书生成成功")
+    end
+
+    profiles = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING]
+    UI.important("profiles = #{profiles}")
+  end
+
+  ######################################################
+  # ✅ 更新签名配置
+  ######################################################
+  lane :prepare_gym do
+    profile_name = lane_context[SharedValues::MATCH_PROVISIONING_PROFILE_MAPPING][bundle_id]
+    unless profile_name
+      UI.user_error!("⚠️ 找不到描述文件，请先执行 on_match 成功")
+    end
+
+    UI.important("profile_name = #{profile_name}")
+
+    update_code_signing_settings(
+      use_automatic_signing: false,
+      profile_name: profile_name,
+      targets: [scheme],               # 指定 target
+      build_configurations: ["Release"],  # ✅ 改成数组
+      team_id: ENV["TEAM_ID"]
+    )
   end
 
 end
