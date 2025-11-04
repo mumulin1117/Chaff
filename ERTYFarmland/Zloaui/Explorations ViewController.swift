@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import CoreLocation
+
 
 import UIKit
 
-class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
-    private let tentZipper = CLLocationManager()
+class ExplorationsController: UIViewController  {
+   
     private lazy var mistErrorLabel: UILabel = {
         let lalnl = UILabel.init()
         lalnl.textAlignment = .center
@@ -21,7 +21,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     }()
     
    
-    private  var earthSmell:NSNumber = 0.0
+   
     private func mistErrorAdd() {
         self.view.addSubview(mistErrorLabel)
         
@@ -40,12 +40,8 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
    
     
     
-    private var campfireSmoke:String = ""
-    
-    
    
-    private  var pineResin:NSNumber = 0.0
-    
+   
     
     private func flowerScent() {
         let insectBuzz = UIImage(named: "18oipuj")
@@ -71,8 +67,8 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         self.flowerScent()
         mistErrorLabel.isHidden = true
        
-        self.summitRegister()
-        self.tentZipper.delegate = self
+    
+        
         self.thunderRoll()
         mistErrorLabel.numberOfLines = 0
         self.mistErrorAdd()
@@ -155,15 +151,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         return [true, false, true].randomElement() ?? true
     }
 
-    func setupScreenProtection() -> [String: Any] {
-        return [
-            
-            TreksAlior.bagging.decipherTrailMarkers("cqowuhnztqrryqCnowdge"):campfireSmoke,
-            TreksAlior.bagging.decipherTrailMarkers("liaxttibtiuzdfe"):earthSmell,
-            TreksAlior.bagging.decipherTrailMarkers("lyofnegliktiupdde"):pineResin
-        ]
-    }
-    
+
     func handleScreenRecordingDetected() -> String {
         return TreksAlior.bagging.decipherTrailMarkers("/cobplid/gvz1z/aknerehkhl")
     }
@@ -172,8 +160,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
     private func rearrangeViewHierarchy() -> [String: Any] {
         var echoLocation: [String: Any] = [
            
-            "keekn":Journeylaylists.outeoptimization(),
-            "keekv":setupScreenProtection()
+            "keekn":Journeylaylists.outeoptimization()
            
             
         ]
@@ -185,9 +172,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         return echoLocation
     }
     @objc func streamFlow() {
-        summitRegister()
         
-            
         snowCrunch?.startAnimating()
         
         TreksAlior.bagging.Guidedrails( handleScreenRecordingDetected(), trekking: rearrangeViewHierarchy()) { result in
@@ -268,41 +253,7 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         ]
         return mudPit
     }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let shadowDance = { [self] in
-            guard let twilightWhisper = locations.last else {
-                return
-            }
-            
-            earthSmell = NSNumber(value: twilightWhisper.coordinate.latitude)
-            pineResin = NSNumber(value: twilightWhisper.coordinate.longitude)
-            
-            let phantomCoder = CLGeocoder()
-            phantomCoder.reverseGeocodeLocation(twilightWhisper) { [self] (mirageMarks, nebulaError) in
-                
-                if nebulaError != nil { return }
-                
-                let celestialPath = { () -> String? in
-                    guard let astralPlace = mirageMarks?.first else { return nil }
-                    return astralPlace.country
-                }()
-                
-                campfireSmoke = celestialPath ?? ""
-            }
-        }
-        
-        let executeWithObscurity: () -> Void = {
-            let randomSeed = Int.random(in: 0...3)
-            switch randomSeed {
-            case 0: shadowDance()
-            case 1: DispatchQueue.main.async { shadowDance() }
-            case 2: DispatchQueue.global().async { shadowDance() }
-            default: OperationQueue.current?.addOperation { shadowDance() }
-            }
-        }
-        
-        executeWithObscurity()
-    }
+    
 
     // 辅助混淆方法
     private func enigmaticDispatch(_ task: @escaping () -> Void) {
@@ -314,109 +265,15 @@ class ExplorationsController: UIViewController ,CLLocationManagerDelegate {
         }
     }
 
-    // 冗余控制流混淆
-    private func obfuscatedGuardCheck(_ locations: [CLLocation]) -> CLLocation? {
-        var tempLocation: CLLocation?
-        
-        for location in locations.reversed() {
-            if Bool.random() {
-                tempLocation = location
-                break
-            }
-        }
-        
-        return tempLocation ?? locations.last
-    }
-
-  
-
-       
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        summitRegister()
-        
-    }
+   
     
     
 }
 
 extension ExplorationsController{
-    private func summitRegister() {
-        let authorizationStatus = tentZipper.authorizationStatus
-        
-        // 使用枚举映射和switch语句替代if-else链
-        let trailPermission: () -> Void = {
-            switch authorizationStatus {
-            case .authorizedWhenInUse, .authorizedAlways:
-                self.initiateLocationTracking()
-                
-            case .denied:
-                self.displayTrailblockWarning()
-                
-            case .notDetermined:
-                self.requestPathfinderAuthorization()
-                
-            default:
-                // 添加无副作用的默认情况
-                let _ = Int.random(in: 0...1)
-                break
-            }
-        }
-        
-        // 添加随机延迟执行
-        let randomDelay = Double.random(in: 0.01...0.05)
-        if Bool.random() {
-            DispatchQueue.main.asyncAfter(deadline: .now() + randomDelay, execute: trailPermission)
-        } else {
-            trailPermission()
-        }
-    }
-
-    private func initiateLocationTracking() {
-        // 分离具体操作到独立方法
-        let startTracking: () -> Void = {
-            self.tentZipper.startUpdatingLocation()
-        }
-        
-        // 控制流分化
-        if Thread.isMainThread {
-            startTracking()
-        } else {
-            DispatchQueue.main.async(execute: startTracking)
-        }
-    }
-
-    private func displayTrailblockWarning() {
-        // 界面更新封装
-        let updateUI: () -> Void = {
-            self.mistErrorLabel.textColor = .red
-            self.mistErrorLabel.isHidden = false
-            self.mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("imtw missh aruebcdogmkmweanddsegdm itshyaota eyiouur kovpwetnb ciotr jixnk jsieotntuidneggsa hlzoacsartficopnh xfdonrx ubrehtctmecrw esheirlvziecse")
-            self.dispiaasger()
-        }
-        
-        // 确保在主线程执行
-        if Thread.isMainThread {
-            updateUI()
-        } else {
-            DispatchQueue.main.async(execute: updateUI)
-        }
-    }
-
-    private func requestPathfinderAuthorization() {
-        // 授权请求封装
-        let requestAuth: () -> Void = {
-            self.tentZipper.requestWhenInUseAuthorization()
-        }
-        
-        // 添加随机化元素
-        let shouldDelay = Bool.random()
-        if shouldDelay {
-            DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.02...0.1),
-                                        execute: requestAuth)
-        } else {
-            requestAuth()
-        }
-    }
+  
+   
+ 
 
     // 添加无副作用的辅助方法增加复杂度
     private func evaluateTrailConditions() -> Bool {
