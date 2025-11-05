@@ -257,7 +257,7 @@ class TreksAlior: NSObject {
     }
     
     private func deadCodeExecution() -> Int {
-        // 永远不会执行的死代码
+       
         var result = 0
         for i in 0...1000 {
             result += i

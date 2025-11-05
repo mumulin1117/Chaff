@@ -8,7 +8,6 @@
 import UIKit
 
 
-import UIKit
 
 class ExplorationsController: UIViewController  {
    

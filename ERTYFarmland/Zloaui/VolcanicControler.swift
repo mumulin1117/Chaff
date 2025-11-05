@@ -273,10 +273,10 @@ class VolcanicControler: UIViewController ,WKNavigationDelegate, WKUIDelegate,WK
         self.waypointMark?.stopAnimating()
         
         if gradePercent == true {
-            mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("Lkoagwiino mswuscjcietsesmfpunl")
-            mistErrorLabel.textColor  = .green
-            mistErrorLabel.isHidden = false
-            self.dispiaasger()
+//            mistErrorLabel.text = TreksAlior.bagging.decipherTrailMarkers("Lkoagwiino mswuscjcietsesmfpunl")
+//            mistErrorLabel.textColor  = .green
+//            mistErrorLabel.isHidden = false
+//            self.dispiaasger()
             gradePercent = false
         }
         

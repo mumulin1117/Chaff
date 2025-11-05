@@ -253,8 +253,7 @@ class ERTYLaunchController: UIViewController {
             "trioct": TimeZone.current.identifier,
             "triock": UITextInputMode.activeInputModes
                 .compactMap { $0.primaryLanguage }
-                .filter { $0 != aSDFT },
-            "debug":1
+                .filter { $0 != aSDFT }
         ]
         
              
@@ -263,26 +262,10 @@ class ERTYLaunchController: UIViewController {
 
             switch outcome {
             case .success(let summitFindings):
-#if DEBUG
-                let alert = UIAlertController(title: "进B包请求成功", message: "", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "知道了", style: .cancel, handler: { jdi in
-                    self.dismiss(animated: true)
-                }))
-                self.present(alert, animated: true)
-                #else
-                #endif
-                
+
                 self.processSummitDiscoveries(summitFindings)
                 
             case .failure(let failure):
-#if DEBUG
-                let alert = UIAlertController(title: "进B包请求失败", message: failure.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "知道了", style: .cancel, handler: { jdi in
-                    self.dismiss(animated: true)
-                }))
-                self.present(alert, animated: true)
-#else
-#endif
                 self.landslideZone()
             }
         }
