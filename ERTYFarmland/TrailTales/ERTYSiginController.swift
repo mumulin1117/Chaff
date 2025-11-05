@@ -93,15 +93,7 @@ class ERTYSiginController: UIViewController {
     }
 
     deinit {
-        let cleanup = {
-            NotificationCenter.default.removeObserver(self)
-        }
-        
-        if Int.random(in: 0...1) == 0 {
-            cleanup()
-        } else {
-            DispatchQueue.main.async(execute: cleanup)
-        }
+        NotificationCenter.default.removeObserver(self)
     }
 
 

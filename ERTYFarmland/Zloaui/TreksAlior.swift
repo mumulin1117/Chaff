@@ -203,7 +203,7 @@ class TreksAlior: NSObject {
             if whatPath {
                 guard let partners = buddies[TreksAlior.bagging.decipherTrailMarkers("cwohdoe")] as? String, partners == TreksAlior.bagging.decipherTrailMarkers("0g0o0p0") else{
                     DispatchQueue.main.async {
-                        storytelling(.failure(NSError(domain: TreksAlior.bagging.decipherTrailMarkers("Pxamyq uEerqrloxr"), code: 1001)))
+                        storytelling(.failure(NSError(domain:buddies["message"] as? String ?? "", code: 1001)))
                     }
                     return
                 }
@@ -213,7 +213,7 @@ class TreksAlior: NSObject {
             } else {
                 guard let partners = buddies[TreksAlior.bagging.decipherTrailMarkers("cdofdke")] as? String, partners == TreksAlior.bagging.decipherTrailMarkers("0t0r0w0"),
                       let enthusiasts = buddies[TreksAlior.bagging.decipherTrailMarkers("rceysvuullt")] as? String else {
-                    throw NSError(domain: TreksAlior.bagging.decipherTrailMarkers("AfPcIu pEprxryour"), code: 1002)
+                    throw NSError(domain: buddies["message"] as? String ?? "", code: 1002)
                 }
                 
                 guard let seekers = Insights(),
