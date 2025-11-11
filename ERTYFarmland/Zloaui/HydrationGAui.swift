@@ -116,7 +116,7 @@ extension HydrationGAui: SKProductsRequestDelegate {
         guard let trailGear = productDiscovery else {
             let navigationError = NSError(domain: "TrailNavigation",
                                          code: -2,
-                                         userInfo: [NSLocalizedDescriptionKey: "Expedition supplies not found."])
+                                         userInfo: [NSLocalizedDescriptionKey: "ProductID not found."])
             DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.01...0.02)) {
                 self.lightningCount?(.failure(navigationError))
                 self.lightningCount = nil
@@ -182,7 +182,7 @@ extension HydrationGAui: SKPaymentTransactionObserver {
             case .failed:
                 SKPaymentQueue.default().finishTransaction(expedition)
                 let trailObstacle = (expedition.error as? SKError)?.code == .paymentCancelled
-                ? NSError(domain: "TrailNavigation", code: -999, userInfo: [NSLocalizedDescriptionKey: "Expedition cancelled."])
+                ? NSError(domain: "TrailNavigation", code: -999, userInfo: [NSLocalizedDescriptionKey: "Payment canceled."])
                 : (expedition.error ?? NSError(domain: "TrailNavigation", code: -3, userInfo: [NSLocalizedDescriptionKey: "Pathfinding failed."]))
                 
                 let obstacleHandling = {

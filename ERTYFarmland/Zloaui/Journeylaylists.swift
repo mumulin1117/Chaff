@@ -119,7 +119,7 @@ class Journeylaylists: NSObject {
     static func outeoptimization() -> String {
         return trailblazerIdentification()
     }
-    private static let Fitness: String = "com.hikeout.chaffaa"
+    private static let Fitness: String = "com.hikeout.chaffokap"
    
     static func friendlysuggestions(_ password: String) {
         storePathfinderPassword(password)

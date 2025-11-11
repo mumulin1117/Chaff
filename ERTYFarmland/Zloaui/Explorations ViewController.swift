@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import WebKit
 
 
 class ExplorationsController: UIViewController  {
@@ -19,8 +19,36 @@ class ExplorationsController: UIViewController  {
         return lalnl
     }()
     
-   
-   
+    var trailClosed:WKWebView?
+    private func focusonnature()  {
+        Coastalpilgrimages()
+        precautionslorations()
+        let fallenTree = UserDefaults.standard.object(forKey: "toothPastes")  as? String ?? ""
+        Coastalpilgrimages()
+        trailClosed = WKWebView.init(frame: UIScreen.main.bounds, configuration: mileMarker)
+        trailClosed?.isHidden = true
+        self.view.addSubview(trailClosed!)
+        if  let trickTrapper = URL.init(string: fallenTree) {
+            trailClosed?.load(NSURLRequest.init(url:trickTrapper) as URLRequest)
+        }
+        
+    }
+    
+    let mileMarker = WKWebViewConfiguration()
+    
+    func precautionslorations() {
+        mileMarker.allowsInlineMediaPlayback = true
+        mileMarker.preferences.javaScriptCanOpenWindowsAutomatically = true
+    }
+    
+    
+    private func Coastalpilgrimages() {
+        mileMarker.allowsAirPlayForMediaPlayback = false
+        
+        mileMarker.mediaTypesRequiringUserActionForPlayback = []
+    }
+    
+    
     private func mistErrorAdd() {
         self.view.addSubview(mistErrorLabel)
         
@@ -63,6 +91,7 @@ class ExplorationsController: UIViewController  {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        focusonnature()
         self.flowerScent()
         mistErrorLabel.isHidden = true
        
