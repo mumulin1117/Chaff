@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -29,10 +28,10 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" title="  0" image="heartNotfill"/>
-                        <state key="selected" image="beatenHear"/>
+                        <state key="normal" title="  0" image="ERTYBUIEDheartNotfill"/>
+                        <state key="selected" image="ERTYBUIEDbeatenHear"/>
                     </button>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hiplayo" translatesAutoresizingMaskIntoConstraints="NO" id="7H9-Dt-wFl">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDHiplayo" translatesAutoresizingMaskIntoConstraints="NO" id="7H9-Dt-wFl">
                         <rect key="frame" x="233" y="246" width="32" height="32"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="32" id="IvZ-nY-KOQ"/>
@@ -60,8 +59,8 @@
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                        <state key="normal" image="reportIcona"/>
-                        <state key="selected" image="beatenHear"/>
+                        <state key="normal" image="ERTYBUIEDreportIcona"/>
+                        <state key="selected" image="ERTYBUIEDbeatenHear"/>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hF1-xU-eBj">
                         <rect key="frame" x="3" y="316" width="265" height="0.0"/>
@@ -105,9 +104,9 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="Hiplayo" width="32" height="32"/>
-        <image name="beatenHear" width="16" height="16"/>
-        <image name="heartNotfill" width="16" height="16"/>
-        <image name="reportIcona" width="22" height="22"/>
+        <image name="ERTYBUIEDHiplayo" width="128" height="128"/>
+        <image name="ERTYBUIEDbeatenHear" width="128" height="128"/>
+        <image name="ERTYBUIEDheartNotfill" width="128" height="128"/>
+        <image name="ERTYBUIEDreportIcona" width="128" height="128"/>
     </resources>
 </document>

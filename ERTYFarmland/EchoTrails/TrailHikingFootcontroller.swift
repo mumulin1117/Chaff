@@ -13,13 +13,13 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
         let misslable = UILabel.init()
         misslable.textAlignment = .center
         misslable.numberOfLines = 0
-        misslable.text = "ExAeGxYRGFFRUQ".hikeReflections()
+        misslable.text = "ExAeGxYRGFFRUQ".ERTYBUIEDhikeReflections()
         misslable.font = UIFont.systemFont(ofSize: 20, weight: .medium)
         misslable.textColor = .orange
         return misslable
     }()
     
-    private let summitBadgeView = UIImageView(image: UIImage(systemName: "himtrail"))
+    private let summitBadgeView = UIImageView(image: UIImage(systemName: "ERTYBUIEDhimtrail"))
       
     private lazy var ropeIndicator: UIActivityIndicatorView = {
         let loading = UIActivityIndicatorView.init(style: .large)
@@ -107,10 +107,10 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
     
     
     func Emergencyprotocols()  {
-        TrailRequestScout.pathfinder.wildernessGuide = nil
+        ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.wildernessGuide = nil
        
         let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OkailLaungnavi") as! UINavigationController
-        ERTYLaunchController.biodegradable?.rootViewController = main
+        ERTYLaunchController.ERTYBUIEDbiodegradable?.rootViewController = main
     }
     @objc private func attemptSummit() {
            ropeIndicator.startAnimating()
@@ -169,12 +169,12 @@ class TrailHikingFootcontroller: UIViewController, WKScriptMessageHandler {
         summitBadgeView.tintColor = .systemGreen
     }
     private func Locallegends(hikes:String)  {
-        HydrationGAui.shared.heatExhaust(avalancheRisk: hikes) { flauo in
+        EMOCLEARHydrationGAui.shared.ERTYBUIEDheatExhaust(ERTYBUIEDavalancheRisk: hikes) { flauo in
             self.typographyKit()
             switch flauo{
             case .success(let falo):
                 self.mistErrorLabel.textColor  = .green
-                self.mistErrorLabel.text = "Lx4GXwwKHBwaDAwZChNe".hikeReflections()
+                self.mistErrorLabel.text = "Lx4GXwwKHBwaDAwZChNe".ERTYBUIEDhikeReflections()
                 self.dispiaasger()
                 self.pixelAlchemy?.evaluateJavaScript("onExpeditionFundsAdded()", completionHandler: nil)
                 self.mistErrorLabel.isHidden = false

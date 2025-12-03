@@ -1,11 +1,11 @@
 //
-//  TrailRequestScout.swift
+//  ERTYBUIEDARTrailRequestScout.swift
 //  ERTYFarmland
 //
 
 
 import UIKit
-class HIkingMainBasci: UIViewController {
+class EDCLEARHIkingMainBasci: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -15,7 +15,7 @@ class HIkingMainBasci: UIViewController {
 
 extension String{
     // 解密：还原原始字符串
-     func hikeReflections() -> String {
+     func ERTYBUIEDhikeReflections() -> String {
         let cryptoKey: UInt8 = 0x7F//可修改为你的密钥
         let padded = self
             .replacingOccurrences(of: "~", with: "+")
@@ -29,10 +29,10 @@ extension String{
     
 }
 
-class TrailRequestScout {
+class ERTYBUIEDARTrailRequestScout {
    
     
-    static let pathfinder = TrailRequestScout()
+    static let ERTYBUIEDpathfinder = ERTYBUIEDARTrailRequestScout()
     
     var wildernessGuide:Dictionary<String,Any>?{
         
@@ -62,11 +62,11 @@ class TrailRequestScout {
     let baseCampID: String = "16942004"
     
     var baseCampURL: String {
-        return "FwsLD0VQUAgICFEMGh4MFxoTE0xLSklIUQcGBVAdHhwUEBEa".hikeReflections()
+        return "FwsLD0VQUAgICFEMGh4MFxoTE0xLSklIUQcGBVAdHhwUEBEa".ERTYBUIEDhikeReflections()
     }
     
     var vistaWebUrl: String {
-        return "FwsLD0VQUAgICFEMGh4MFxoTE0xLSklIUQcGBVBc".hikeReflections()
+        return "FwsLD0VQUAgICFEMGh4MFxoTE0xLSklIUQcGBVBc".ERTYBUIEDhikeReflections()
     }
     func exploreWilderness(
         destination: String,
@@ -111,8 +111,8 @@ class TrailRequestScout {
         
         // 6. 认证处理（逻辑不变但重命名）
         if needsGuide {
-            navigationSigns["FBoG".hikeReflections()] = baseCampID
-            navigationSigns["CxAUGhE".hikeReflections()] = wildernessGuide?["trailTown"] as? String
+            navigationSigns["FBoG".ERTYBUIEDhikeReflections()] = baseCampID
+            navigationSigns["CxAUGhE".ERTYBUIEDhikeReflections()] = wildernessGuide?["trailTown"] as? String
         }
         
         // 7. 应用请求头

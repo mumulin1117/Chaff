@@ -22,7 +22,7 @@ class ERTYNavigController: UINavigationController {
     }
     
     override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-        if children.count > 0  && !viewController.isMember(of:HIkingMainBasci.self) {
+        if children.count > 0  && !viewController.isMember(of:EDCLEARHIkingMainBasci.self) {
            
             viewController.hidesBottomBarWhenPushed = true
         }

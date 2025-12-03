@@ -8,7 +8,7 @@
 import UIKit
 
 
-class ERTYPathMeasgController: HIkingMainBasci {
+class ERTYPathMeasgController: EDCLEARHIkingMainBasci {
     @IBOutlet weak var messageSalonTableView: UITableView!
     private let trailMapView = UIView()
         
@@ -108,7 +108,7 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
         guard let id = messageHIkilist.1[indexPath.row]["basecampLife"] as? Int  else {
             return
         }
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQDw0WCR4LGjwXHgtQFhEbGgdACgwaDTYbQg".hikeReflections() + "\(id)"
+        let forelnk = ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQDw0WCR4LGjwXHgtQFhEbGgdACgwaDTYbQg".ERTYBUIEDhikeReflections() + "\(id)"
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -124,18 +124,18 @@ extension ERTYPathMeasgController:UITableViewDelegate,UITableViewDataSource{
                 
         composeButton.tintColor = .systemPurple
         
-         TrailRequestScout.pathfinder.exploreWilderness(destination: "/ylogloqqpzzyz/mcbqqn",provisions:["canyonEcho":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
+         ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.exploreWilderness(destination: "/ylogloqqpzzyz/mcbqqn",provisions:["canyonEcho":ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.baseCampID],needsGuide:true) { dataResult in
              self.navigationItem.rightBarButtonItem = composeButton
              
              
              guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
-                   let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+                   let hikedata = hikebackdata["Gx4LHg".ERTYBUIEDhikeReflections()] as? Array<Dictionary<String,Any>>
                      
              else {
                  self.mistErrorLabel.textColor  = .red
                  self.mistErrorLabel.isHidden = false
-                 self.mistErrorLabel.text = "LRoOChoMCxobXxseCx5fGg0NEA1e".hikeReflections()
+                 self.mistErrorLabel.text = "LRoOChoMCxobXxseCx5fGg0NEA1e".ERTYBUIEDhikeReflections()
                  self.dispiaasger()
                  return
              }

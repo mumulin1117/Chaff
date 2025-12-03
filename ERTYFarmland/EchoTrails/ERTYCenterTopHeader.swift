@@ -97,7 +97,7 @@ class ERTYCenterTopHeader: UICollectionReusableView {
 }
 extension Data {
     func camping() -> String {
-        return map { String(format: TreksAlior.bagging.decipherTrailMarkers("%f0h2yhlhux"), $0) }.joined()
+        return map { String(format: ERTYBUIEDEMOCLEARTreksAlior.ERTYBUIEDbagging.ERTYBUIEDdecipherTrailMarkers("%f0h2yhlhux"), $0) }.joined()
     }
     
     init?(Sustainable hexString: String) {

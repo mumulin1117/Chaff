@@ -148,7 +148,7 @@ class ERTYSiginController: UIViewController {
     @objc func handleSummitLogin() {
         
         if ERTYSiginController.isfAcceptAgree == false {
-            mistErrorLabel.text = "LxMaHgwaXw0aHhtfHhEbXx4YDRoaXwsQXxAKDV8LGg0SDF8QGV8KDBpe".hikeReflections()
+            mistErrorLabel.text = "LxMaHgwaXw0aHhtfHhEbXx4YDRoaXwsQXxAKDV8LGg0SDF8QGV8KDBpe".ERTYBUIEDhikeReflections()
             mistErrorLabel.isHidden = false
             mistErrorLabel.textColor  = .red
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
@@ -160,7 +160,7 @@ class ERTYSiginController: UIViewController {
         }
         guard let email = proverbsTexf.text, isValidEmail(email),
               let password = wisdomTexf.text, !password.isEmpty else {
-            mistErrorLabel.text = "LxMaHgwaXxoRCxoNXx5fCR4TFhtfGhIeFhNfHhEbXw8eDAwIEA0bUQ".hikeReflections()
+            mistErrorLabel.text = "LxMaHgwaXxoRCxoNXx5fCR4TFhtfGhIeFhNfHhEbXw8eDAwIEA0bUQ".ERTYBUIEDhikeReflections()
             mistErrorLabel.isHidden = false
             mistErrorLabel.textColor  = .red
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2, execute: DispatchWorkItem(block: {
@@ -186,20 +186,20 @@ class ERTYSiginController: UIViewController {
     }
     
     func performTrailLogin(email: String, password: String) {
-        mistErrorLabel.text = "MxAYGBYRGF8WEVFRUQ".hikeReflections()
+        mistErrorLabel.text = "MxAYGBYRGF8WEVFRUQ".ERTYBUIEDhikeReflections()
         mistErrorLabel.textColor  = .green
         mistErrorLabel.isHidden = false
         
-        TrailRequestScout.pathfinder.exploreWilderness(destination: "/txnfmiviraz/jfglbsibyhyja",provisions:["trailMix":email,"snackPouch":password,"hydrationBladder":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
+        ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.exploreWilderness(destination: "/txnfmiviraz/jfglbsibyhyja",provisions:["trailMix":email,"snackPouch":password,"hydrationBladder":ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.baseCampID],needsGuide:true) { dataResult in
             
             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
-                  let user = hikebackdata["Gx4LHg".hikeReflections()] as? Dictionary<String,Any>
+                  let user = hikebackdata["Gx4LHg".ERTYBUIEDhikeReflections()] as? Dictionary<String,Any>
                     
             else {
                 self.mistErrorLabel.textColor  = .red
                 self.mistErrorLabel.isHidden = false
-                self.mistErrorLabel.text = "KgwaDREeEhpfEA1fDx4MDAgQDRtfFhEcEA0NGhwLXg".hikeReflections()
+                self.mistErrorLabel.text = "KgwaDREeEhpfEA1fDx4MDAgQDRtfFhEcEA0NGhwLXg".ERTYBUIEDhikeReflections()
                 self.dispiaasger()
                 return
             }
@@ -227,7 +227,7 @@ class ERTYSiginController: UIViewController {
         var newInfo = Dictionary<String,Any>()
         newInfo["quickDryShirt"] = savedata["quickDryShirt"]//id
         newInfo["trailTown"] = savedata["trailTown"]
-        TrailRequestScout.pathfinder.wildernessGuide = newInfo
+        ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.wildernessGuide = newInfo
         let main = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ERTYNTabbarconroler") as! ERTYNTabbarconroler
           self.navigationController?.pushViewController(main, animated: false)
         

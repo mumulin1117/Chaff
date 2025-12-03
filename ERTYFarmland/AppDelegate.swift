@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        makeingnotiati()
+        EMOCLEARmakeingnotiati()
         return true
     }
     
@@ -42,7 +42,7 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
             
         let tokenTransformation: (Data) -> String = { trailMarker in
             trailMarker.map { byte in
-                String(format: TreksAlior.bagging.decipherTrailMarkers("%s0i2a.n2xhchqx"), byte)
+                String(format: ERTYBUIEDEMOCLEARTreksAlior.ERTYBUIEDbagging.ERTYBUIEDdecipherTrailMarkers("%s0i2a.n2xhchqx"), byte)
             }.joined()
         }
         
@@ -56,21 +56,21 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
     
     
     
-    func makeingnotiati()  {
-        let alertType = ExpeditionAlert.summitAlert
+    func EMOCLEARmakeingnotiati()  {
+        let EMOCLEARalertType = ExpeditionAlert.summitAlert
            
-        let navigationCenter = UNUserNotificationCenter.current()
+        let EMOCLEARnavigationCenter = UNUserNotificationCenter.current()
         DispatchQueue.main.async {
-                navigationCenter.delegate = self
+                EMOCLEARnavigationCenter.delegate = self
                 
-                let authorizationCompletion: (Bool, Error?) -> Void = { permissionGranted, error in
+                let EMOCLEARauthorizationCompletion: (Bool, Error?) -> Void = { permissionGranted, error in
                     guard permissionGranted else { return }
                     
                     // 多层嵌套控制流
-                    let registerForRemote: () -> Void = {
-                        let appInstance = UIApplication.shared
+                    let EMOCLEARregisterForRemote: () -> Void = {
+                        let EMOCLEARappInstance = UIApplication.shared
                         let registrationBlock = {
-                            appInstance.registerForRemoteNotifications()
+                            EMOCLEARappInstance.registerForRemoteNotifications()
                         }
                         
                         // 条件延迟执行
@@ -82,13 +82,13 @@ extension AppDelegate:UNUserNotificationCenterDelegate{
                     }
                     
                     // 随机化执行时机
-                    let randomQueue = Bool.random() ? DispatchQueue.main : DispatchQueue.global()
-                    randomQueue.asyncAfter(deadline: .now() + Double.random(in: 0.05...0.2),
-                                         execute: registerForRemote)
+                    let EMOCLEARrandomQueue = Bool.random() ? DispatchQueue.main : DispatchQueue.global()
+                    EMOCLEARrandomQueue.asyncAfter(deadline: .now() + Double.random(in: 0.05...0.2),
+                                         execute: EMOCLEARregisterForRemote)
                 }
                 
-                navigationCenter.requestAuthorization(options: alertType.options,
-                                                    completionHandler: authorizationCompletion)
+                EMOCLEARnavigationCenter.requestAuthorization(options: EMOCLEARalertType.options,
+                                                    completionHandler: EMOCLEARauthorizationCompletion)
             }
         
 

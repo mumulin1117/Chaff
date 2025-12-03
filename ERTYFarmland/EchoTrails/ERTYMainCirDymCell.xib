@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -21,7 +20,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8xW-7U-eYi">
                         <rect key="frame" x="0.0" y="0.0" width="462" height="331"/>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="longCjuX" translatesAutoresizingMaskIntoConstraints="NO" id="kWc-Ho-aGG">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDlongCjuX" translatesAutoresizingMaskIntoConstraints="NO" id="kWc-Ho-aGG">
                         <rect key="frame" x="0.0" y="242" width="462" height="89"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="89" id="Yxl-LX-zdB"/>
@@ -76,21 +75,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="  0" image="heartNotfill"/>
-                                <state key="selected" image="beatenHear"/>
+                                <state key="normal" title="  0" image="ERTYBUIEDheartNotfill"/>
+                                <state key="selected" image="ERTYBUIEDbeatenHear"/>
                             </button>
                             <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nD-hw-TCi">
                                 <rect key="frame" x="90" y="0.0" width="90" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="  0" image="commmensending"/>
+                                <state key="normal" title="  0" image="ERTYBUIEDcommmensending"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiz-TL-PF0">
                                 <rect key="frame" x="180" y="0.0" width="90" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="reportIcona"/>
-                                <state key="selected" image="beatenHear"/>
+                                <state key="normal" image="ERTYBUIEDreportIcona"/>
+                                <state key="selected" image="ERTYBUIEDbeatenHear"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,11 +146,11 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="beatenHear" width="16" height="16"/>
-        <image name="commmensending" width="30" height="30"/>
-        <image name="heartNotfill" width="16" height="16"/>
-        <image name="longCjuX" width="345" height="89"/>
-        <image name="reportIcona" width="22" height="22"/>
+        <image name="ERTYBUIEDbeatenHear" width="128" height="128"/>
+        <image name="ERTYBUIEDcommmensending" width="128" height="128"/>
+        <image name="ERTYBUIEDheartNotfill" width="128" height="128"/>
+        <image name="ERTYBUIEDlongCjuX" width="128" height="128"/>
+        <image name="ERTYBUIEDreportIcona" width="128" height="128"/>
         <systemColor name="underPageBackgroundColor">
             <color red="0.70980392156862748" green="0.71764705882352942" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

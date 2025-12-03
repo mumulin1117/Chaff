@@ -27,7 +27,7 @@ class ERTYPrivicerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.isHidden = false
-        let pathways = UIImageView(image: UIImage(named: "backingWiter"))
+        let pathways = UIImageView(image: UIImage(named: "ERTYBUIEDbackingWiter"))
         
         pathways.isUserInteractionEnabled = true
         
@@ -37,7 +37,7 @@ class ERTYPrivicerController: UIViewController {
         
         
         if compass == .privacy {
-            alertsLabel.text = "Lw0WCR4cBl8vEBMWHAY".hikeReflections()
+            alertsLabel.text = "Lw0WCR4cBl8vEBMWHAY".ERTYBUIEDhikeReflections()
             trackingContent.text = """
 Last Updated: 2025-05-01
 Contact Email: docbar@gmail.com

@@ -17,7 +17,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="natureQy" translatesAutoresizingMaskIntoConstraints="NO" id="vVd-If-acQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDnatureQy" translatesAutoresizingMaskIntoConstraints="NO" id="vVd-If-acQ">
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                         </subviews>
@@ -79,7 +79,7 @@
         <scene sceneID="5pC-EK-5XT">
             <objects>
                 <navigationController id="l2W-7F-4Ny" customClass="ERTYNavigController" customModule="ERTYFarmland" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="S_AID" landscapeImage="S_AID" selectedImage="S_AID_qiuti" id="iI5-NT-ReH"/>
+                    <tabBarItem key="tabBarItem" title="" image="ERTYBUIEDS_AID" selectedImage="ERTYBUIEDS_AID_qiuti" id="iI5-NT-ReH"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gQk-OQ-mh3">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -107,21 +107,21 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="himtrail" translatesAutoresizingMaskIntoConstraints="NO" id="dxz-hw-kzX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDhimtrail" translatesAutoresizingMaskIntoConstraints="NO" id="dxz-hw-kzX">
                                 <rect key="frame" x="16" y="103" width="82" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="ajE-tk-dds"/>
                                     <constraint firstAttribute="width" constant="82" id="hvF-38-5eg"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hiketips" translatesAutoresizingMaskIntoConstraints="NO" id="T1C-SP-MGk">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDhiketips" translatesAutoresizingMaskIntoConstraints="NO" id="T1C-SP-MGk">
                                 <rect key="frame" x="245" y="103" width="148" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="148" id="AcP-Qc-tJt"/>
                                     <constraint firstAttribute="height" constant="44" id="Zr1-uy-BJv"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Hiketogether" translatesAutoresizingMaskIntoConstraints="NO" id="PNM-vA-M6j">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDHiketogether" translatesAutoresizingMaskIntoConstraints="NO" id="PNM-vA-M6j">
                                 <rect key="frame" x="16" y="143" width="201" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="201" id="5Xs-ks-HWU"/>
@@ -167,8 +167,8 @@
                                 <rect key="frame" x="16" y="360" width="361" height="492"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnl-Ja-y1l">
-                                <rect key="frame" x="26" y="370" width="341" height="27.333333333333314"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnl-Ja-y1l">
+                                <rect key="frame" x="26" y="370" width="341" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="21"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
@@ -180,7 +180,7 @@
                                     <constraint firstAttribute="height" constant="56" id="KsO-Yc-fwP"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="takingpictupre"/>
+                                <state key="normal" backgroundImage="ERTYBUIEDtakingpictupre"/>
                                 <connections>
                                     <action selector="takingNewpost:" destination="Flf-fm-9ne" eventType="touchUpInside" id="ePg-VV-Jfi"/>
                                 </connections>
@@ -240,7 +240,7 @@
         <scene sceneID="5E5-Kw-IFK">
             <objects>
                 <navigationController id="Iqq-Ve-djY" customClass="ERTYNavigController" customModule="ERTYFarmland" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="moon_lo" landscapeImage="moon_lo" selectedImage="moon_lo_check" id="Wn1-qV-CpO"/>
+                    <tabBarItem key="tabBarItem" title="" image="ERTYBUIEDmoon_lo" selectedImage="ERTYBUIEDmoon_lo_check" id="Wn1-qV-CpO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="f1U-I1-EKw">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -290,7 +290,7 @@
         <scene sceneID="tc7-nc-AVP">
             <objects>
                 <navigationController id="XPA-rI-7hy" customClass="ERTYNavigController" customModule="ERTYFarmland" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="send_lo" selectedImage="send_lo_check" id="vBZ-gF-8ue"/>
+                    <tabBarItem key="tabBarItem" title="" image="ERTYBUIEDsend_lo" selectedImage="ERTYBUIEDsend_lo_check" id="vBZ-gF-8ue"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="OBV-IZ-XyR">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -311,7 +311,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="himeasg" translatesAutoresizingMaskIntoConstraints="NO" id="xq5-S4-0jE">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDhimeasg" translatesAutoresizingMaskIntoConstraints="NO" id="xq5-S4-0jE">
                                 <rect key="frame" x="16" y="103" width="116" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="9aF-Kw-9cX"/>
@@ -322,8 +322,8 @@
                                 <rect key="frame" x="0.0" y="159" width="393" height="693"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPL-H3-MeD">
-                                <rect key="frame" x="20" y="169" width="353" height="27.333333333333343"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPL-H3-MeD">
+                                <rect key="frame" x="20" y="169" width="353" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="21"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
@@ -357,7 +357,7 @@
         <scene sceneID="OTv-Px-pc8">
             <objects>
                 <navigationController id="2C5-PP-Cdc" customClass="ERTYNavigController" customModule="ERTYFarmland" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="vsp_lo" selectedImage="vsp_lo_check" id="0hf-Ky-Sat"/>
+                    <tabBarItem key="tabBarItem" title="" image="ERTYBUIEDvsp_lo" selectedImage="ERTYBUIEDvsp_lo_check" id="0hf-Ky-Sat"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="62V-vc-5Nq">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -378,7 +378,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exploretitle" translatesAutoresizingMaskIntoConstraints="NO" id="b94-kG-3PS">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDexploretitle" translatesAutoresizingMaskIntoConstraints="NO" id="b94-kG-3PS">
                                 <rect key="frame" x="16" y="103" width="105" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="VOj-pO-pvp"/>
@@ -392,7 +392,7 @@
                                     <constraint firstAttribute="height" constant="38" id="vqe-Rb-stR"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" backgroundImage="oviodeo"/>
+                                <state key="normal" backgroundImage="ERTYBUIEDoviodeo"/>
                                 <connections>
                                     <action selector="setupVideoShare:" destination="hS8-HD-MXT" eventType="touchUpInside" id="0Wi-ZA-6q1"/>
                                 </connections>
@@ -403,7 +403,7 @@
                                 <collectionViewLayout key="collectionViewLayout" id="GKQ-lU-4IO"/>
                                 <cells/>
                             </collectionView>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBt-D6-0tW">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FBt-D6-0tW">
                                 <rect key="frame" x="23" y="169" width="341" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Kailasa-Bold" family="Kailasa" pointSize="21"/>
@@ -439,22 +439,22 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Hiketogether" width="197.33332824707031" height="12.666666984558105"/>
-        <image name="S_AID" width="30" height="30"/>
-        <image name="S_AID_qiuti" width="30" height="30"/>
-        <image name="exploretitle" width="105" height="36"/>
-        <image name="hiketips" width="147" height="44"/>
-        <image name="himeasg" width="116" height="37"/>
-        <image name="himtrail" width="82" height="36"/>
-        <image name="moon_lo" width="30" height="30"/>
-        <image name="moon_lo_check" width="30" height="30"/>
-        <image name="natureQy" width="375" height="812"/>
-        <image name="oviodeo" width="110" height="38"/>
-        <image name="send_lo" width="30" height="30"/>
-        <image name="send_lo_check" width="30" height="30"/>
-        <image name="takingpictupre" width="56" height="56"/>
-        <image name="vsp_lo" width="30" height="30"/>
-        <image name="vsp_lo_check" width="30" height="30"/>
+        <image name="ERTYBUIEDHiketogether" width="197.33332824707031" height="12.666666984558105"/>
+        <image name="ERTYBUIEDS_AID" width="30" height="30"/>
+        <image name="ERTYBUIEDS_AID_qiuti" width="30" height="30"/>
+        <image name="ERTYBUIEDexploretitle" width="105" height="36"/>
+        <image name="ERTYBUIEDhiketips" width="147" height="44"/>
+        <image name="ERTYBUIEDhimeasg" width="116" height="37"/>
+        <image name="ERTYBUIEDhimtrail" width="82" height="36"/>
+        <image name="ERTYBUIEDmoon_lo" width="30" height="30"/>
+        <image name="ERTYBUIEDmoon_lo_check" width="30" height="30"/>
+        <image name="ERTYBUIEDnatureQy" width="375" height="812"/>
+        <image name="ERTYBUIEDoviodeo" width="110" height="38"/>
+        <image name="ERTYBUIEDsend_lo" width="30" height="30"/>
+        <image name="ERTYBUIEDsend_lo_check" width="30" height="30"/>
+        <image name="ERTYBUIEDtakingpictupre" width="56" height="56"/>
+        <image name="ERTYBUIEDvsp_lo" width="30" height="30"/>
+        <image name="ERTYBUIEDvsp_lo_check" width="30" height="30"/>
         <systemColor name="darkTextColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -462,7 +462,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemPinkColor">
-            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="viewFlipsideBackgroundColor">
             <color red="0.12156862745098039" green="0.12941176470588237" blue="0.14117647058823529" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

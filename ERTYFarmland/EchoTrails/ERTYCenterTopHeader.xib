@@ -26,14 +26,14 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Post" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-Of-WQD">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDERTYBUIEPost" translatesAutoresizingMaskIntoConstraints="NO" id="9GT-Of-WQD">
                     <rect key="frame" x="372.66666666666669" y="400" width="26" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="HLD-9s-u5s"/>
                         <constraint firstAttribute="width" constant="26" id="gc1-HM-Wdo"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Fans" translatesAutoresizingMaskIntoConstraints="NO" id="vZw-rY-Axp">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDFans" translatesAutoresizingMaskIntoConstraints="NO" id="vZw-rY-Axp">
                     <rect key="frame" x="116.33333333333331" y="400" width="26" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="eeN-6t-LzD"/>
@@ -45,7 +45,7 @@
                     <color key="backgroundColor" red="1" green="0.47843137250000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="  Edit" image="edittravel"/>
+                    <state key="normal" title="  Edit" image="ERTYBUIEDedittravel"/>
                     <connections>
                         <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="QCS-iu-T82"/>
                     </connections>
@@ -72,12 +72,12 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" title="  Setting" image="setingtravel"/>
+                    <state key="normal" title="  Setting" image="ERTYBUIEDsetingtravel"/>
                     <connections>
                         <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="lvN-bm-Owq"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Followers" translatesAutoresizingMaskIntoConstraints="NO" id="sty-LD-ARh">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ERTYBUIEDFollowers" translatesAutoresizingMaskIntoConstraints="NO" id="sty-LD-ARh">
                     <rect key="frame" x="229.66666666666663" y="400" width="56" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="8nE-26-hyi"/>
@@ -101,7 +101,7 @@
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" backgroundImage="hikebudy"/>
+                    <state key="normal" backgroundImage="ERTYBUIEDhikebudy"/>
                     <connections>
                         <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="vgy-SR-PMU"/>
                     </connections>
@@ -114,7 +114,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" backgroundImage="moredimoned"/>
+                    <state key="normal" backgroundImage="ERTYBUIEDmoredimoned"/>
                     <connections>
                         <action selector="clicklaundryDay:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="UUG-HS-FnR"/>
                     </connections>
@@ -126,8 +126,8 @@
                         <constraint firstAttribute="height" constant="29" id="S5i-qY-PxC"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="postcenter"/>
-                    <state key="selected" image="centerpostsel"/>
+                    <state key="normal" image="ERTYBUIEDpostcenter"/>
+                    <state key="selected" image="ERTYBUIEDcenterpostsel"/>
                     <connections>
                         <action selector="checkPosterOrview:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="ART-iX-cuR"/>
                     </connections>
@@ -139,8 +139,8 @@
                         <constraint firstAttribute="height" constant="29" id="iiD-IC-GX2"/>
                     </constraints>
                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                    <state key="normal" image="Video"/>
-                    <state key="selected" image="videocentersel"/>
+                    <state key="normal" image="ERTYBUIEDVideo"/>
+                    <state key="selected" image="ERTYBUIEDvideocentersel"/>
                     <connections>
                         <action selector="checkPosterOrview:" destination="U6b-Vx-4bR" eventType="touchUpInside" id="ADk-qm-WfM"/>
                     </connections>
@@ -216,16 +216,16 @@
         </collectionReusableView>
     </objects>
     <resources>
-        <image name="Fans" width="23.666666030883789" height="8.6666669845581055"/>
-        <image name="Followers" width="51" height="9.6666669845581055"/>
-        <image name="Post" width="22.666666030883789" height="8.6666669845581055"/>
-        <image name="Video" width="48.666667938232422" height="14"/>
-        <image name="centerpostsel" width="46" height="29"/>
-        <image name="edittravel" width="22" height="20"/>
-        <image name="hikebudy" width="168" height="80"/>
-        <image name="moredimoned" width="168" height="80"/>
-        <image name="postcenter" width="46.333332061767578" height="29"/>
-        <image name="setingtravel" width="21" height="20"/>
-        <image name="videocentersel" width="50.666667938232422" height="29"/>
+        <image name="ERTYBUIEDERTYBUIEPost" width="22.666666030883789" height="8.6666669845581055"/>
+        <image name="ERTYBUIEDFans" width="23.666666030883789" height="8.6666669845581055"/>
+        <image name="ERTYBUIEDFollowers" width="51" height="9.6666669845581055"/>
+        <image name="ERTYBUIEDVideo" width="48.666667938232422" height="14"/>
+        <image name="ERTYBUIEDcenterpostsel" width="46" height="29"/>
+        <image name="ERTYBUIEDedittravel" width="22" height="20"/>
+        <image name="ERTYBUIEDhikebudy" width="168" height="80"/>
+        <image name="ERTYBUIEDmoredimoned" width="168" height="80"/>
+        <image name="ERTYBUIEDpostcenter" width="46.333332061767578" height="29"/>
+        <image name="ERTYBUIEDsetingtravel" width="21" height="20"/>
+        <image name="ERTYBUIEDvideocentersel" width="128" height="128"/>
     </resources>
 </document>

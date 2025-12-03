@@ -8,13 +8,13 @@
 import UIKit
 
 
-class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , reportContetnDelegate {
+class ERTYEchoTrailsController: EDCLEARHIkingMainBasci, TrailWaterfallLayoutDelegate , reportContetnDelegate {
     private var fogNavigation:(Int,Array<Dictionary<String,Any>>)  = (10,Array<Dictionary<String,Any>>())
     private let trailMapView = UIView()
       
     private let compassButton = UIButton(type: .system)
     func reportHikingContent() {
-        pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".hikeReflections())
+        pushtoNexteHikenpage(valleys:ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".ERTYBUIEDhikeReflections())
     }
     
     struct CoutureHeadpiece {
@@ -75,7 +75,7 @@ class ERTYEchoTrailsController: HIkingMainBasci, TrailWaterfallLayoutDelegate , 
     }
    
     @IBAction func setupVideoShare(_ sender: Any) {
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "pages/releaseVideos/index?"
+        let forelnk = ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "pages/releaseVideos/index?"
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -166,12 +166,12 @@ extension ERTYEchoTrailsController:UICollectionViewDelegate,UICollectionViewData
        
        trailMapView.layer.cornerRadius = 12
      
-        TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":20,"leaveNoTrace":1,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
+        ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":20,"leaveNoTrace":1,"waterfallChaser":ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.baseCampID],needsGuide:true) { dataResult in
             
             
             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
-                  let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+                  let hikedata = hikebackdata["Gx4LHg".ERTYBUIEDhikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                 self.designerLoungeCard.layer.borderWidth = 0.5

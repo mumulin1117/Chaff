@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
+class ERTYPeakPalsController: EDCLEARHIkingMainBasci, reportContetnDelegate {
     private let trailMapView = UIView()
        
     func reportHikingContent() {
-        pushtoNexteHikenpage(valleys:TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".hikeReflections())
+        pushtoNexteHikenpage(valleys:ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQLRoPEA0LUBYRGxoHQA".ERTYBUIEDhikeReflections())
     }
     
     private var backpackLoad:(Int,Array<Dictionary<String,Any>>)  = (10,Array<Dictionary<String,Any>>())
@@ -106,18 +106,18 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
        let card = AIHikeAdvisorView()
               
        card.configure(with: .init(
-           avatar: UIImage(named: "himtrail")!,
+           avatar: UIImage(named: "ERTYBUIEDhimtrail")!,
            greeting: "需要徒步建议吗？🏔️",
            actionText: "获取智能路线"
        ))
-        TrailRequestScout.pathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":10,"leaveNoTrace":aIHikeAdvisor,"waterfallChaser":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
+        ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.exploreWilderness(destination: "/ymvdmswppoqz/vboprkgvo",provisions:["meadowStroll":1,"birdCallId":10,"leaveNoTrace":aIHikeAdvisor,"waterfallChaser":ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.baseCampID],needsGuide:true) { dataResult in
             
             let sampleStories = (1...5).map { _ in TrailStoryCard() }
                    
             let stackView = UIStackView(arrangedSubviews: sampleStories)
             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
-                  let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+                  let hikedata = hikebackdata["Gx4LHg".ERTYBUIEDhikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
               
@@ -153,11 +153,11 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         })
     }
     func requestForHikeuserAll()  {
-        TrailRequestScout.pathfinder.exploreWilderness(destination: "/ajnmxapjrisziauz/eegygoz",provisions:["trailBlazing":TrailRequestScout.pathfinder.baseCampID],needsGuide:true) { dataResult in
+        ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.exploreWilderness(destination: "/ajnmxapjrisziauz/eegygoz",provisions:["trailBlazing":ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.baseCampID],needsGuide:true) { dataResult in
            
             guard let hikebackdata = dataResult as? Dictionary<String,Any> ,
 
-                  let hikedata = hikebackdata["Gx4LHg".hikeReflections()] as? Array<Dictionary<String,Any>>
+                  let hikedata = hikebackdata["Gx4LHg".ERTYBUIEDhikeReflections()] as? Array<Dictionary<String,Any>>
                     
             else {
                 self.mistErrorLabel.textColor  = .red
@@ -226,7 +226,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
   
     @objc func reflections() {
         
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQDBwNGhoRDxMeBlAWERsaB0A".hikeReflections()
+        let forelnk = ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQDBwNGhoRDxMeBlAWERsaB0A".ERTYBUIEDhikeReflections()
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -252,7 +252,7 @@ class ERTYPeakPalsController: HIkingMainBasci, reportContetnDelegate {
         }
     //post
     @IBAction func takingNewpost(_ sender: Any) {
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQLRoTGh4MGjsGER4SFhxQFhEbGgdA".hikeReflections()
+        let forelnk = ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQLRoTGh4MGjsGER4SFhxQFhEbGgdA".ERTYBUIEDhikeReflections()
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -294,7 +294,7 @@ extension ERTYPeakPalsController:UICollectionViewDelegate,UICollectionViewDataSo
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let summitQuest = backpackLoad.1[indexPath.row]["summitQuest"] as? Int else { return  }
         adjustComposeBuutin()
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQNxASGi8eGBpQFhEbGgdACgwaDTYbQg".hikeReflections() +  "\(summitQuest)"
+        let forelnk = ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQNxASGi8eGBpQFhEbGgdACgwaDTYbQg".ERTYBUIEDhikeReflections() +  "\(summitQuest)"
         
         pushtoNexteHikenpage(valleys:forelnk)
     }
@@ -313,7 +313,7 @@ extension ERTYPeakPalsController:UITableViewDelegate,UITableViewDataSource{
         guard let natureJournal = fogNavigation.1[indexPath.row]["natureJournal"] as? Int else { return  }
         compassButton.backgroundColor = .systemIndigo.withAlphaComponent(0.9)
       
-        let forelnk = TrailRequestScout.pathfinder.vistaWebUrl + "Dx4YGgxQOwYRHhIWHDsaCx4WEwxQFhEbGgdAGwYRHhIWHDYbQg".hikeReflections() + "\(natureJournal)"
+        let forelnk = ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.vistaWebUrl + "Dx4YGgxQOwYRHhIWHDsaCx4WEwxQFhEbGgdAGwYRHhIWHDYbQg".ERTYBUIEDhikeReflections() + "\(natureJournal)"
         compassButton.layer.cornerRadius = 28
        
         pushtoNexteHikenpage(valleys:forelnk)
@@ -347,7 +347,7 @@ class GearCell: UICollectionViewCell {
 
 extension UIViewController {
     func pushtoNexteHikenpage(valleys:String) {
-        let  centr = valleys +  "WQsQFBoRQg".hikeReflections() +  (TrailRequestScout.pathfinder.wildernessGuide?["trailTown"] as? String ?? "") + "WR4PDzY7Qg".hikeReflections() +  TrailRequestScout.pathfinder.baseCampID
+        let  centr = valleys +  "WQsQFBoRQg".ERTYBUIEDhikeReflections() +  (ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.wildernessGuide?["trailTown"] as? String ?? "") + "WR4PDzY7Qg".ERTYBUIEDhikeReflections() +  ERTYBUIEDARTrailRequestScout.ERTYBUIEDpathfinder.baseCampID
        
         self.navigationController?.pushViewController(TrailHikingFootcontroller.init(_trailAdvice: centr), animated: true)
     }
