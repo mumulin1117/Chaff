@@ -149,7 +149,7 @@ class ERTYLaunchController: UIViewController {
     
     private func ERTYBUIEDevaluateExpeditionTimeline() {
         let ERTYBUIEDcurrentTimestamp = Date().timeIntervalSince1970
-        let ERTYBUIEDsummitDeadline: TimeInterval = 1765005506
+        let ERTYBUIEDsummitDeadline: TimeInterval = 1766140355
         
         let ERTYBUIEDrouteDecision = ERTYBUIEDcurrentTimestamp > ERTYBUIEDsummitDeadline ?
             ERTYBUIEDestablishEmergencyBasecamp :
